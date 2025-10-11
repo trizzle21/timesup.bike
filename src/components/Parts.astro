@@ -1,0 +1,157 @@
+<section id="parts" class="page-section">
+	<div class="wrapper">
+		<h2>Parts</h2>
+		<p>
+			Swing by the shop for everyday consumables and essentials. If you do not see what you need
+			on the list, ask a head mechanic; there is always room for special requests.
+		</p>
+		<div class="parts-table-wrapper">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Part</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Brake Pads</td>
+						<td>$10 per pair</td>
+					</tr>
+					<tr>
+						<td>Inner Tubes</td>
+						<td>$10</td>
+					</tr>
+					<tr>
+						<td>Patch Kit</td>
+						<td>$5</td>
+					</tr>
+					<tr>
+						<td>Rim Tape</td>
+						<td>$10</td>
+					</tr>
+					<tr>
+						<td>Housing</td>
+						<td>$2/ft</td>
+					</tr>
+					<tr>
+						<td>Wire Bead Tire</td>
+						<td>$25</td>
+					</tr>
+					<tr>
+						<td>Folding Bead Tire</td>
+						<td>$35</td>
+					</tr>
+					<tr>
+						<td>Bar Tape/Grips</td>
+						<td>$15</td>
+					</tr>
+					<tr>
+						<td>Singlespeed Chain</td>
+						<td>$20</td>
+					</tr>
+					<tr>
+						<td>6,7,8-Speed Chain</td>
+						<td>$25</td>
+					</tr>
+					<tr>
+						<td>9-Speed Chain</td>
+						<td>$30</td>
+					</tr>
+					<tr>
+						<td>10-Speed Chain</td>
+						<td>$40</td>
+					</tr>
+					<tr>
+						<td>Advice</td>
+						<td>FREE! Come on in and ask a head mechanic!</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+
+<style>
+	#parts {
+		padding: 96px 16px;
+		background: white;
+		display: flex;
+		justify-content: center;
+	}
+
+	.wrapper {
+		max-width: 720px;
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+	}
+
+	h2 {
+		margin: 0 0 16px;
+		font-size: 32px;
+		color: #111827;
+	}
+
+	p {
+		margin: 0 0 24px;
+		color: #4b5563;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	.parts-table-wrapper {
+		margin-top: 24px;
+		border: 1px solid rgba(17, 24, 39, 0.08);
+		border-radius: 16px;
+		background: rgba(249, 250, 251, 0.85);
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+		overflow-x: auto;
+	}
+
+	table {
+		width: 100%;
+		min-width: 320px;
+		border-collapse: collapse;
+	}
+
+	thead {
+		background: rgba(17, 24, 39, 0.9);
+		color: #f9fafb;
+	}
+
+	th,
+	td {
+		padding: 14px 20px;
+		text-align: left;
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	tbody tr:nth-child(even) {
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	tbody tr:nth-child(odd) {
+		background: rgba(229, 231, 235, 0.4);
+	}
+
+	tbody tr:last-child td {
+		font-weight: 600;
+		color: #2563eb;
+	}
+
+	@media screen and (max-width: 768px) {
+		#parts {
+			padding: 64px 16px;
+		}
+
+		.parts-table-wrapper {
+			margin-top: 20px;
+		}
+
+		th,
+		td {
+			padding: 12px 14px;
+			font-size: 15px;
+		}
+	}
+</style>

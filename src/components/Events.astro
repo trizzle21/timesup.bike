@@ -1,0 +1,153 @@
+<section id="events" class="page-section">
+	<div class="wrapper">
+		<h2>Upcoming Events</h2>
+		<p class="lead">
+			Join our community on rides, workshops, and meetups around the city. Everyone is welcome; bring
+			a friend and help spread the word!
+		</p>
+		<div class="event-grid">
+			<article class="event-card">
+				<header>
+					<p class="event-date">
+						<span class="event-day">Oct 18</span>
+						<span class="event-time">6:30 pm</span>
+					</p>
+					<h3>Full Moon Ride</h3>
+				</header>
+				<p class="event-meta">Meet at Tompkins Square Park - 7-10 mile casual pace</p>
+				<p class="event-description">
+					Glow up your bike and cruise through the city lights. We'll wrap with snacks and a plaza
+					dance party; lights and costumes encouraged.
+				</p>
+			</article>
+			<article class="event-card">
+				<header>
+					<p class="event-date">
+						<span class="event-day">Oct 26</span>
+						<span class="event-time">2:00 pm</span>
+					</p>
+					<h3>Fix-Your-Bike Workshop</h3>
+				</header>
+				<p class="event-meta">Times Up Bike Kitchen - Sliding scale donation</p>
+				<p class="event-description">
+					Get hands-on help from head mechanics. We'll cover brake adjustments, diagnosing noisy
+					drivetrains, and the basics of on-the-go repairs.
+				</p>
+			</article>
+			<article class="event-card">
+				<header>
+					<p class="event-date">
+						<span class="event-day">Nov 2</span>
+						<span class="event-time">11:00 am</span>
+					</p>
+					<h3>Commuter Route Scouting</h3>
+				</header>
+				<p class="event-meta">Pier 35 start - Moderate pace - 15 miles</p>
+				<p class="event-description">
+					Help us map safe, low-stress routes connecting uptown and downtown. Data gathered feeds
+					into our advocacy for better street design.
+				</p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<style>
+	#events {
+		padding: 96px 16px;
+		background: #f3f4f6;
+		display: flex;
+		justify-content: center;
+	}
+
+	.wrapper {
+		max-width: 960px;
+		width: 100%;
+		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+	}
+
+	h2 {
+		margin: 0 0 16px;
+		font-size: 34px;
+		color: #111827;
+	}
+
+	.lead {
+		margin: 0 0 32px;
+		color: #4b5563;
+		font-size: 18px;
+		line-height: 1.65;
+	}
+
+	.event-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 24px;
+	}
+
+	.event-card {
+		background: #ffffff;
+		border-radius: 18px;
+		border: 1px solid rgba(17, 24, 39, 0.08);
+		box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+		padding: 24px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.event-card header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 16px;
+	}
+
+	.event-date {
+		margin: 0;
+		text-align: right;
+		color: #2563eb;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.event-day {
+		display: block;
+		font-size: 18px;
+	}
+
+	.event-time {
+		font-size: 14px;
+		color: #1f2937;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 22px;
+		color: #111827;
+	}
+
+	.event-meta {
+		margin: 0;
+		font-size: 15px;
+		color: #6b7280;
+	}
+
+	.event-description {
+		margin: 0;
+		font-size: 16px;
+		color: #1f2937;
+		line-height: 1.6;
+	}
+
+	@media screen and (max-width: 640px) {
+		#events {
+			padding: 72px 16px;
+		}
+
+		.event-card {
+			padding: 20px;
+		}
+	}
+</style>
