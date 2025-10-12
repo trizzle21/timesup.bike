@@ -40,11 +40,18 @@ const schedule = [
 	<div class="info-grid">
 		<section id="overview" class="info-card">
 			<h2>Overview</h2>
+
 			<p>
 				We provide tools, parts, and peer-to-peer education so everyone can maintain their ride. Our
 				shop operates on donations and mutual aid, which keeps the doors open and the wrenches turning
 				for the entire community.
 			</p>
+			<img
+				class="overview-hero"
+				src="/repair-class.png"
+				alt="Volunteers leading a bicycle repair class"
+			/>
+
 		</section>
 
 		<section id="schedule" class="info-card">
@@ -61,12 +68,17 @@ const schedule = [
 
 		<section id="location" class="info-card">
 			<h2>Location</h2>
+			<img
+				class="location-map"
+				src="/timesup-location.png"
+				alt="Map showing the Time's Up Bike Co-op location"
+			/>
 			<address>
 				626 E 14th St<br />
 				New York, NY 10009
 			</address>
 			<p>
-				Find us in the East Village between avenue B and C. Bike parking is available out front.
+				Find us in the East Village between Avenue B and C. Bike parking is available out front.
 			</p>
 		</section>
 
@@ -80,7 +92,7 @@ const schedule = [
 			<p>
 				There are many ways that you can volunteer and help Time’s Up!’s Bike Co-op. First and foremost, Time’s Up! 
 				relies on a strong membership base, so if you have not joined already, please do so at our Membership Page. If you are 
-				interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail xupbicyclecoop@gmail.com 
+				interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail <a href="mailto:contact@timesup.bike">contact@timesup.bike</a> 
 				or drop by the Manhattan space (626 E 14th St.) on Wednesday or Sunday afternoons. We’ll pair you with a current mechanic 
 				so you can learn the ropes of the space and gain hands-on maintenance skills. If you cannot schedule a specific time 
 				for a committed volunteership, you can volunteer on an impromptu basis.
@@ -88,8 +100,8 @@ const schedule = [
 			<br>
 			<p>
 				If you are interested in helping out at one of Time’s Up!’s group rides or other outdoor activities, e-mail 
-				timesup.events@gmail.com. Otherwise, the best thing you can do to help out is show up to the workshops and events 
-				regularly. There’s always ample opportunity to contribute and make a difference!			
+				<a href="mailto:timesup.events@gmail.com">timesup.events@gmail.com</a>. Otherwise, the best thing you can do to help out 
+				is show up to the workshops and events regularly. There’s always ample opportunity to contribute and make a difference!			
 			</p>
 		</section>
 
@@ -100,7 +112,7 @@ const schedule = [
 				within a couple of days.
 			</p>
 			<p class="contact-email">
-				<a href="mailto:hello@timesupbike.org">hello@timesupbike.org</a>
+				<a href="mailto:contact@timesup.bike">contact@timesup.bike</a>
 			</p>
 		</section>
 	</div>
@@ -135,7 +147,7 @@ const schedule = [
 
 	.info-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr));
 		gap: 28px;
 		max-width: 1100px;
 		margin: 0 auto;
@@ -162,6 +174,24 @@ const schedule = [
 	.info-card p {
 		margin: 0;
 		line-height: 1.65;
+	}
+
+	.overview-hero {
+		width: 100%;
+		margin: 8px 0 16px;
+		border-radius: 12px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+		object-fit: cover;
+		max-height: 540px;
+	}
+
+	.location-map {
+		width: 100%;
+		margin: 8px 0 12px;
+		border-radius: 12px;
+		border: 1px solid rgba(15, 23, 42, 0.08);
+		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 	}
 
 	.schedule-list {

@@ -7,12 +7,12 @@
 		</p>
 		<div class="event-grid">
 			<article class="event-card">
-				<header>
+				<header class="event-header">
+					<h3>Full Moon Ride</h3>
 					<p class="event-date">
 						<span class="event-day">Oct 18</span>
 						<span class="event-time">6:30 pm</span>
 					</p>
-					<h3>Full Moon Ride</h3>
 				</header>
 				<p class="event-meta">Meet at Tompkins Square Park - 7-10 mile casual pace</p>
 				<p class="event-description">
@@ -21,12 +21,12 @@
 				</p>
 			</article>
 			<article class="event-card">
-				<header>
+				<header class="event-header">
+					<h3>Fix-Your-Bike Workshop</h3>
 					<p class="event-date">
 						<span class="event-day">Oct 26</span>
 						<span class="event-time">2:00 pm</span>
 					</p>
-					<h3>Fix-Your-Bike Workshop</h3>
 				</header>
 				<p class="event-meta">Times Up Bike Kitchen - Sliding scale donation</p>
 				<p class="event-description">
@@ -35,12 +35,12 @@
 				</p>
 			</article>
 			<article class="event-card">
-				<header>
+				<header class="event-header">
+					<h3>Commuter Route Scouting</h3>
 					<p class="event-date">
 						<span class="event-day">Nov 2</span>
 						<span class="event-time">11:00 am</span>
 					</p>
-					<h3>Commuter Route Scouting</h3>
 				</header>
 				<p class="event-meta">Pier 35 start - Moderate pace - 15 miles</p>
 				<p class="event-description">
@@ -81,7 +81,7 @@
 
 	.event-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(min(840px, 100%), 1fr));
 		gap: 24px;
 	}
 
@@ -96,7 +96,7 @@
 		gap: 12px;
 	}
 
-	.event-card header {
+	.event-header {
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
