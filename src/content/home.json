@@ -20,6 +20,35 @@
       "detail": "Every other Saturday from March to November at 1pm at La Plaza Garden on 9th and Avenue C. Classes are free and open to all levels of experience and expertise. Most classes provide a general overview of bicycle diagnostics and repair, though advanced topics may be scheduled if requested. We cannot guarantee that attendees will have time to fix their own bikes during class (open workshops are the time for this), but attendees are encouraged to bring their own bikes to class if possible to support applied learning."
     }
   ],
+  "gallery": {
+    "heading": "Our Community in Action",
+    "images": [
+      {
+        "src": "/IMG-20250517-WA0077.jpg",
+        "alt": "Times Up bike co-op storefront with community members and bikes"
+      },
+      {
+        "src": "/IMG-20250409-WA0001.jpg",
+        "alt": "Workshop participants learning bike repair techniques"
+      },
+      {
+        "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
+        "alt": "Hands-on wheel building and repair workshop"
+      },
+      {
+        "src": "/IMG-20250418-WA0015.jpg",
+        "alt": "Indoor bike repair workshop with volunteers and participants"
+      },
+      {
+        "src": "/PXL_20250316_230424435.jpg",
+        "alt": "Group workshop session with bike repair stands"
+      },
+      {
+        "src": "/IMG-20250921-WA0081.jpg",
+        "alt": "Street-side bike repair demonstration"
+      }
+    ]
+  },
   "overview": {
     "heading": "Overview",
     "paragraphs": [
@@ -42,11 +71,11 @@
     ]
   },
   "join": {
-    "heading": "How to Join",
+    "heading": "Get Involved",
     "paragraphs": [
       "Time's Up! is an all-volunteer environmental education and direct action non-profit group. Our Bike Co-op's goal is to give everyone enough knowledge to maintain their bikes, and hopefully, teach others to do the same.",
-      "There are many ways that you can volunteer and help Time's Up!'s Bike Co-op. First and foremost, Time's Up! relies on a strong membership base, so if you have not joined already, please do so at our Membership Page. If you are interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail contact@timesup.bike or drop by the Manhattan space (626 E 14th St.) on Wednesday or Sunday afternoons. We'll pair you with a current mechanic so you can learn the ropes of the space and gain hands-on maintenance skills. If you cannot schedule a specific time for a committed volunteership, you can volunteer on an impromptu basis.",
-      "If you are interested in helping out at one of Time's Up!'s group rides or other outdoor activities, e-mail timesup.events@gmail.com. Otherwise, the best thing you can do to help out is show up to the workshops and events regularly. There's always ample opportunity to contribute and make a difference!"
+      "If you are interested in becoming a mechanic, or in helping out with bicycle repair at the weekly workshops, e-mail contact@timesup.bike or drop by the Manhattan space (626 E 14th St.) on Wednesday or Sunday afternoons. We'll pair you with a current mechanic so you can learn the ropes of the space and gain hands-on maintenance skills.",
+      "The best thing you can do to help out is show up to the workshops and events regularly. There's always ample opportunity to contribute and make a difference!"
     ]
   },
   "contact": {

@@ -76,12 +76,17 @@ const { pathname } = Astro.url;
 	}
 
 	:root {
-		--site-gradient: linear-gradient(
-			135deg,
-			rgba(134, 239, 172, 0.4) 0%,
-			rgba(254, 240, 138, 0.55) 55%,
-			rgba(250, 204, 21, 0.6) 100%
-		);
+		--site-bg: #faf8f5;
+		--primary: #b86f50;
+		--primary-dark: #9a5a3e;
+		--primary-light: #d4915e;
+		--accent: #7c9a5e;
+		--accent-light: #a3bf84;
+		--text-dark: #2f2f2f;
+		--text-gray: #5c5c5c;
+		--text-light: #7a7a7a;
+		--surface: #ffffff;
+		--surface-warm: #fdfcfa;
 	}
 
 	html,
@@ -89,66 +94,89 @@ const { pathname } = Astro.url;
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
-		background: var(--site-gradient);
-		color: #111827;
+		background: var(--site-bg);
+		color: var(--text-dark);
 	}
 
 	body {
-		font-family: Helvetica, arial, sans-serif;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	.site-header {
 		position: sticky;
 		top: 0;
 		width: 100%;
-		background: rgba(249, 250, 251, 0.92);
-		backdrop-filter: blur(12px);
-		border-bottom: 1px solid rgba(17, 24, 39, 0.08);
-		z-index: 10;
+		background: var(--surface);
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		z-index: 50;
 	}
 
 	.header-inner {
 		margin: 0 auto;
-		max-width: 1100px;
+		max-width: 1200px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 16px 24px;
+		padding: 20px 32px;
 	}
 
 	.brand {
-		font-size: 20px;
-		font-weight: 600;
+		font-size: 22px;
+		font-weight: 700;
 		text-decoration: none;
-		color: #111827;
+		color: var(--text-dark);
+		letter-spacing: -0.02em;
 	}
 
 	.header-left {
 		display: flex;
 		align-items: center;
-		gap: 20px;
+		gap: 24px;
 	}
 
 	nav {
 		display: flex;
-		gap: 20px;
+		gap: 32px;
 	}
 
 	nav a {
-		color: #374151;
+		color: var(--text-gray);
 		text-decoration: none;
 		font-weight: 500;
+		font-size: 15px;
 		transition: color 0.2s ease;
+		position: relative;
+	}
+
+	nav a::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: var(--primary);
+		transition: width 0.3s ease;
 	}
 
 	nav a:hover,
 	nav a:focus {
-		color: #111827;
+		color: var(--primary);
+	}
+
+	nav a:hover::after {
+		width: 100%;
 	}
 
 	nav a[aria-current='page'] {
-		color: #111827;
+		color: var(--primary);
 		font-weight: 600;
+	}
+
+	nav a[aria-current='page']::after {
+		width: 100%;
 	}
 
 	.timesup-logo {
@@ -156,78 +184,83 @@ const { pathname } = Astro.url;
 		align-items: center;
 		border-radius: 50%;
 		padding: 4px;
-		transition: transform 0.2s ease;
+		opacity: 0.9;
+		transition: opacity 0.2s ease;
 	}
 
 	.timesup-logo:hover,
 	.timesup-logo:focus {
-		transform: scale(1.05);
+		opacity: 1;
 	}
 
 	.timesup-logo img {
 		display: block;
-		width: 60px;
-		height: 60px;
+		width: 56px;
+		height: 56px;
 		object-fit: contain;
 	}
 
 	.page-main {
-		min-height: calc(100vh - 72px);
+		min-height: calc(100vh - 96px);
 	}
 
 	.site-footer {
-		background: #111827;
-		color: #f9fafb;
-		padding: 32px 24px 48px;
+		background: #3d3225;
+		color: #f5f2ed;
+		padding: 48px 32px;
 	}
 
 	.footer-inner {
-		max-width: 1100px;
+		max-width: 1200px;
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		gap: 16px;
+		gap: 20px;
 	}
 
 	.footer-links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 16px;
+		gap: 20px;
 		align-items: center;
-		font-size: 16px;
+		font-size: 15px;
 	}
 
 	.footer-links span {
 		font-weight: 600;
+		color: var(--accent-light);
 	}
 
 	.footer-links a {
-		color: #60a5fa;
+		color: #d4c4b0;
 		text-decoration: none;
 		transition: color 0.2s ease;
+		font-weight: 500;
 	}
 
 	.footer-links a:hover,
 	.footer-links a:focus {
-		color: #bfdbfe;
+		color: #fff;
 	}
 
 	.footer-description {
 		margin: 0;
-		line-height: 1.6;
-		max-width: 780px;
-		color: #d1d5db;
+		line-height: 1.7;
+		max-width: 800px;
+		color: #b5a898;
+		font-size: 14px;
 	}
 
 	@media screen and (max-width: 640px) {
 		.header-inner {
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 12px;
+			gap: 16px;
+			padding: 16px 24px;
 		}
 
 		nav {
-			gap: 16px;
+			gap: 24px;
 		}
 
 		.timesup-logo img {
@@ -236,11 +269,7 @@ const { pathname } = Astro.url;
 		}
 
 		.site-footer {
-			padding: 24px 20px 40px;
-		}
-
-		.footer-inner {
-			gap: 20px;
+			padding: 40px 24px;
 		}
 	}
 </style>

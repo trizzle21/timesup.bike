@@ -68,7 +68,7 @@ const linkifyText = (text) => {
 	return segments;
 };
 
-const { hero, schedule, overview, location, join, contact } = home;
+const { hero, gallery, schedule, overview, location, join, contact } = home;
 ---
 
 <section id="home" class="home">
@@ -78,6 +78,17 @@ const { hero, schedule, overview, location, join, contact } = home;
 			<p>{text}</p>
 		))}
 	</div>
+
+	<section class="gallery-section">
+		<h2>{gallery.heading}</h2>
+		<div class="gallery-grid">
+			{gallery.images.map((image) => (
+				<div class="gallery-item">
+					<img src={image.src} alt={image.alt} loading="lazy" />
+				</div>
+			))}
+		</div>
+	</section>
 
 	<div class="info-grid">
 		<section id="overview" class="info-card">
@@ -158,21 +169,22 @@ const { hero, schedule, overview, location, join, contact } = home;
 
 <style>
 	.home {
-		padding: 96px 16px 120px;
-		background: var(--site-gradient);
+		padding: 80px 32px 120px;
 	}
 
 	.home-hero {
-		max-width: 900px;
-		margin: 0 auto 56px;
+		max-width: 800px;
+		margin: 0 auto 64px;
 		text-align: center;
-		color: #0f172a;
 	}
 
 	.home-hero h1 {
-		font-size: 44px;
-		margin: 0 0 16px;
-		line-height: 1.1;
+		font-size: 48px;
+		font-weight: 700;
+		margin: 0 0 20px;
+		line-height: 1.15;
+		letter-spacing: -0.02em;
+		color: var(--text-dark);
 	}
 
 	.home-hero p {
@@ -180,64 +192,109 @@ const { hero, schedule, overview, location, join, contact } = home;
 		max-width: 640px;
 		font-size: 18px;
 		line-height: 1.7;
-		color: #1f2937;
+		color: var(--text-gray);
 	}
 
 	.home-hero p + p {
 		margin-top: 16px;
 	}
 
+	.gallery-section {
+		max-width: 1100px;
+		margin: 0 auto 72px;
+	}
+
+	.gallery-section h2 {
+		font-size: 28px;
+		font-weight: 600;
+		color: var(--text-dark);
+		text-align: center;
+		margin: 0 0 32px;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+		gap: 20px;
+	}
+
+	.gallery-item {
+		overflow: hidden;
+		border-radius: 12px;
+		aspect-ratio: 4 / 3;
+		background: var(--surface);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
 	.info-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(min(520px, 100%), 1fr));
-		gap: 28px;
+		grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+		gap: 24px;
 		max-width: 1100px;
 		margin: 0 auto;
 	}
 
 	.info-card {
-		background: rgba(255, 255, 255, 0.95);
-		border-radius: 18px;
-		padding: 28px 32px;
-		box-shadow: 0 18px 38px rgba(15, 23, 42, 0.12);
-		border: 1px solid rgba(15, 23, 42, 0.08);
+		background: var(--surface);
+		border-radius: 16px;
+		padding: 32px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		color: #1f2937;
+		color: var(--text-gray);
 	}
 
 	.info-card h2 {
 		margin: 0;
-		font-size: 24px;
-		color: #0f172a;
+		font-size: 22px;
+		font-weight: 600;
+		color: var(--text-dark);
 	}
 
 	.info-card p {
 		margin: 0;
-		line-height: 1.65;
+		line-height: 1.7;
+		font-size: 15px;
 	}
 
 	.info-card p + p {
 		margin-top: 12px;
 	}
 
+	.info-card a {
+		color: var(--primary);
+		font-weight: 500;
+		text-decoration: underline;
+		text-decoration-color: rgba(184, 111, 80, 0.3);
+		text-underline-offset: 2px;
+		transition: text-decoration-color 0.2s ease;
+	}
+
+	.info-card a:hover,
+	.info-card a:focus {
+		text-decoration-color: var(--primary);
+	}
+
 	.overview-hero {
 		width: 100%;
-		margin: 8px 0 16px;
-		border-radius: 12px;
-		border: 1px solid rgba(15, 23, 42, 0.08);
-		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+		margin: 8px 0 12px;
+		border-radius: 10px;
 		object-fit: cover;
-		max-height: 540px;
+		max-height: 400px;
 	}
 
 	.location-map {
 		width: 100%;
 		margin: 8px 0 12px;
-		border-radius: 12px;
-		border: 1px solid rgba(15, 23, 42, 0.08);
-		box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+		border-radius: 10px;
 	}
 
 	.schedule-list {
@@ -250,33 +307,44 @@ const { hero, schedule, overview, location, join, contact } = home;
 	.schedule-item {
 		display: grid;
 		gap: 4px;
+		padding: 16px;
+		background: var(--surface-warm);
+		border-radius: 10px;
+		border-left: 3px solid var(--accent);
 	}
 
 	.schedule-item dt {
 		font-weight: 600;
-		color: #111827;
+		font-size: 15px;
+		color: var(--text-dark);
 	}
 
 	.schedule-item dd {
 		margin: 0;
-		color: #4b5563;
-		line-height: 1.65;
+		color: var(--text-gray);
+		line-height: 1.6;
+		font-size: 14px;
 	}
 
 	address {
 		font-style: normal;
-		color: #1f2937;
-		line-height: 1.6;
+		color: var(--text-gray);
+		line-height: 1.7;
+		font-size: 15px;
 	}
 
 	.location-link {
-		color: inherit;
-		text-decoration: none;
+		color: var(--primary);
+		text-decoration: underline;
+		text-decoration-color: rgba(184, 111, 80, 0.3);
+		text-underline-offset: 2px;
+		font-weight: 500;
+		transition: text-decoration-color 0.2s ease;
 	}
 
 	.location-link:hover,
 	.location-link:focus {
-		text-decoration: underline;
+		text-decoration-color: var(--primary);
 	}
 
 	.contact-card .contact-email {
@@ -284,27 +352,47 @@ const { hero, schedule, overview, location, join, contact } = home;
 		font-size: 18px;
 	}
 
-	.contact-card a {
-		color: #2563eb;
-		text-decoration: none;
-	}
-
-	.contact-card a:hover,
-	.contact-card a:focus {
-		text-decoration: underline;
-	}
-
 	@media screen and (max-width: 768px) {
 		.home {
-			padding: 64px 16px 96px;
+			padding: 56px 20px 80px;
+		}
+
+		.home-hero {
+			margin-bottom: 48px;
 		}
 
 		.home-hero h1 {
-			font-size: 36px;
+			font-size: 32px;
+		}
+
+		.home-hero p {
+			font-size: 16px;
+		}
+
+		.gallery-section {
+			margin-bottom: 48px;
+		}
+
+		.gallery-section h2 {
+			font-size: 22px;
+			margin-bottom: 24px;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+			gap: 16px;
 		}
 
 		.info-card {
-			padding: 24px;
+			padding: 24px 20px;
+		}
+
+		.info-card h2 {
+			font-size: 20px;
+		}
+
+		.schedule-item {
+			padding: 14px;
 		}
 	}
 </style>
