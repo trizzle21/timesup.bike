@@ -68,27 +68,27 @@ const linkifyText = (text) => {
 	return segments;
 };
 
-const { hero, gallery, schedule, overview, location, join, contact } = home;
+const {gallery} = home;
 ---
 
 <section id="home" class="home">
 	<div class="hero-side">
 		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 		<h1>Time's Up! Bike Coop</h1>
-		<p class="tagline">A volunteer-driven community space in NYC's East Village dedicated to accessible bicycle repair.  Come fix your bike or just chit chat about it.</p>
+		<p class="tagline">A volunteer-driven community space in NYC's East Village dedicated to accessible bicycle repair.  Come fix your bike or just chit chat about it</p>
 
 		<div class="hero-info">
 			<p><strong>How It Works?</strong><br />Bring your bike, sign in and a volunteer mechanic will provide the tools and guidance for your project.  Suggested $2 donation for use of shop supplies</p>
 			<div class="helpful-tips">
 				<strong>Helpful Tips</strong>
 				<ul>
-					<li>Come early</li>
-					<li>We are not equipped to service e-bikes</li>
-					<li>In inclement weather or for holiday hours, check our Instagram page</li>
+					<li>No new projects 30 minutes before closing</li>
+					<li>No e-bike servicing</li>
+					<li>Check our <a href="https://www.instagram.com/times_up_nyc/">Instagram</a> for holiday or inclement weather hours</li>
 				</ul>
 			</div>
 			<p><strong>Open Shop Hours</strong><br />Wed & Sun, 5pm – 8pm</p>
-			<p><strong>East Village Location</strong><br /><a href="https://maps.app.goo.gl/ejnQJXa6CUUtb12R9" rel="noreferrer noopener" target="_blank">626 E 14th St, NYC</a></p>
+			<p><strong>Location</strong><br /><a href="https://maps.app.goo.gl/ejnQJXa6CUUtb12R9" rel="noreferrer noopener" target="_blank">626 E 14th St, New York, NY 10009</a></p>
 			<p><strong>Contact Us</strong><br /><a href="mailto:contact@timesup.bike">contact@timesup.bike</a></p>
 		</div>
 
@@ -155,21 +155,21 @@ const { hero, gallery, schedule, overview, location, join, contact } = home;
 	.watermark {
 		position: absolute;
 		top: 50px;
-		left: 20px;
-		width: 700px;
-		opacity: 0.15;
+		left: -10px;
+		width: 750px;
+		opacity: 0.10;
 		pointer-events: none;
 		z-index: 0;
 		transform: rotate(-15deg);
 	}
 
 	.hero-side h1 {
-		font-size: 56px;
-		font-weight: 400;
+		font-size: 50px;
+		font-weight: 700;
 		line-height: 1.1;
 		margin: 0 0 16px;
 		color: var(--text-dark);
-		font-family: Georgia, 'Times New Roman', serif;
+		font-family: 'Inter', sans-serif;
 		position: relative;
 		z-index: 1;
 	}
