@@ -1,109 +1,41 @@
 ---
 import home from '../content/home.json';
 
-const emailPattern = /[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}/g;
-const supportUrl = 'https://times-up.org/support/';
-const keywordLinks = [
-	{
-		text: 'Membership Page',
-		href: supportUrl,
-		attrs: { rel: 'noreferrer noopener', target: '_blank' },
-	},
-];
-
-const linkifyText = (text) => {
-	const segments = [];
-	let cursor = 0;
-
-	const getNextMatch = (start) => {
-		let nextMatch = { index: Infinity };
-
-		emailPattern.lastIndex = start;
-		const emailMatch = emailPattern.exec(text);
-		if (emailMatch) {
-			nextMatch = {
-				type: 'email',
-				value: emailMatch[0],
-				index: emailMatch.index,
-				length: emailMatch[0].length,
-			};
-		}
-
-		const keywordMatch = keywordLinks
-			.map((item) => ({
-				type: 'link',
-				value: item.text,
-				href: item.href,
-				attrs: item.attrs,
-				index: text.indexOf(item.text, start),
-				length: item.text.length,
-			}))
-			.filter((item) => item.index !== -1)
-			.sort((a, b) => a.index - b.index)[0];
-
-		if (keywordMatch && keywordMatch.index < nextMatch.index) {
-			return keywordMatch;
-		}
-
-		return nextMatch.index !== Infinity ? nextMatch : null;
-	};
-
-	while (cursor < text.length) {
-		const match = getNextMatch(cursor);
-
-		if (!match) {
-			segments.push({ type: 'text', value: text.slice(cursor) });
-			break;
-		}
-
-		if (match.index > cursor) {
-			segments.push({ type: 'text', value: text.slice(cursor, match.index) });
-		}
-
-		segments.push(match);
-		cursor = match.index + match.length;
-	}
-
-	emailPattern.lastIndex = 0;
-	return segments;
-};
-
-const {gallery} = home;
+const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
 ---
 
 <section id="home" class="home">
 	<div class="hero-side">
 		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
-		<h1>Time's Up! Bike Co-op</h1>
-		<p class="tagline">A volunteer-driven space in the East Village for accessible bicycle repair.  Fix your bike or just chit chat about it</p>
+		<h1>{hero.title}</h1>
+		<p class="tagline">{hero.tagline}</p>
 
 		<div class="hero-info">
-			<p><strong>How It Works?</strong><br />Bring your bike, sign in and explain the issue to the volunteer mechanic.  They will provide the tools and guidance but you will be hands on with the bike.  Suggested $2 donation covers tool use and supplies.  We also sell used parts onsite, <a href="https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243">parts pricing</a></p>
+			<p><strong>{howItWorks.heading}</strong><br />{howItWorks.text} <a href={howItWorks.partsLink.url} rel="noreferrer noopener" target="_blank">{howItWorks.partsLink.text}</a></p>
 			<div class="helpful-tips">
-				<strong>Helpful Tips</strong>
+				<strong>{helpfulTips.heading}</strong>
 				<ul>
-					<li>Come early. Fixing one problem sometimes uncovers another</li>
-					<li>No new projects 30 minutes before closing</li>
-					<li>No e-bike servicing</li>
-					<li>Check our <a href="https://www.instagram.com/times_up_nyc/">Instagram</a> for holiday/inclement weather hours and special events</li>
+					{helpfulTips.tips.map((tip) => (
+						<li set:html={tip.includes('Instagram') ? tip.replace('Instagram', `<a href="${socialLinks.instagram}">Instagram</a>`) : tip} />
+					))}
 				</ul>
 			</div>
-			<p><strong>Open Hours</strong><br />Wed & Sun, 5pm – 8pm</p>
-			<p><strong>Location</strong><br /><a href="https://maps.app.goo.gl/ejnQJXa6CUUtb12R9" rel="noreferrer noopener" target="_blank">626 E 14th St, New York, NY 10009</a></p>
-			<p><strong>Contact Us</strong><br /><a href="mailto:contact@timesup.bike">contact@timesup.bike</a></p>
+			<p><strong>{hours.heading}</strong><br />{hours.text}</p>
+			<p><strong>{location.heading}</strong><br /><a href={location.mapUrl} rel="noreferrer noopener" target="_blank">{location.address}</a></p>
+			<p><strong>{contact.heading}</strong><br /><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
 		</div>
 
 		<footer class="hero-footer">
-			<a href="https://www.instagram.com/times_up_nyc/" rel="noreferrer noopener" target="_blank" title="Instagram">
+			<a href={socialLinks.instagram} rel="noreferrer noopener" target="_blank" title="Instagram">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
 			</a>
-			<a href="https://account.venmo.com/u/timesup" rel="noreferrer noopener" target="_blank" title="Venmo">
+			<a href={socialLinks.venmo} rel="noreferrer noopener" target="_blank" title="Venmo">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 3c.9 1.5 1.3 3 1.3 4.9 0 6.1-5.2 14-9.4 19.6H4.4L1.2 4.1l6.5-.6 1.8 14.5c1.7-2.8 3.8-7.1 3.8-10.1 0-1.8-.3-3-0.8-4L19.5 3z"/></svg>
 			</a>
-			<a href="https://cash.app/$TIMESUPNYC" rel="noreferrer noopener" target="_blank" title="Cash App">
+			<a href={socialLinks.cashApp} rel="noreferrer noopener" target="_blank" title="Cash App">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09v1.27h-2.82v-1.21c-1.63-.24-3.04-1.05-3.5-2.29l1.79-.72c.36.89 1.28 1.5 2.5 1.5 1.17 0 1.87-.53 1.87-1.34 0-.79-.56-1.17-1.91-1.57l-.67-.21c-1.89-.57-3.06-1.44-3.06-3.15 0-1.62 1.22-2.78 3.02-3.06V6.64h2.82v1.15c1.27.23 2.3.89 2.77 1.89l-1.7.85c-.31-.6-.98-1.08-1.86-1.08-.97 0-1.56.47-1.56 1.15 0 .66.52 1.02 1.65 1.36l.67.21c2.1.63 3.32 1.54 3.32 3.38 0 1.76-1.34 2.95-3.33 3.17z"/></svg>
 			</a>
-			<a href="https://times-up.org/" rel="noreferrer noopener" target="_blank" title="Times-up.org">
+			<a href={socialLinks.website} rel="noreferrer noopener" target="_blank" title="Times-up.org">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
 			</a>
 		</footer>

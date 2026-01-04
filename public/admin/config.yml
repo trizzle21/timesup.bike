@@ -9,15 +9,76 @@ public_folder: /
 
 collections:
   - name: home
-    label: Home
+    label: Home Page
     format: json
     editor:
       preview: false
     files:
-      - label: Gallery Images
-        name: gallery
+      - label: Home Page Content
+        name: home_content
         file: src/content/home.json
         fields:
+          - label: Hero Section
+            name: hero
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Tagline, name: tagline, widget: text }
+
+          - label: How It Works
+            name: howItWorks
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Parts Link
+                name: partsLink
+                widget: object
+                fields:
+                  - { label: Link Text, name: text, widget: string }
+                  - { label: URL, name: url, widget: string }
+
+          - label: Helpful Tips
+            name: helpfulTips
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - label: Tips
+                name: tips
+                widget: list
+                field: { label: Tip, name: tip, widget: string }
+
+          - label: Hours
+            name: hours
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Text, name: text, widget: string }
+
+          - label: Location
+            name: location
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Address, name: address, widget: string }
+              - { label: Map URL, name: mapUrl, widget: string }
+
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: string }
+              - { label: Email, name: email, widget: string }
+
+          - label: Social Links
+            name: socialLinks
+            widget: object
+            fields:
+              - { label: Instagram URL, name: instagram, widget: string }
+              - { label: Venmo URL, name: venmo, widget: string }
+              - { label: Cash App URL, name: cashApp, widget: string }
+              - { label: Website URL, name: website, widget: string }
+
           - label: Gallery
             name: gallery
             widget: object
@@ -95,6 +156,14 @@ collections:
         file: src/content/about.json
         fields:
           - { label: Title, name: title, widget: string }
+          - label: Storefront Image
+            name: storefrontImage
+            widget: object
+            fields:
+              - label: Image
+                name: src
+                widget: image
+              - { label: Alt Text, name: alt, widget: string }
           - label: Paragraphs
             name: paragraphs
             widget: list
@@ -105,6 +174,3 @@ collections:
           - label: Instagram URL
             name: instagramUrl
             widget: string
-            pattern:
-              - https?://.*
-              - Must be a valid URL.
