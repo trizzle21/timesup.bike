@@ -1,24 +1,15 @@
 {
   "hero": {
     "title": "Time's Up! Bike Co-op",
-    "tagline": "A volunteer-driven space in the East Village for accessible bicycle repair. Learn how to fix your bike or just chit chat about it"
+    "tagline": "A volunteer-run space in the East Village for accessible bicycle repair.  Learn how to fix your bike or just chit chat about it.  Beginner friendly, no experience needed.\nThis co-op is an environmental initiative under [Time's Up org](https://times-up.org/)"
   },
   "howItWorks": {
     "heading": "How It Works?",
-    "text": "Bring your bike, sign in and describe the issue to the volunteer mechanic. They will provide the tools and guidance but you will be hands on with the bike. Suggested $2 donation covers tool use and supplies. We also sell used parts onsite,",
-    "partsLink": {
-      "text": "parts pricing",
-      "url": "https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243"
-    }
+    "text": "Bring your bike and describe the issue to a volunteer mechanic. They will provide the tools and guidance but you will be hands on for the repair. Suggested $2 donation covers tool use and supplies. We also sell used parts onsite ([parts pricing)](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243)"
   },
   "helpfulTips": {
     "heading": "Helpful Tips",
-    "tips": [
-      "Come early. Fixing one problem sometimes uncovers another",
-      "No new projects 30 minutes before closing",
-      "No e-bike servicing",
-      "Check our Instagram for holiday/inclement weather hours and special events"
-    ]
+    "tips": "- Come early. Fixing one problem sometimes reveals another\n- No new projects 30 minutes before closing\n- No e-bike servicing\n- Check our [Instagram](https://www.instagram.com/times_up_nyc/) for holiday hours, inclement weather closings and special events"
   },
   "hours": {
     "heading": "Open Hours",
@@ -26,8 +17,7 @@
   },
   "location": {
     "heading": "Location",
-    "address": "626 East 14th St. New York, NY 10009",
-    "mapUrl": "https://maps.app.goo.gl/ejnQJXa6CUUtb12R9"
+    "text": "[626 East 14th St. New York, NY 10009](https://maps.app.goo.gl/ejnQJXa6CUUtb12R9)"
   },
   "contact": {
     "heading": "Contact Us",
@@ -37,7 +27,8 @@
     "instagram": "https://www.instagram.com/times_up_nyc/",
     "venmo": "https://account.venmo.com/u/timesup",
     "cashApp": "https://cash.app/$TIMESUPNYC",
-    "website": "https://times-up.org/"
+    "website": "https://times-up.org/",
+    "mapUrl": "https://maps.app.goo.gl/bbvQ2hcbwoXSjmKm8"
   },
   "gallery": {
     "heading": "Our Community in Action",
@@ -48,7 +39,7 @@
       },
       {
         "src": "/IMG-20250517-WA0040.jpg",
-        "alt": "Fall fundraising"
+        "alt": "Fall fundraiser"
       },
       {
         "src": "/IMG-20241117-WA0004.jpg",
@@ -72,11 +63,11 @@
       },
       {
         "src": "/IMG-20250418-WA0015.jpg",
-        "alt": "Since we don't store personal bikes overnight, repairs occassionally last late into the evening"
+        "alt": "Since we don't store personal bikes overnight, repairs occasionally last late into the evening so you can ride home"
       },
       {
         "src": "/IMG-20250928-WA0047.jpg",
-        "alt": "Street repairs when it's nice out"
+        "alt": "Repairs overflow onto the sidewalk when it is too crowded inside"
       },
       {
         "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
@@ -84,11 +75,11 @@
       },
       {
         "src": "/IMG-20250409-WA0001.jpg",
-        "alt": "Participants fixing their bikes with volunteer mechanic guidance"
+        "alt": "Sunday repair workshop"
       },
       {
         "src": "/IMG-20250312-WA0000.jpg",
-        "alt": "Bike maintenance workshop"
+        "alt": "Get your hands dirty.  No need to wear your Sunday best."
       },
       {
         "src": "/IMG-20250517-WA0077.jpg",
@@ -100,11 +91,11 @@
       },
       {
         "src": "/IMG-20250409-WA0002.jpg",
-        "alt": "Mechanic helping with repairs"
+        "alt": "Sometimes you come in with one problem and it uncovers another"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (2).jpeg",
-        "alt": "Learn to fix your bike"
+        "alt": "Learn to fix your bike.  Gloves provided."
       },
       {
         "src": "/PXL_20250316_230359937.jpg",
@@ -112,11 +103,11 @@
       },
       {
         "src": "/IMG-20250921-WA0081.jpg",
-        "alt": "Street repairs when it's nice out"
+        "alt": "Street repairs when weather permits"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
-        "alt": "Learn to fix your bike"
+        "alt": "Learn to fix your bike surrounded by artwork"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (4).jpeg",
@@ -128,15 +119,15 @@
       },
       {
         "src": "/IMG-20250428-WA0008.jpg",
-        "alt": "We sell used commuter bikes for ~$160"
+        "alt": "We fix up and sell used commuter bikes for ~$160"
       },
       {
         "src": "/IMG-20250629-WA0000.jpg",
-        "alt": "Come browse our used parts bins"
+        "alt": "Come browse our used parts bins.  We carry a limited stock of new parts."
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM.jpeg",
-        "alt": "Learn to fix your bike"
+        "alt": "Learn to fix your bike.  No experience needed"
       }
     ]
   }

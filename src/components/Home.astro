@@ -1,8 +1,16 @@
 ---
 import { Image } from 'astro:assets';
+import { marked } from 'marked';
 import home from '../content/home.json';
 
 const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
+
+// Parse markdown to HTML
+const taglineHtml = await marked.parse(hero.tagline);
+const howItWorksHtml = await marked.parse(howItWorks.text);
+const helpfulTipsHtml = await marked.parse(helpfulTips.tips);
+const hoursHtml = await marked.parse(hours.text);
+const locationHtml = await marked.parse(location.text);
 
 // Import all gallery images dynamically
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true });
@@ -19,20 +27,25 @@ const getImage = (src: string) => {
 	<div class="hero-side">
 		<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 		<h1>{hero.title}</h1>
-		<p class="tagline">{hero.tagline}</p>
+		<div class="tagline" set:html={taglineHtml} />
 
 		<div class="hero-info">
-			<p><strong>{howItWorks.heading}</strong><br />{howItWorks.text} <a href={howItWorks.partsLink.url} rel="noreferrer noopener" target="_blank">{howItWorks.partsLink.text}</a></p>
+			<div class="how-it-works">
+				<strong>{howItWorks.heading}</strong>
+				<div set:html={howItWorksHtml} />
+			</div>
 			<div class="helpful-tips">
 				<strong>{helpfulTips.heading}</strong>
-				<ul>
-					{helpfulTips.tips.map((tip) => (
-						<li set:html={tip.includes('Instagram') ? tip.replace('Instagram', `<a href="${socialLinks.instagram}">Instagram</a>`) : tip} />
-					))}
-				</ul>
+				<div set:html={helpfulTipsHtml} />
 			</div>
-			<p><strong>{hours.heading}</strong><br />{hours.text}</p>
-			<p><strong>{location.heading}</strong><br /><a href={location.mapUrl} rel="noreferrer noopener" target="_blank">{location.address}</a></p>
+			<div class="hours">
+				<strong>{hours.heading}</strong>
+				<div set:html={hoursHtml} />
+			</div>
+			<div class="location">
+				<strong>{location.heading}</strong>
+				<div set:html={locationHtml} />
+			</div>
 			<p><strong>{contact.heading}</strong><br /><a href={`mailto:${contact.email}`}>{contact.email}</a></p>
 		</div>
 
@@ -46,8 +59,11 @@ const getImage = (src: string) => {
 			<a href={socialLinks.cashApp} rel="noreferrer noopener" target="_blank" title="Cash App" aria-label="Cash App">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09v1.27h-2.82v-1.21c-1.63-.24-3.04-1.05-3.5-2.29l1.79-.72c.36.89 1.28 1.5 2.5 1.5 1.17 0 1.87-.53 1.87-1.34 0-.79-.56-1.17-1.91-1.57l-.67-.21c-1.89-.57-3.06-1.44-3.06-3.15 0-1.62 1.22-2.78 3.02-3.06V6.64h2.82v1.15c1.27.23 2.3.89 2.77 1.89l-1.7.85c-.31-.6-.98-1.08-1.86-1.08-.97 0-1.56.47-1.56 1.15 0 .66.52 1.02 1.65 1.36l.67.21c2.1.63 3.32 1.54 3.32 3.38 0 1.76-1.34 2.95-3.33 3.17z"/></svg>
 			</a>
-			<a href={socialLinks.website} rel="noreferrer noopener" target="_blank" title="Times-up.org" aria-label="Times-up.org">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+			<a href={socialLinks.mapUrl} rel="noreferrer noopener" target="_blank" title="Location" aria-label="Location">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+			</a>
+			<a href={`mailto:${contact.email}`} title="Email" aria-label="Email">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
 			</a>
 		</footer>
 	</div>
@@ -178,6 +194,21 @@ const getImage = (src: string) => {
 		z-index: 1;
 	}
 
+	.tagline :global(p) {
+		margin: 0;
+	}
+
+	.tagline :global(a) {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.tagline :global(a:hover) {
+		color: var(--primary-dark);
+		text-decoration: underline;
+	}
+
 	.hero-nav {
 		display: flex;
 		flex-direction: column;
@@ -216,6 +247,27 @@ const getImage = (src: string) => {
 		color: var(--text-dark);
 	}
 
+	.how-it-works {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.how-it-works :global(p) {
+		margin: 0;
+	}
+
+	.how-it-works :global(a) {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.how-it-works :global(a:hover) {
+		color: var(--primary-dark);
+		text-decoration: underline;
+	}
+
 	.hero-info a {
 		color: var(--primary);
 		text-decoration: none;
@@ -232,14 +284,71 @@ const getImage = (src: string) => {
 		color: var(--text-gray);
 	}
 
-	.helpful-tips ul {
+	.helpful-tips :global(p) {
+		margin: 0;
+	}
+
+	.helpful-tips :global(ul) {
 		margin: 8px 0 0;
 		padding-left: 20px;
 		line-height: 1.6;
 	}
 
-	.helpful-tips li {
+	.helpful-tips :global(li) {
 		margin-bottom: 4px;
+	}
+
+	.helpful-tips :global(a) {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.helpful-tips :global(a:hover) {
+		color: var(--primary-dark);
+		text-decoration: underline;
+	}
+
+	.hours {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.hours :global(p) {
+		margin: 0;
+	}
+
+	.hours :global(a) {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.hours :global(a:hover) {
+		color: var(--primary-dark);
+		text-decoration: underline;
+	}
+
+	.location {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+	}
+
+	.location :global(p) {
+		margin: 0;
+	}
+
+	.location :global(a) {
+		color: var(--primary);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.location :global(a:hover) {
+		color: var(--primary-dark);
+		text-decoration: underline;
 	}
 
 	.hero-footer {
