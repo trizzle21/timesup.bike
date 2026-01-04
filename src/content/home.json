@@ -43,84 +43,72 @@
     "heading": "Our Community in Action",
     "images": [
       {
-        "src": "/IMG-20250517-WA0077.jpg",
-        "alt": "Street repairs when the weather permits"
-      },
-      {
-        "src": "/IMG-20250409-WA0001.jpg",
-        "alt": "Participants fixing their bikes with volunteer mechanic guidance"
-      },
-      {
-        "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
-        "alt": "Wheel building workshop"
-      },
-      {
-        "src": "/IMG-20250418-WA0015.jpg",
-        "alt": "Since we don't store personal bikes overnight, repairs occassionally last late into the evening"
-      },
-      {
-        "src": "/PXL_20250316_230359937.jpg",
-        "alt": "Sign in when you arrive"
-      },
-      {
-        "src": "/IMG-20250921-WA0081.jpg",
-        "alt": "Street repairs when it's nice out"
-      },
-      {
-        "src": "/IMG-20250928-WA0047.jpg",
-        "alt": "Street repairs when it's nice out"
+        "src": "/IMG-20241117-WA0004.jpg",
+        "alt": "Saturday class at La Plaza Community Garden in the summer and early fall"
       },
       {
         "src": "/IMG-20250607-WA0009.jpg",
         "alt": "Saturday class at La Plaza Community Garden in the summer and early fall"
       },
       {
-        "src": "/IMG-20250430-WA0002.jpg",
-        "alt": "Spring workshop session"
-      },
-      {
-        "src": "/IMG-20250312-WA0000.jpg",
-        "alt": "Bike maintenance workshop"
-      },
-      {
-        "src": "/IMG-20250216-WA0005.jpg",
-        "alt": "Volunteers welcome regardless of mechanical skill. We have plenty to do from sales, web design to general organizing"
-      },
-      {
-        "src": "/IMG-20250130-WA0003.jpg",
-        "alt": "Some of our volunteer mechanics"
-      },
-      {
-        "src": "/IMG-20241117-WA0004.jpg",
-        "alt": "Saturday class at La Plaza Community Garden in the summer and early fall"
+        "src": "/IMG-20250419-WA0019.jpg",
+        "alt": "Flat fix class at La Plaza Community Garden"
       },
       {
         "src": "/IMG-20241110-WA0007.jpg",
         "alt": "Late night at the coop"
       },
       {
-        "src": "/IMG-20250419-WA0019.jpg",
-        "alt": "Flat fix class at La Plaza Community Garden"
+        "src": "/IMG-20250430-WA0002.jpg",
+        "alt": "Spring workshop session"
+      },
+      {
+        "src": "/IMG-20250418-WA0015.jpg",
+        "alt": "Since we don't store personal bikes overnight, repairs occassionally last late into the evening"
+      },
+      {
+        "src": "/IMG-20250928-WA0047.jpg",
+        "alt": "Street repairs when it's nice out"
+      },
+      {
+        "src": "/IMG-20250517-WA0077.jpg",
+        "alt": "Street repairs when the weather permits"
+      },
+      {
+        "src": "/WhatsApp Image 2025-10-14 at 11.10.54 PM.jpeg",
+        "alt": "Wheel building workshop"
+      },
+      {
+        "src": "/IMG-20250409-WA0001.jpg",
+        "alt": "Participants fixing their bikes with volunteer mechanic guidance"
+      },
+      {
+        "src": "/IMG-20250312-WA0000.jpg",
+        "alt": "Bike maintenance workshop"
       },
       {
         "src": "/IMG-20250419-WA0015.jpg",
         "alt": "Flat fix class at La Plaza Community Garden"
       },
       {
-        "src": "/IMG-20250428-WA0008.jpg",
-        "alt": "We sell used commuter bikes for ~$160"
+        "src": "/IMG-20250216-WA0005.jpg",
+        "alt": "Volunteers welcome regardless of mechanical skill. We have plenty to do from sales, web design to general organizing"
       },
       {
-        "src": "/IMG-20250517-WA0040.jpg",
-        "alt": "Fall fundraising"
-      },
-      {
-        "src": "/IMG-20250629-WA0000.jpg",
-        "alt": "Come browse our used parts bins"
+        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
+        "alt": "Learn to fix your bike"
       },
       {
         "src": "/IMG-20250409-WA0002.jpg",
         "alt": "Mechanic helping with repairs"
+      },
+      {
+        "src": "/IMG-20250921-WA0081.jpg",
+        "alt": "Street repairs when it's nice out"
+      },
+      {
+        "src": "/IMG-20250130-WA0003.jpg",
+        "alt": "Some of our volunteer mechanics"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM.jpeg",
@@ -131,12 +119,24 @@
         "alt": "Learn to fix your bike"
       },
       {
-        "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (3).jpeg",
-        "alt": "Learn to fix your bike"
+        "src": "/PXL_20250316_230359937.jpg",
+        "alt": "Sign in when you arrive"
+      },
+      {
+        "src": "/IMG-20250428-WA0008.jpg",
+        "alt": "We sell used commuter bikes for ~$160"
+      },
+      {
+        "src": "/IMG-20250629-WA0000.jpg",
+        "alt": "Come browse our used parts bins"
       },
       {
         "src": "/WhatsApp Image 2025-12-28 at 2.03.15 PM (4).jpeg",
         "alt": "Spring into Action group ride"
+      },
+      {
+        "src": "/IMG-20250517-WA0040.jpg",
+        "alt": "Fall fundraising"
       }
     ]
   }

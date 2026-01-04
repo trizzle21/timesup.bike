@@ -58,11 +58,15 @@ const getImage = (src: string) => {
 			const allImages: GalleryImage[] = [...gallery.images];
 			const cols: GalleryImage[][] = [[], [], []];
 			allImages.forEach((img, i) => cols[i % 3].push(img));
-			return cols.map((col) => (
-				<div class="gallery-col">
+			return cols.map((col, colIdx) => {
+				const midIndex = Math.floor(col.length / 2);
+				return (
+				<div class="gallery-col" data-col={colIdx}>
 					{col.map((image, idx) => {
 						const imgSrc = getImage(image.src);
-						const loading = idx < 4 ? "eager" : "lazy";
+						// Eagerly load images near the middle (visible on initial load)
+						const isMiddle = idx >= midIndex - 2 && idx < midIndex + 2;
+						const loading = isMiddle ? "eager" : "lazy";
 						return (
 							<div class="gallery-item">
 								{imgSrc ? (
@@ -77,10 +81,45 @@ const getImage = (src: string) => {
 						);
 					})}
 				</div>
-			));
+			)});
 		})()}
 	</div>
 </section>
+
+<script>
+	const columns = document.querySelectorAll('.gallery-col');
+
+	// Max stagger offsets at middle of scroll (in pixels)
+	const maxOffsets = [-100, 0, -200];
+
+	function updateStagger() {
+		const scrollTop = window.scrollY;
+		const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+		// Progress from 0 (top) to 1 (bottom)
+		const progress = maxScroll > 0 ? scrollTop / maxScroll : 0;
+
+		// Stagger peaks at middle (0.5), disappears at edges (0 and 1)
+		// Using sine curve for smooth easing
+		const staggerAmount = Math.sin(progress * Math.PI);
+
+		columns.forEach((col, i) => {
+			const element = col as HTMLElement;
+			const offset = maxOffsets[i] * staggerAmount;
+			element.style.transform = `translateY(${offset}px)`;
+		});
+	}
+
+	// Scroll to middle on page load
+	window.addEventListener('load', () => {
+		const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+		window.scrollTo(0, maxScroll / 2);
+		updateStagger();
+	});
+
+	window.addEventListener('scroll', updateStagger);
+	window.addEventListener('resize', updateStagger);
+</script>
 
 
 <style>
