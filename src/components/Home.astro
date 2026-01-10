@@ -128,10 +128,10 @@ const getImage = (src: string) => {
 		});
 	}
 
-	// Scroll to middle on page load for maximum stagger (skip on mobile portrait)
+	// Scroll to middle on page load for maximum stagger (skip on stacked/tablet layouts)
 	window.addEventListener('load', () => {
-		const isMobilePortrait = window.matchMedia('(max-width: 480px) and (orientation: portrait)').matches;
-		if (isMobilePortrait) return;
+		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
+		if (isStackedLayout) return;
 
 		requestAnimationFrame(() => {
 			const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
