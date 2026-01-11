@@ -578,7 +578,13 @@ const getImage = (src: string) => {
 
 	}
 
-	@media screen and (max-height: 990x) {
+	@media screen and (max-height: 990px) {
+		.popular-hours-row {
+			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 1080px) {
 		.popular-hours-row {
 			flex-direction: column;
 		}
