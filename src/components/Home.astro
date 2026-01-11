@@ -140,6 +140,15 @@ const getImage = (src: string) => {
 	const offsetRatios = [0, -0.09, -0.18];
 
 	function updateStagger() {
+		// Disable stagger when gallery is stacked below hero
+		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
+		if (isStackedLayout) {
+			columns.forEach((col) => {
+				(col as HTMLElement).style.transform = '';
+			});
+			return;
+		}
+
 		const scrollTop = window.scrollY;
 		const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
 		const vh = window.innerHeight;
@@ -158,8 +167,56 @@ const getImage = (src: string) => {
 		});
 	}
 
+	// Redistribute images for 2-column layout
+	let originalColumns: HTMLElement[][] = [];
+	let isRedistributed = false;
+
+	function storeOriginalLayout() {
+		if (originalColumns.length === 0) {
+			columns.forEach((col) => {
+				originalColumns.push(Array.from(col.children) as HTMLElement[]);
+			});
+		}
+	}
+
+	function redistributeFor2Columns() {
+		if (isRedistributed) return;
+		storeOriginalLayout();
+
+		const allItems = originalColumns.flat();
+		const half = Math.ceil(allItems.length / 2);
+
+		columns.forEach((col) => col.innerHTML = '');
+		allItems.slice(0, half).forEach((item) => columns[0].appendChild(item));
+		allItems.slice(half).forEach((item) => columns[1].appendChild(item));
+
+		isRedistributed = true;
+	}
+
+	function restoreOriginalLayout() {
+		if (!isRedistributed || originalColumns.length === 0) return;
+
+		columns.forEach((col, i) => {
+			col.innerHTML = '';
+			originalColumns[i].forEach((item) => col.appendChild(item));
+		});
+
+		isRedistributed = false;
+	}
+
+	function handleColumnLayout() {
+		const isTwoColumn = window.matchMedia('(max-width: 640px)').matches;
+		if (isTwoColumn) {
+			redistributeFor2Columns();
+		} else {
+			restoreOriginalLayout();
+		}
+	}
+
 	// Scroll to middle on page load for maximum stagger (skip on stacked/tablet layouts)
 	window.addEventListener('load', () => {
+		handleColumnLayout();
+
 		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
 		if (isStackedLayout) return;
 
@@ -171,7 +228,10 @@ const getImage = (src: string) => {
 	});
 
 	window.addEventListener('scroll', updateStagger);
-	window.addEventListener('resize', updateStagger);
+	window.addEventListener('resize', () => {
+		updateStagger();
+		handleColumnLayout();
+	});
 </script>
 
 
@@ -577,7 +637,7 @@ const getImage = (src: string) => {
 			position: relative;
 			width: 100%;
 			height: auto;
-			padding: 60px 32px;
+			padding: 60px 32px 24px;
 		}
 
 		.hero-side h1 {
@@ -599,7 +659,7 @@ const getImage = (src: string) => {
 		}
 
 		.hero-info {
-			padding-bottom: 0;
+			padding-bottom: 0px;
 		}
 
 	}
@@ -613,6 +673,19 @@ const getImage = (src: string) => {
 	@media screen and (max-width: 1800px) {
 		.popular-hours-row {
 			flex-direction: column;
+		}
+	}
+
+	@media screen and (max-width: 1595px) {
+		.hero-footer {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		.footer-tagline {
+			align-items: flex-start;
+			text-align: left;
+			margin-left: 0;
 		}
 	}
 
