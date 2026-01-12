@@ -52,6 +52,7 @@ const getImage = (src: string) => {
 						class="popular-hours"
 						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=1545457890&single=true&widget=false&headers=false&chrome=false&rm=demo"
 						title="Previous Shift"
+						tabindex="-1"
 					></iframe>
 					<div class="timeline">
 						<span>5pm</span>
@@ -65,6 +66,7 @@ const getImage = (src: string) => {
 						class="popular-hours"
 						src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTJ4C1-FUs1PhoIaq2Xdn-w5yeOjrEnBFF1xbOEc17QN6o_dgxT-PaxhIEBlUFh_3vn1URUOrw7hz50/pubhtml?gid=251752307&single=true&widget=false&headers=false&chrome=false&rm=demo"
 						title="Popular Hours"
+						tabindex="-1"
 					></iframe>
 					<div class="timeline">
 						<span>5pm</span>
@@ -214,7 +216,7 @@ const getImage = (src: string) => {
 	}
 
 	// Scroll to middle on page load for maximum stagger (skip on stacked/tablet layouts)
-	window.addEventListener('load', () => {
+	document.addEventListener('DOMContentLoaded', () => {
 		handleColumnLayout();
 
 		const isStackedLayout = window.matchMedia('(max-width: 1024px)').matches;
@@ -470,12 +472,15 @@ const getImage = (src: string) => {
 	.popular-hours-row {
 		display: flex;
 		gap: 8px;
+		width: 100%;
 	}
 
 	.popular-hours-container {
 		display: flex;
 		flex-direction: column;
-		width: 250px;
+		flex: 1;
+		min-width: 0;
+		max-width: 260px;
 	}
 
 	.popular-hours {
