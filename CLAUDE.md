@@ -31,9 +31,9 @@ npm run preview
 
 Content is managed through Decap CMS and stored as JSON files in `src/content/`:
 - `home.json` - Hero, schedule, overview, location, join, and contact sections
-- `events.json` - Events listing
-- `parts.json` - Parts catalog
-- `about.json` - About page content
+- `events.json` - Events listing.  Currently not used.
+- `parts.json` - Parts catalog.  Currently not used.
+- `about.json` - About page content.  Currently not used.
 
 The CMS is configured in `public/admin/config.yml` and accessible at `/admin` when running locally with `local_backend: true`.
 
