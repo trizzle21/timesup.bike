@@ -17,7 +17,7 @@ Additional scripts for the collective:
 
 ## Contributing
 
-No gatekeepers here—open a PR and let's ship.
+No gatekeepers here. Open a PR and let's ship.
 
 1. Fork, branch, and hack on the change you want to see.
 2. Run the project locally so the revolution actually loads.
