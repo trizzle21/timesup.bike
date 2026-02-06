@@ -249,7 +249,7 @@ const getImage = (src: string) => {
 			const numBikesFixed = data.find(item => item.Param === 'customers');
 
 			if (numBikesFixed && numBikesFixed.Value && footerSlogan) {
-				footerSlogan.textContent = "  " + numBikesFixed.Value + "+ bikes fixed";
+				footerSlogan.textContent = "  " + numBikesFixed.Value + "+ repaired";
 			}
 		} catch (error) {
 			console.error('Error fetching slogan:', error);
