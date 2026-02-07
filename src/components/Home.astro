@@ -5,6 +5,15 @@ import home from '../content/home.json';
 
 const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
 
+// Fetch chart data at build time
+let buildTimeData = null;
+try {
+	const response = await fetch('https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec');
+	buildTimeData = await response.json();
+} catch (error) {
+	console.error('Error fetching data at build time:', error);
+}
+
 // Parse markdown to HTML
 const taglineHtml = await marked.parse(hero.tagline);
 const howItWorksHtml = await marked.parse(howItWorks.text);
@@ -233,6 +242,12 @@ const getImage = (src: string) => {
 	});
 </script>
 
+<script define:vars={{ buildTimeData }}>
+	// Embed build-time data for instant page load
+	window.__BUILD_TIME_DATA__ = buildTimeData;
+	window.__BUILD_TIME_TIMESTAMP__ = Date.now();
+</script>
+
 <script>
 	// TEST MODE: Set to true to always show blue bars (for testing)
 	const TEST_OPERATING_HOURS = false;
@@ -289,8 +304,18 @@ const getImage = (src: string) => {
 		try {
 			let data;
 
-			// Check cache first
-			if (isCacheValid()) {
+			// Check for build-time data first (for instant initial load)
+			if (window.__BUILD_TIME_DATA__ && !getCachedData()) {
+				data = window.__BUILD_TIME_DATA__;
+				// Cache the build-time data with its timestamp
+				localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+				localStorage.setItem(CACHE_TIMESTAMP_KEY, window.__BUILD_TIME_TIMESTAMP__.toString());
+				// Clear the global to prevent reuse
+				delete window.__BUILD_TIME_DATA__;
+				delete window.__BUILD_TIME_TIMESTAMP__;
+			}
+			// Check cache next
+			else if (isCacheValid()) {
 				data = getCachedData();
 			}
 
