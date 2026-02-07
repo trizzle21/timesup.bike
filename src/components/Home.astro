@@ -96,7 +96,7 @@ const getImage = (src: string) => {
 				<span id="footer-slogan">Loading...</span>
 			</div>
 			<div class="footer-column footer-right">
-				<span class="footer-tagline"><span>An environmental initiative</span><span>under <a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
+				<span class="footer-tagline"><span>An initiative under</span><span><a href="https://times-up.org/" target="_blank" rel="noreferrer noopener">Time's Up org</a></span></span>
 			</div>
 		</footer>
 	</div>
@@ -248,9 +248,10 @@ const getImage = (src: string) => {
 			// The API returns an array of objects with Param and Value keys
 			const numBikesFixed = data.find(item => item.Param === 'customers');
 			const numVolunteers = data.find(item => item.Param === 'volunteers');
+			const numVisits = data.find(item => item.Param === 'visits');
 
 			if (numBikesFixed && numBikesFixed.Value && footerSlogan) {
-				footerSlogan.textContent = "  " + (Number(numBikesFixed.Value) + Number(numVolunteers.Value)) + "+ repaired";
+				footerSlogan.textContent = "  " + (Number(numBikesFixed.Value) + Number(numVolunteers.Value)) + "+ fixed in " + numVisits.Value + " visits";
 			}
 		} catch (error) {
 			console.error('Error fetching slogan:', error);
