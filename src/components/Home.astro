@@ -235,13 +235,71 @@ const getImage = (src: string) => {
 
 <script>
 	// TEST MODE: Set to true to always show blue bars (for testing)
-	const TEST_ACTIVE_BARS = false;
+	const TEST_OPERATING_HOURS = false;
+
+	// Cache configuration
+	const CACHE_KEY = 'timesup_chart_data';
+	const CACHE_TIMESTAMP_KEY = 'timesup_chart_data_timestamp';
+	const TEST_MODE_TTL = 60 * 1000; // 1 minute (for testing)
+	const OPERATING_HOURS_TTL = 5 * 60 * 1000; // 5 minutes
+	const NON_OPERATING_HOURS_TTL = 60 * 60 * 1000; // 1 hour
+
+	// Get cache TTL based on operating hours
+	function getCacheTTL() {
+		if (TEST_OPERATING_HOURS) return TEST_MODE_TTL;
+		return isOperatingHours() ? OPERATING_HOURS_TTL : NON_OPERATING_HOURS_TTL;
+	}
+
+	// Check if cached data is still valid
+	function isCacheValid() {
+		try {
+			const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+			if (!timestamp) return false;
+
+			const age = Date.now() - parseInt(timestamp);
+			const ttl = getCacheTTL();
+			return age < ttl;
+		} catch (error) {
+			return false;
+		}
+	}
+
+	// Get cached data
+	function getCachedData() {
+		try {
+			const cached = localStorage.getItem(CACHE_KEY);
+			return cached ? JSON.parse(cached) : null;
+		} catch (error) {
+			return null;
+		}
+	}
+
+	// Save data to cache
+	function setCachedData(data) {
+		try {
+			localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+			localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
+		} catch (error) {
+			console.error('Failed to cache data:', error);
+		}
+	}
 
 	// Fetch and render charts and footer slogan
 	async function fetchAndRenderCharts() {
 		try {
-			const response = await fetch('https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec');
-			const data = await response.json();
+			let data;
+
+			// Check cache first
+			if (isCacheValid()) {
+				data = getCachedData();
+			}
+
+			// Fetch fresh data if cache miss or invalid
+			if (!data) {
+				const response = await fetch('https://script.google.com/macros/s/AKfycbzhGL1Zdvz5UBrqvFL3JAkCDNisd8wha3HCfK9cN1dfUwxu1zXIgX-vqGDHPMJr7U2h/exec');
+				data = await response.json();
+				setCachedData(data);
+			}
 
 			// Parse data into a map for easier access
 			const dataMap = {};
@@ -358,7 +416,7 @@ const getImage = (src: string) => {
 		const barsEl = document.getElementById(`${chartId}-chart-bars`);
 		if (barsEl) {
 			const maxValue = Math.max(...shiftData);
-			const isActive = chartId === 'curr' && (TEST_ACTIVE_BARS || (isOperatingHours() && isToday(date)));
+			const isActive = chartId === 'curr' && (TEST_OPERATING_HOURS || (isOperatingHours() && isToday(date)));
 
 			const bars = shiftData.map(value => {
 				const height = maxValue > 0 ? (value / maxValue) * 100 : 0;
@@ -387,6 +445,23 @@ const getImage = (src: string) => {
 
 	// Fetch and render on page load
 	document.addEventListener('DOMContentLoaded', fetchAndRenderCharts);
+
+	// Set up automatic polling based on operating hours
+	function startPolling() {
+		// Initial check
+		const ttl = getCacheTTL();
+
+		// Set up interval to check and refresh cache
+		setInterval(async () => {
+			// If cache is expired, fetch fresh data
+			if (!isCacheValid()) {
+				await fetchAndRenderCharts();
+			}
+		}, 60000); // Check every minute
+	}
+
+	// Start polling after initial load
+	document.addEventListener('DOMContentLoaded', startPolling);
 </script>
 
 <style>
