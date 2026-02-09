@@ -255,6 +255,7 @@ const getImage = (src: string) => {
 	// Cache configuration
 	const CACHE_KEY = 'timesup_chart_data';
 	const CACHE_TIMESTAMP_KEY = 'timesup_chart_data_timestamp';
+	const CACHE_OPERATING_HOURS_KEY = 'timesup_operating_hours_status';
 	const TEST_MODE_TTL = 60 * 1000; // 1 minute (for testing)
 	const OPERATING_HOURS_TTL = 5 * 60 * 1000; // 5 minutes
 	const NON_OPERATING_HOURS_TTL = 24 * 60 * 60 * 1000; // 24 hour
@@ -273,6 +274,16 @@ const getImage = (src: string) => {
 
 			const age = Date.now() - parseInt(timestamp);
 			const ttl = getCacheTTL();
+
+			// Check for operating hours transition
+			const cachedDuringOperatingHours = localStorage.getItem(CACHE_OPERATING_HOURS_KEY) === 'true';
+			const currentlyOperatingHours = isOperatingHours();
+
+			// If we've transitioned from non-operating to operating hours, invalidate cache
+			if (!cachedDuringOperatingHours && currentlyOperatingHours) {
+				return false;
+			}
+
 			return age < ttl;
 		} catch (error) {
 			return false;
@@ -294,6 +305,7 @@ const getImage = (src: string) => {
 		try {
 			localStorage.setItem(CACHE_KEY, JSON.stringify(data));
 			localStorage.setItem(CACHE_TIMESTAMP_KEY, Date.now().toString());
+			localStorage.setItem(CACHE_OPERATING_HOURS_KEY, isOperatingHours().toString());
 		} catch (error) {
 			console.error('Failed to cache data:', error);
 		}
@@ -473,16 +485,19 @@ const getImage = (src: string) => {
 
 	// Set up automatic polling based on operating hours
 	function startPolling() {
-		// Initial check
-		const ttl = getCacheTTL();
-
 		// Set up interval to check and refresh cache
 		setInterval(async () => {
-			// If cache is expired, fetch fresh data
 			if (!isCacheValid()) {
 				await fetchAndRenderCharts();
 			}
 		}, 60000); // Check every minute
+
+		// Also check when page becomes visible (tab switching)
+		document.addEventListener('visibilitychange', async () => {
+			if (!document.hidden && !isCacheValid()) {
+				await fetchAndRenderCharts();
+			}
+		});
 	}
 
 	// Start polling after initial load
