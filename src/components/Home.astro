@@ -483,7 +483,7 @@ const getImage = (src: string) => {
 		if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 			const totalBikes = numBikesFixed + numVolunteers;
 			footerSlogan.innerHTML = `
-				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>
+				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>&nbsp;
 				<span class="stat-pill stat-pill-blue"><strong>${numVisits}</strong>&nbsp;visits</span>
 			`;
 		}
@@ -946,7 +946,7 @@ const getImage = (src: string) => {
 	.footer-pills-container :global(.stat-pill) {
 		display: inline-flex;
 		align-items: center;
-		padding: clamp(4px, 0.6vw, 8px) clamp(8px, 1.2vw, 14px);
+		padding: clamp(2px, 0.6vw, 4px) clamp(6px, 1.2vw, 12px);
 		border-radius: 6px;
 		font-size: clamp(10px, 1.5vw, 13px);
 		font-weight: 600;
