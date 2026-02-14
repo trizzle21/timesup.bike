@@ -565,7 +565,7 @@ const getImage = (src: string) => {
 	}
 
 	// Animate a number counter from start to end
-	function animateCounter(element, start, end, duration = 500) {
+	function animateCounter(element, start, end, duration = 500, suffix = '') {
 		if (start === end) return;
 
 		const startTime = performance.now();
@@ -579,12 +579,12 @@ const getImage = (src: string) => {
 			const easeOut = 1 - Math.pow(1 - progress, 3);
 			const current = Math.floor(start + (difference * easeOut));
 
-			element.textContent = current + (end > 999 ? '+' : '');
+			element.textContent = current + suffix;
 
 			if (progress < 1) {
 				requestAnimationFrame(update);
 			} else {
-				element.textContent = end + (end > 999 ? '+' : '');
+				element.textContent = end + suffix;
 			}
 		}
 
@@ -622,13 +622,13 @@ const getImage = (src: string) => {
 			// Animate to new values if they changed
 			if (currentRepairs !== totalBikes) {
 				repairsPill.parentElement.classList.add('updating');
-				animateCounter(repairsPill, currentRepairs, totalBikes, 600);
+				animateCounter(repairsPill, currentRepairs, totalBikes, 600, '+');
 				setTimeout(() => repairsPill.parentElement.classList.remove('updating'), 650);
 			}
 
 			if (currentVisits !== numVisits) {
 				visitsPill.parentElement.classList.add('updating');
-				animateCounter(visitsPill, currentVisits, numVisits, 600);
+				animateCounter(visitsPill, currentVisits, numVisits, 600, '');
 				setTimeout(() => visitsPill.parentElement.classList.remove('updating'), 650);
 			}
 		}
