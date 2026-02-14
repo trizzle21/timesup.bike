@@ -604,32 +604,36 @@ const getImage = (src: string) => {
 			// Check if pills already exist
 			let repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 			let visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
+			const isFirstLoad = !repairsPill || !visitsPill;
 
-			// If pills don't exist, create them
-			if (!repairsPill || !visitsPill) {
+			// If pills don't exist, create them with actual values
+			if (isFirstLoad) {
 				footerSlogan.innerHTML = `
-					<span class="stat-pill stat-pill-red"><strong>0+</strong>&nbsp;repairs</span>&nbsp;
-					<span class="stat-pill stat-pill-blue"><strong>0</strong>&nbsp;visits</span>
+					<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>&nbsp;
+					<span class="stat-pill stat-pill-blue"><strong>${numVisits}</strong>&nbsp;visits</span>
 				`;
 				repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 				visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
 			}
 
-			// Get current values
-			const currentRepairs = parseInt(repairsPill.textContent) || 0;
-			const currentVisits = parseInt(visitsPill.textContent) || 0;
+			// Only animate if this is not the first load
+			if (!isFirstLoad) {
+				// Get current values
+				const currentRepairs = parseInt(repairsPill.textContent) || 0;
+				const currentVisits = parseInt(visitsPill.textContent) || 0;
 
-			// Animate to new values if they changed
-			if (currentRepairs !== totalBikes) {
-				repairsPill.parentElement.classList.add('updating');
-				animateCounter(repairsPill, currentRepairs, totalBikes, 600, '+');
-				setTimeout(() => repairsPill.parentElement.classList.remove('updating'), 650);
-			}
+				// Animate to new values if they changed
+				if (currentRepairs !== totalBikes) {
+					repairsPill.parentElement.classList.add('updating');
+					animateCounter(repairsPill, currentRepairs, totalBikes, 600, '+');
+					setTimeout(() => repairsPill.parentElement.classList.remove('updating'), 650);
+				}
 
-			if (currentVisits !== numVisits) {
-				visitsPill.parentElement.classList.add('updating');
-				animateCounter(visitsPill, currentVisits, numVisits, 600, '');
-				setTimeout(() => visitsPill.parentElement.classList.remove('updating'), 650);
+				if (currentVisits !== numVisits) {
+					visitsPill.parentElement.classList.add('updating');
+					animateCounter(visitsPill, currentVisits, numVisits, 600, '');
+					setTimeout(() => visitsPill.parentElement.classList.remove('updating'), 650);
+				}
 			}
 		}
 	}
