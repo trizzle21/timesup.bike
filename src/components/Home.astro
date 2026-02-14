@@ -535,17 +535,60 @@ const getImage = (src: string) => {
 			const maxValue = Math.max(...shiftData);
 			const isActive = chartId === 'curr' && (TEST_OPERATING_HOURS || (isOperatingHours() && isToday(date)));
 
-			const bars = shiftData.map(value => {
+			// Get existing bars or create new ones
+			let barElements = barsEl.querySelectorAll('.chart-bar');
+
+			// If no bars exist or wrong count, create them
+			if (barElements.length !== shiftData.length) {
+				const bars = shiftData.map(() => {
+					return `<div class="chart-bar" style="height: 0%"></div>`;
+				}).join('');
+				barsEl.innerHTML = bars;
+				barElements = barsEl.querySelectorAll('.chart-bar');
+			}
+
+			// Update existing bars (this triggers CSS transitions)
+			barElements.forEach((bar, index) => {
+				const value = shiftData[index];
 				const height = maxValue > 0 ? (value / maxValue) * 100 : 0;
 				const isPeak = value === maxValue && value > 0;
-				const classes = ['chart-bar'];
-				if (isPeak) classes.push('peak');
-				if (isActive) classes.push('active');
-				return `<div class="${classes.join(' ')}" style="height: ${height}%"></div>`;
-			}).join('');
 
-			barsEl.innerHTML = bars;
+				// Update height (this will animate due to CSS transition)
+				bar.style.height = `${height}%`;
+
+				// Update classes
+				bar.className = 'chart-bar';
+				if (isPeak) bar.classList.add('peak');
+				if (isActive) bar.classList.add('active');
+			});
 		}
+	}
+
+	// Animate a number counter from start to end
+	function animateCounter(element, start, end, duration = 500) {
+		if (start === end) return;
+
+		const startTime = performance.now();
+		const difference = end - start;
+
+		function update(currentTime) {
+			const elapsed = currentTime - startTime;
+			const progress = Math.min(elapsed / duration, 1);
+
+			// Easing function (ease-out)
+			const easeOut = 1 - Math.pow(1 - progress, 3);
+			const current = Math.floor(start + (difference * easeOut));
+
+			element.textContent = current + (end > 999 ? '+' : '');
+
+			if (progress < 1) {
+				requestAnimationFrame(update);
+			} else {
+				element.textContent = end + (end > 999 ? '+' : '');
+			}
+		}
+
+		requestAnimationFrame(update);
 	}
 
 	// Update footer slogan
@@ -557,18 +600,42 @@ const getImage = (src: string) => {
 
 		if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 			const totalBikes = numBikesFixed + numVolunteers;
-			footerSlogan.innerHTML = `
-				<span class="stat-pill stat-pill-red"><strong>${totalBikes}+</strong>&nbsp;repairs</span>&nbsp;
-				<span class="stat-pill stat-pill-blue"><strong>${numVisits}</strong>&nbsp;visits</span>
-			`;
+
+			// Check if pills already exist
+			let repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
+			let visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
+
+			// If pills don't exist, create them
+			if (!repairsPill || !visitsPill) {
+				footerSlogan.innerHTML = `
+					<span class="stat-pill stat-pill-red"><strong>0+</strong>&nbsp;repairs</span>&nbsp;
+					<span class="stat-pill stat-pill-blue"><strong>0</strong>&nbsp;visits</span>
+				`;
+				repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
+				visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
+			}
+
+			// Get current values
+			const currentRepairs = parseInt(repairsPill.textContent) || 0;
+			const currentVisits = parseInt(visitsPill.textContent) || 0;
+
+			// Animate to new values if they changed
+			if (currentRepairs !== totalBikes) {
+				repairsPill.parentElement.classList.add('updating');
+				animateCounter(repairsPill, currentRepairs, totalBikes, 600);
+				setTimeout(() => repairsPill.parentElement.classList.remove('updating'), 650);
+			}
+
+			if (currentVisits !== numVisits) {
+				visitsPill.parentElement.classList.add('updating');
+				animateCounter(visitsPill, currentVisits, numVisits, 600);
+				setTimeout(() => visitsPill.parentElement.classList.remove('updating'), 650);
+			}
 		}
 	}
 
 	// Fetch and render on page load
 	document.addEventListener('DOMContentLoaded', () => fetchAndRenderCharts());
-
-	// Expose for debugging/testing in console
-	window.fetchAndRenderCharts = fetchAndRenderCharts;
 
 	// Set up automatic polling based on operating hours
 	function startPolling() {
@@ -1037,7 +1104,11 @@ const getImage = (src: string) => {
 		font-weight: 600;
 		letter-spacing: 0.05em;
 		white-space: nowrap;
-		/* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.footer-pills-container :global(.stat-pill.updating) {
+		transform: scale(1.05);
 	}
 
 	.footer-pills-container :global(.stat-pill strong) {
@@ -1050,9 +1121,17 @@ const getImage = (src: string) => {
 		color: #ffffff;
 	}
 
+	.footer-pills-container :global(.stat-pill-red.updating) {
+		box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+	}
+
 	.footer-pills-container :global(.stat-pill-blue) {
 		background: #4285f4;
 		color: #ffffff;
+	}
+
+	.footer-pills-container :global(.stat-pill-blue.updating) {
+		box-shadow: 0 0 20px rgba(66, 133, 244, 0.6);
 	}
 
 	.footer-initiative-text {
