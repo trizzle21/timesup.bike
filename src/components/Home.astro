@@ -454,17 +454,20 @@ const getImage = (src: string) => {
 		}
 	}
 
-	// Check if current time is during operating hours (Sun/Wed 5pm-8pm)
+	// Check if current time is during operating hours (Sun/Wed 5pm-8pm Eastern Time)
 	function isOperatingHours() {
+		// Get current time in New York timezone
 		const now = new Date();
-		const day = now.getDay(); // 0 = Sunday, 3 = Wednesday
-		const hour = now.getHours();
+		const nyTimeString = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+		const nyTime = new Date(nyTimeString);
+
+		const day = nyTime.getDay(); // 0 = Sunday, 3 = Wednesday
+		const hour = nyTime.getHours();
 
 		// Check if it's Sunday (0) or Wednesday (3)
 		const isOperatingDay = day === 0 || day === 3;
 		// Check if time is between 5pm (17) and 8pm (20)
 		const isOperatingTime = hour >= 17 && hour < 20;
-
 
 		return isOperatingDay && isOperatingTime;
 	}
@@ -597,6 +600,7 @@ const getImage = (src: string) => {
 		const numBikesFixed = Number(dataMap.customers);
 		const numVolunteers = Number(dataMap.volunteers);
 		const numVisits = Number(dataMap.visits);
+		const mvpVolStr = dataMap.mvp_vol_str;
 
 		if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 			const totalBikes = numBikesFixed + numVolunteers;
@@ -611,7 +615,7 @@ const getImage = (src: string) => {
 				const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
 				lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 			}
-			const tooltipText = `Last updated: ${lastUpdated}`;
+			const tooltipText = `Last updated: ${lastUpdated}\n${mvpVolStr}`;
 
 			// Check if pills already exist
 			let repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
