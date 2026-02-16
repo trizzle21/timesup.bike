@@ -1,5 +1,6 @@
 import { getCachedData, setCachedData, isCacheValid, CACHE_TIMESTAMP_KEY } from './cache';
 import { isOperatingHours } from './cache';
+import { showToast, createMultiClickHandler } from './toast';
 
 // Retry configuration for API failures
 let retryCount = 0;
@@ -174,21 +175,24 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const numVisits = Number(dataMap.visits);
 	const mvpVolStr = dataMap.mvp_vol_str;
 
+	// Get last updated timestamp for tooltip
+	const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
+	let lastUpdated = 'Unknown';
+	if (timestamp) {
+		const date = new Date(parseInt(timestamp));
+		const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+		const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
+		const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
+	}
+
+	const toastText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
+	const toastDuration = 5000;
+	const tooltipText = `Last updated: ${lastUpdated}`;
+
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 		const totalBikes = numBikesFixed + numVolunteers;
-
-		// Get last updated timestamp for tooltip
-		const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
-		let lastUpdated = 'Unknown';
-		if (timestamp) {
-			const date = new Date(parseInt(timestamp));
-			const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
-			const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
-			const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
-			lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
-		}
-		const tooltipText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
-
+		
 		// Check if pills already exist
 		let repairsPill = footerSlogan.querySelector('.stat-pill-red strong') as HTMLElement | null;
 		let visitsPill = footerSlogan.querySelector('.stat-pill-blue strong') as HTMLElement | null;
@@ -202,14 +206,39 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			`;
 			repairsPill = footerSlogan.querySelector('.stat-pill-red strong');
 			visitsPill = footerSlogan.querySelector('.stat-pill-blue strong');
+
+			// Add triple-click handler to red pill for mobile tooltip
+			const redPill = footerSlogan.querySelector('.stat-pill-red');
+			if (redPill) {
+				createMultiClickHandler(redPill as HTMLElement, 3, () => {
+					showToast(toastText, toastDuration);
+				});
+			}
 		}
 
 		// Only animate if this is not the first load
 		if (!isFirstLoad && repairsPill && visitsPill) {
 			// Update tooltip with latest timestamp
 			const visitsPillParent = visitsPill.parentElement;
+			const repairsPillParent = repairsPill.parentElement;
+
 			if (visitsPillParent) {
 				visitsPillParent.setAttribute('title', tooltipText);
+			}
+
+			// Update the triple-click handler on red pill with new tooltip text
+			if (repairsPillParent) {
+				// Remove old handler if exists
+				const oldHandler = (repairsPillParent as any).__tripleClickCleanup;
+				if (oldHandler) {
+					oldHandler();
+				}
+
+				// Add new handler with updated text
+				const cleanup = createMultiClickHandler(repairsPillParent, 3, () => {
+					showToast(toastText, toastDuration);
+				});
+				(repairsPillParent as any).__tripleClickCleanup = cleanup;
 			}
 
 			// Get current values
