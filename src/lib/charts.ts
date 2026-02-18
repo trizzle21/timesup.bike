@@ -186,11 +186,11 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 	}
 
-	const toastVolText = `${mvpVolStr}\nLast updated: ${lastUpdated}`;
+	const toastVolText = `${mvpVolStr}\n\nLast updated: ${lastUpdated}`;
 	const tooltipText = `Last updated: ${lastUpdated}`;
 	const toastDuration = 5000;
-	const toastLongDuration = toastDuration * 2;
-	const toastRefreshText = "Data manually refreshed";
+	const toastLongDuration = toastDuration * 3;
+	const toastRefreshText = "Requesting data refresh";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 		const totalBikes = numBikesFixed + numVolunteers;
