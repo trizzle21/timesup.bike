@@ -173,6 +173,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const numBikesFixed = Number(dataMap.customers);
 	const numVolunteers = Number(dataMap.volunteers);
 	const numVisits = Number(dataMap.visits);
+	const numDayOfData = Number(dataMap.days_of_data);
 	const mvpVolStr = dataMap.mvp_vol_str;
 
 	// Get last updated timestamp for tooltip
@@ -182,12 +183,13 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 		const date = new Date(parseInt(timestamp));
 		const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
 		const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
-		const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true });
+		const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
 		lastUpdated = `${dayOfWeek}, ${shortDate} at ${time}`;
 	}
 
-	const toastVolText = `${mvpVolStr}\n\nLast updated: ${lastUpdated}`;
-	const tooltipText = `Last updated: ${lastUpdated}`;
+	const tooltipText = `Last updated: ${lastUpdated}\nDays of Data: ${numDayOfData}`;
+	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
+	
 	const toastDuration = 5000;
 	const toastLongDuration = toastDuration * 3;
 	const toastRefreshText = "📡  Refreshing data";
