@@ -1,3 +1,4 @@
+// @ts-ignore - Deno/Edge runtime URL import, not resolvable by Node TypeScript
 import type { Context } from "https://edge.netlify.com/";
 import {
   OPERATING_DAYS,

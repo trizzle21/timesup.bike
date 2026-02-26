@@ -277,7 +277,7 @@ const getImage = (src: string) => {
 	const storedDeployId = localStorage.getItem(CACHE_DEPLOY_KEY);
 	if (storedDeployId !== deployId) {
 		clearCache();
-		localStorage.setItem(CACHE_DEPLOY_KEY, deployId);
+		localStorage.setItem(CACHE_DEPLOY_KEY, deployId ?? '');
 	}
 
 	// Expose for console testing/debugging

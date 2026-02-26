@@ -2,6 +2,6 @@
 
 interface Window {
 	__BUILD_TIME_DATA__?: any;
-	__BUILD_TIME_TIMESTAMP__?: number;
+	__DEPLOY_ID__?: string;
 	fetchAndRenderCharts?: (forceRefresh?: boolean) => Promise<void>;
 }
