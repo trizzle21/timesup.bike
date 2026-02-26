@@ -1,6 +1,7 @@
+import { getCachedData, setCachedData, isCacheValid, CACHE_TIMESTAMP_KEY } from './cache';
+import { isOperatingHours } from './cache';
 import { showToast, createMultiClickHandler } from './toast';
 import {
-	isOperatingHours,
 	MAX_RETRIES,
 	RETRY_DELAYS,
 	POLLING_INTERVAL,
@@ -12,8 +13,8 @@ import {
 // Retry configuration for API failures
 let retryCount = 0;
 
-// Last-updated timestamp (set after each successful data fetch)
-let lastUpdatedTimestamp: number | null = null;
+// Track if background refresh is in progress
+let isBackgroundRefreshing = false;
 
 // API endpoint - use edge function for caching and rate limiting
 const API_URL = '/api/chart-data';
@@ -181,10 +182,11 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	const daysOfData = dataMap.days_of_data;
 	const mvpVolStr = dataMap.mvp_vol_str;
 
-	// Get last updated timestamp from module variable
+	// Get last updated timestamp for tooltip
+	const timestamp = localStorage.getItem(CACHE_TIMESTAMP_KEY);
 	let lastUpdated = 'Unknown';
-	if (lastUpdatedTimestamp) {
-		const date = new Date(lastUpdatedTimestamp);
+	if (timestamp) {
+		const date = new Date(parseInt(timestamp));
 		const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
 		const shortDate = date.toLocaleDateString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' });
 		const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
@@ -193,12 +195,12 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 
 	const tooltipText = `Last updated on ${lastUpdated}.\nData from ${daysOfData}`;
 	const toastVolText = `${mvpVolStr}\n\n${tooltipText}`;
-
+	
 	const toastRefreshText = "📡  Refreshing data";
 
 	if (footerSlogan && numBikesFixed && numVolunteers && numVisits) {
 		const totalBikes = numBikesFixed + numVolunteers;
-
+		
 		// Check if pills already exist
 		let repairsPill = footerSlogan.querySelector('.stat-pill-red strong') as HTMLElement | null;
 		let visitsPill = footerSlogan.querySelector('.stat-pill-blue strong') as HTMLElement | null;
@@ -295,34 +297,59 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 	try {
 		let data;
 
-		if (buildTimeData) {
-			// First load: use build-time data for instant render, skip API call
+		// Check for build-time data first (for instant initial load)
+		if (buildTimeData && !getCachedData()) {
 			data = buildTimeData;
-			lastUpdatedTimestamp = Date.now();
-		} else {
-			// Fetch from API — browser HTTP cache handles caching transparently
-			const fetchOptions: RequestInit = forceRefresh ? { cache: 'no-store' } : {};
+			// Use setCachedData to ensure all cache keys are set (including expiration)
+			setCachedData(data, testOperatingHours);
+		}
+		// Check cache - use if valid and not forcing refresh
+		else if (isCacheValid() && !forceRefresh) {
+			data = getCachedData();
+		}
+		// SWR: Use stale cache while revalidating in background
+		else if (!isCacheValid() && !forceRefresh) {
+			const staleData = getCachedData();
+			if (staleData && !isBackgroundRefreshing) {
+				console.log('Using stale cache while revalidating...');
+				data = staleData;
+				// Fetch fresh data in background
+				isBackgroundRefreshing = true;
+				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+					isBackgroundRefreshing = false;
+				});
+			}
+		}
 
+		// Fetch fresh data if needed (cache miss, invalid, or force refresh)
+		if (!data || forceRefresh) {
 			try {
-				const response = await fetch(API_URL, fetchOptions);
+				const response = await fetch(API_URL);
 
 				if (!response.ok) {
 					throw new Error(`API returned ${response.status}`);
 				}
 
 				data = await response.json();
-				lastUpdatedTimestamp = Date.now();
+				setCachedData(data, testOperatingHours);
 				retryCount = 0; // Reset retry count on success
 			} catch (fetchError) {
-				console.error('Error fetching data:', fetchError);
+				console.error('Error fetching fresh data:', fetchError);
 
-				if (retryCount < MAX_RETRIES) {
+				// Try to use stale cache as fallback
+				const staleData = getCachedData();
+				if (staleData) {
+					console.warn('Using stale cache due to fetch error');
+					data = staleData;
+				} else if (retryCount < MAX_RETRIES) {
+					// Schedule retry with exponential backoff
 					const delay = RETRY_DELAYS[retryCount];
 					console.log(`Retrying in ${delay}ms... (attempt ${retryCount + 1}/${MAX_RETRIES})`);
 					retryCount++;
 					setTimeout(() => fetchAndRenderCharts(false, testOperatingHours), delay);
-					return;
+					return; // Exit early, retry will call this function again
 				} else {
+					// All retries failed, show error to user
 					console.error('Failed to fetch data after all retries');
 					document.querySelectorAll('.chart-loading').forEach(el => {
 						el.textContent = 'Failed to load data';
@@ -367,16 +394,18 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 	}
 }
 
-// Set up automatic polling
+// Set up automatic polling based on operating hours
 export function startPolling(testOperatingHours: boolean = false): void {
-	// Poll every interval — browser HTTP cache returns instantly until TTL expires
+	// Set up interval to check and refresh cache
 	setInterval(async () => {
-		await fetchAndRenderCharts(false, testOperatingHours);
+		if (!isCacheValid()) {
+			await fetchAndRenderCharts(false, testOperatingHours);
+		}
 	}, POLLING_INTERVAL);
 
-	// Also refresh when page becomes visible (tab switching)
+	// Also check when page becomes visible (tab switching)
 	document.addEventListener('visibilitychange', async () => {
-		if (!document.hidden) {
+		if (!document.hidden && !isCacheValid()) {
 			await fetchAndRenderCharts(false, testOperatingHours);
 		}
 	});
