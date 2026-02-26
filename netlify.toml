@@ -16,6 +16,6 @@
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
-  for = "/*.{jpg,jpeg,png,gif,svg,webp,avif}"
+  for = "/uploads/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"

@@ -6,10 +6,9 @@ Pedal-powered mutual aid > car-centric capitalism. This repo holds the Astro sit
 
 1. Node.js 18+ and npm ready? You're halfway there.
 2. Install dependencies: `npm install`
-3. To run the project locally with the edge functions working, you should use the Netlify CLI instead of normal "npm run dev"
-   1. Install Netlify CLI: `npm install -g netlify-cli`
-   2. Run with Netlify: `netlify dev`
-4. Run `http://localhost:4321`
+3. Install Netlify CLI: `npm install -g netlify-cli`
+4. Run `netlify dev`
+4. Go to `http://localhost:8888`.  The astro server starts on port 4321 but a proxy layer on port 8888 sits in front of astro and adds the netlify edge function(s)
 
 
 Additional scripts for the collective:
