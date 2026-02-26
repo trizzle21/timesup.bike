@@ -55,7 +55,7 @@ function getNextShiftStart(): number {
     daysToAdd = OPERATING_DAYS[1] - currentDay;
   } else if (currentDay === OPERATING_DAYS[1]) {
     // Second operating day: shift is today if before start, otherwise jump to first operating day next week
-    daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : 7 - OPERATING_DAYS[1] + OPERATING_DAYS[0];
+    daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : 7 - (OPERATING_DAYS[1] + OPERATING_DAYS[0]);
   } else {
     // After second operating day: next shift is first operating day next week
     daysToAdd = 7 + OPERATING_DAYS[0] - currentDay;

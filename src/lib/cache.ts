@@ -12,7 +12,19 @@ import {
 export const CACHE_KEY = 'timesup_chart_data';
 export const CACHE_TIMESTAMP_KEY = 'timesup_chart_data_timestamp';
 export const CACHE_EXPIRATION_KEY = 'timesup_chart_data_expiration';
+export const CACHE_DEPLOY_KEY = 'timesup_deploy_id';
 export { TEST_MODE_TTL };
+
+// Clear all cached data
+export function clearCache(): void {
+	try {
+		localStorage.removeItem(CACHE_KEY);
+		localStorage.removeItem(CACHE_TIMESTAMP_KEY);
+		localStorage.removeItem(CACHE_EXPIRATION_KEY);
+	} catch (error) {
+		console.error('Failed to clear cache:', error);
+	}
+}
 
 // Check if current time is during operating hours (Sun/Wed 5pm-8pm Eastern Time)
 export function isOperatingHours(): boolean {

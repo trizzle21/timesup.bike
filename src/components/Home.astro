@@ -5,6 +5,9 @@ import home from '../content/home.json';
 
 const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
 
+// Deploy ID for cache busting (Netlify sets COMMIT_REF, fallback to build timestamp)
+const deployId = import.meta.env.COMMIT_REF || String(Date.now());
+
 // Fetch chart data at build time
 let buildTimeData = null;
 try {
@@ -247,25 +250,34 @@ const getImage = (src: string) => {
 	});
 </script>
 
-<script define:vars={{ buildTimeData }}>
+<script define:vars={{ buildTimeData, deployId }}>
 	// Embed build-time data for instant page load
 	window.__BUILD_TIME_DATA__ = buildTimeData;
-	window.__BUILD_TIME_TIMESTAMP__ = Date.now();
+	window.__DEPLOY_ID__ = deployId;
 </script>
 
 <script>
 	import { fetchAndRenderCharts, startPolling } from '../lib/charts';
+	import { clearCache, CACHE_DEPLOY_KEY } from '../lib/cache';
 
 	// TEST MODE: Set to true to always show blue bars (for testing)
 	const TEST_OPERATING_HOURS = false;
 
-	// Get build-time data from window global (set by previous script)
+	// Get build-time data and deploy ID from window globals (set by previous script)
 	const buildTimeData = window.__BUILD_TIME_DATA__;
+	const deployId = window.__DEPLOY_ID__;
 
-	// Clear build-time data globals after extracting
+	// Clear globals after extracting
 	if (window.__BUILD_TIME_DATA__) {
 		delete window.__BUILD_TIME_DATA__;
-		delete window.__BUILD_TIME_TIMESTAMP__;
+		delete window.__DEPLOY_ID__;
+	}
+
+	// Bust cache if this is a new deploy
+	const storedDeployId = localStorage.getItem(CACHE_DEPLOY_KEY);
+	if (storedDeployId !== deployId) {
+		clearCache();
+		localStorage.setItem(CACHE_DEPLOY_KEY, deployId);
 	}
 
 	// Expose for console testing/debugging
