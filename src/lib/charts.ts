@@ -397,7 +397,7 @@ export function startPolling(testOperatingHours: boolean = false): void {
 		if (!isCacheValid()) {
 			await fetchAndRenderCharts(false, testOperatingHours);
 		}
-	}, 15000); // Check 15 seconds
+	}, 10000); // Check 10 seconds
 
 	// Also check when page becomes visible (tab switching)
 	document.addEventListener('visibilitychange', async () => {
