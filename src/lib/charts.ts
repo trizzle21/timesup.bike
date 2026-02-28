@@ -292,6 +292,29 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 	}
 }
 
+// Update announcement banner from latest data
+function updateAnnouncementBanner(dataMap: Record<string, any>): void {
+	const banner = document.getElementById('announcement-banner');
+	if (!banner) return;
+
+	const announcement = dataMap.announcement;
+	const raw = dataMap.announcement_date;
+	const announceDate = raw ? String(raw).split('T')[0] : null;
+	const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+
+	if (announcement && announceDate === today) {
+		document.getElementById('announcement-message')!.textContent = announcement.toUpperCase();
+		const d = new Date();
+		const tz = { timeZone: 'America/New_York' };
+		const weekday = d.toLocaleDateString('en-US', { ...tz, weekday: 'short' });
+		const date = d.toLocaleDateString('en-US', { ...tz, month: 'numeric', day: 'numeric', year: '2-digit' });
+		document.getElementById('announcement-date')!.textContent = `${weekday} ${date}`;
+		banner.style.display = 'flex';
+	} else {
+		banner.style.display = 'none';
+	}
+}
+
 // Fetch and render charts and footer slogan
 export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOperatingHours: boolean = false, buildTimeData: any = null): Promise<void> {
 	try {
@@ -383,6 +406,9 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 
 		// Update footer slogan
 		updateFooterSlogan(dataMap);
+
+		// Update announcement banner
+		updateAnnouncementBanner(dataMap);
 
 		// Hide loading indicators
 		document.querySelectorAll('.chart-loading').forEach(el => {

@@ -261,33 +261,6 @@ const getImage = (src: string) => {
 </script>
 
 <script>
-	(async () => {
-		try {
-			let rows;
-			const cached = localStorage.getItem('timesup_chart_data');
-			if (cached) {
-				rows = JSON.parse(cached);
-			} else {
-				const r = await fetch('/api/chart-data');
-				rows = await r.json();
-			}
-			const announcement = rows.find((row: any) => row.Param === 'announcement')?.Value;
-			const announceDate = rows.find((row: any) => row.Param === 'announcement_date')?.Value?.split('T')[0];
-			const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
-			if (announcement && announceDate === today) {
-				document.getElementById('announcement-message')!.textContent = announcement.toUpperCase();
-				const d = new Date();
-				const tz = { timeZone: 'America/New_York' };
-				const weekday = d.toLocaleDateString('en-US', { ...tz, weekday: 'short' });
-				const date = d.toLocaleDateString('en-US', { ...tz, month: 'numeric', day: 'numeric', year: '2-digit' });
-				document.getElementById('announcement-date')!.textContent = `${weekday} ${date}`;
-				document.getElementById('announcement-banner')!.style.display = 'flex';
-			}
-		} catch {}
-	})();
-</script>
-
-<script>
 	import { fetchAndRenderCharts, startPolling } from '../lib/charts';
 	import { clearCache, CACHE_DEPLOY_KEY } from '../lib/cache';
 
