@@ -98,9 +98,17 @@ function getNextShiftStart(): number {
   return now.getTime() + CACHE_TTL_MAX;
 }
 
+// Check if it's an operating day between midnight and closing time
+function isOperatingDayBeforeClose(): boolean {
+  const now = new Date();
+  const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
+  const nyTime = new Date(nyTimeString);
+  return OPERATING_DAYS.includes(nyTime.getDay()) && nyTime.getHours() < OPERATING_HOUR_END;
+}
+
 // Calculate cache expiration
 function calculateExpiration(): number {
-  if (isOperatingHours()) {
+  if (isOperatingDayBeforeClose()) {
     return Date.now() + CACHE_TTL_OPERATING;
   } else {
     // Non-operating hours: minimum of 24 hours or time until next shift
