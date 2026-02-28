@@ -122,13 +122,25 @@ export function isOperatingDayBeforeClose(): boolean {
 	return OPERATING_DAYS.includes(nyTime.getDay()) && nyTime.getHours() < OPERATING_HOUR_END;
 }
 
+// Check if there is an announcement active today
+function hasActiveAnnouncement(data: any): boolean {
+	if (!Array.isArray(data)) return false;
+	const announcement = data.find((r: any) => r.Param === 'announcement')?.Value;
+	if (!announcement) return false;
+	const raw = data.find((r: any) => r.Param === 'announcement_date')?.Value;
+	if (!raw) return false;
+	const announceDate = String(raw).split('T')[0];
+	const today = new Date().toLocaleDateString('en-CA', { timeZone: TIMEZONE });
+	return announceDate === today;
+}
+
 // Calculate cache expiration datetime
-export function calculateExpiration(testOperatingHours: boolean = false): number {
+export function calculateExpiration(testOperatingHours: boolean = false, data?: any): number {
 	if (testOperatingHours) {
 		return Date.now() + TEST_MODE_TTL;
 	}
 
-	if (isOperatingDayBeforeClose()) {
+	if (isOperatingDayBeforeClose() || hasActiveAnnouncement(data)) {
 		return Date.now() + CACHE_TTL_OPERATING;
 	} else {
 		// Non-operating hours: minimum of 24 hours or time until next shift
@@ -165,7 +177,7 @@ export function getCachedData(): any {
 export function setCachedData(data: any, testOperatingHours: boolean = false): void {
 	try {
 		const now = Date.now();
-		const expiration = calculateExpiration(testOperatingHours);
+		const expiration = calculateExpiration(testOperatingHours, data);
 		localStorage.setItem(CACHE_KEY, JSON.stringify(data));
 		localStorage.setItem(CACHE_TIMESTAMP_KEY, now.toString());
 		localStorage.setItem(CACHE_EXPIRATION_KEY, expiration.toString());

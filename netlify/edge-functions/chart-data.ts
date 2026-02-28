@@ -106,9 +106,21 @@ function isOperatingDayBeforeClose(): boolean {
   return OPERATING_DAYS.includes(nyTime.getDay()) && nyTime.getHours() < OPERATING_HOUR_END;
 }
 
+// Check if there is an announcement active today
+function hasActiveAnnouncement(data: any): boolean {
+  if (!Array.isArray(data)) return false;
+  const announcement = data.find((r: any) => r.Param === 'announcement')?.Value;
+  if (!announcement) return false;
+  const raw = data.find((r: any) => r.Param === 'announcement_date')?.Value;
+  if (!raw) return false;
+  const announceDate = String(raw).split('T')[0];
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: TIMEZONE });
+  return announceDate === today;
+}
+
 // Calculate cache expiration
-function calculateExpiration(): number {
-  if (isOperatingDayBeforeClose()) {
+function calculateExpiration(data?: any): number {
+  if (isOperatingDayBeforeClose() || hasActiveAnnouncement(data)) {
     return Date.now() + CACHE_TTL_OPERATING;
   } else {
     // Non-operating hours: minimum of 24 hours or time until next shift
@@ -152,7 +164,7 @@ export default async (request: Request, context: Context) => {
     const data = await response.json();
 
     // Update cache
-    const expiration = calculateExpiration();
+    const expiration = calculateExpiration(data);
     cache = {
       data,
       expiration,
