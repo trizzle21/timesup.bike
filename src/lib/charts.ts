@@ -301,12 +301,13 @@ function updateAnnouncementBanner(dataMap: Record<string, any>): void {
 
 	if (announcement) {
 		document.getElementById('announcement-message')!.textContent = announcement.toUpperCase();
-		const d = new Date();
+		const d = new Date(dataMap.announcement_date || Date.now());
 		const tz = { timeZone: 'America/New_York' };
-		const weekday = d.toLocaleDateString('en-US', { ...tz, weekday: 'short' });
+		const weekday = d.toLocaleDateString('en-US', { ...tz, weekday: 'long' });
 		const date = d.toLocaleDateString('en-US', { ...tz, month: 'numeric', day: 'numeric', year: '2-digit' });
-		document.getElementById('announcement-date')!.textContent = `${weekday} ${date}`;
-		banner.style.display = 'flex';
+		const time = d.toLocaleTimeString('en-US', { ...tz, hour: 'numeric', minute: '2-digit', hour12: true });
+		document.getElementById('announcement-date')!.textContent = `posted on ${weekday} ${date} at ${time}`;
+		banner.style.display = 'block';
 	} else {
 		banner.style.display = 'none';
 	}
