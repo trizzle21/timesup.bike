@@ -40,16 +40,15 @@ export function getNextShiftStart(): number {
 	const currentDay = nyTime.getDay();
 	const currentHour = nyTime.getHours();
 
+	// Find days until the next operating day midnight.
+	// Today counts only if we haven't passed closing time yet.
 	let daysToAdd = 0;
-
-	if (currentDay === OPERATING_DAYS[0]) {
-		daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : OPERATING_DAYS[1] - OPERATING_DAYS[0];
-	} else if (currentDay < OPERATING_DAYS[1]) {
-		daysToAdd = OPERATING_DAYS[1] - currentDay;
-	} else if (currentDay === OPERATING_DAYS[1]) {
-		daysToAdd = currentHour < OPERATING_HOUR_START ? 0 : 7 - (OPERATING_DAYS[1] + OPERATING_DAYS[0]);
-	} else {
-		daysToAdd = 7 + OPERATING_DAYS[0] - currentDay;
+	for (let i = 0; i <= 7; i++) {
+		const checkDay = (currentDay + i) % 7;
+		if (!OPERATING_DAYS.includes(checkDay)) continue;
+		if (i === 0 && currentHour >= OPERATING_HOUR_END) continue;
+		daysToAdd = i;
+		break;
 	}
 
 	const nextShift = new Date(now);
