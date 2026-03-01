@@ -17,14 +17,6 @@ export function isOperatingHours(): boolean {
 	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START && hour < OPERATING_HOUR_END;
 }
 
-// Check if it's an operating day between midnight and closing time
-export function isOperatingDayBeforeClose(): boolean {
-	const now = new Date();
-	const nyTimeString = now.toLocaleString('en-US', { timeZone: TIMEZONE });
-	const nyTime = new Date(nyTimeString);
-	return OPERATING_DAYS.includes(nyTime.getDay()) && nyTime.getHours() < OPERATING_HOUR_END;
-}
-
 // Check if there is an active announcement
 export function hasActiveAnnouncement(data: any): boolean {
 	if (!Array.isArray(data)) return false;
@@ -77,7 +69,10 @@ export function getNextShiftStart(): number {
 
 // Calculate cache expiration timestamp
 export function calculateExpiration(data?: any): number {
-	if (isOperatingDayBeforeClose() || hasActiveAnnouncement(data)) {
+	const now = new Date();
+	const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
+	const isOpDay = OPERATING_DAYS.includes(nyTime.getDay());
+	if (isOpDay || hasActiveAnnouncement(data)) {
 		return Date.now() + CACHE_TTL_OPERATING;
 	}
 	return Math.min(Date.now() + CACHE_TTL_MAX, getNextShiftStart());
