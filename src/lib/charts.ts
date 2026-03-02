@@ -323,6 +323,13 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			data = buildTimeData;
 			// Use setCachedData to ensure all cache keys are set (including expiration)
 			setCachedData(data);
+			// Build-time data may be stale — revalidate in background
+			if (!isBackgroundRefreshing) {
+				isBackgroundRefreshing = true;
+				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
+					isBackgroundRefreshing = false;
+				});
+			}
 		}
 		// Check cache - use if valid and not forcing refresh
 		else if (isCacheValid() && !forceRefresh) {
