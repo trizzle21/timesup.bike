@@ -353,7 +353,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 		if (!data || forceRefresh) {
 			try {
 				const url = forceRefresh ? `${API_URL}?fresh=true` : API_URL;
-				const response = await fetch(url);
+				const response = await fetch(url, forceRefresh ? { cache: 'no-store' } : {});
 
 				if (!response.ok) {
 					throw new Error(`API returned ${response.status}`);
