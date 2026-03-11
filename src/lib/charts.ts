@@ -1,4 +1,4 @@
-import { getCachedData, setCachedData, isCacheValid, clearCache, CACHE_TIMESTAMP_KEY } from './cache';
+import { getCachedData, setCachedData, isCacheValid, CACHE_TIMESTAMP_KEY } from './cache';
 import { isOperatingHours } from './cache';
 import { showToast, createMultiClickHandler } from './toast';
 import {
@@ -227,7 +227,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			const bluePill = footerSlogan.querySelector('.stat-pill-blue');
 			if (bluePill) {
 				createMultiClickHandler(bluePill as HTMLElement, 3, () => {
-					fetchAndRenderCharts(true);
+					fetchAndRenderCharts(true, false, null, true);
 					showToast(toastRefreshText, TOAST_DURATION);
 				});
 			}
@@ -252,7 +252,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 				// Add new handler for force refresh
 				const blueCleanup = createMultiClickHandler(visitsPillParent, 3, () => {
 					showToast(toastRefreshText, TOAST_DURATION);
-					fetchAndRenderCharts(true);
+					fetchAndRenderCharts(true, false, null, true);
 				});
 				(visitsPillParent as any).__tripleClickCleanup = blueCleanup;
 			}
@@ -314,7 +314,7 @@ function updateAnnouncementBanner(dataMap: Record<string, any>): void {
 }
 
 // Fetch and render charts and footer slogan
-export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOperatingHours: boolean = false, buildTimeData: any = null): Promise<void> {
+export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOperatingHours: boolean = false, buildTimeData: any = null, bustServerCache: boolean = false): Promise<void> {
 	try {
 		let data;
 
@@ -326,8 +326,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 			// Build-time data may be stale — revalidate in background
 			if (!isBackgroundRefreshing) {
 				isBackgroundRefreshing = true;
-				clearCache();
-				fetchAndRenderCharts(false, testOperatingHours).finally(() => {
+				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
@@ -344,8 +343,7 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 				data = staleData;
 				// Fetch fresh data in background
 				isBackgroundRefreshing = true;
-				clearCache();
-				fetchAndRenderCharts(false, testOperatingHours).finally(() => {
+				fetchAndRenderCharts(true, testOperatingHours).finally(() => {
 					isBackgroundRefreshing = false;
 				});
 			}
@@ -354,8 +352,8 @@ export async function fetchAndRenderCharts(forceRefresh: boolean = false, testOp
 		// Fetch fresh data if needed (cache miss, invalid, or force refresh)
 		if (!data || forceRefresh) {
 			try {
-				const url = forceRefresh ? `${API_URL}?fresh=true` : API_URL;
-				const response = await fetch(url, forceRefresh ? { cache: 'no-store' } : {});
+				const url = bustServerCache ? `${API_URL}?fresh=true` : API_URL;
+				const response = await fetch(url, bustServerCache ? { cache: 'no-store' } : {});
 
 				if (!response.ok) {
 					throw new Error(`API returned ${response.status}`);
