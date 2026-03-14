@@ -14,10 +14,6 @@ const getImage = (src: string) => {
 	return key ? images[key].default : null;
 };
 
-// Distribute into 3 columns
-type Portrait = typeof items[number];
-const cols: Portrait[][] = [[], [], [], []];
-items.forEach((item, i) => cols[i % 4].push(item));
 ---
 
 <section class="portraits">
@@ -28,44 +24,40 @@ items.forEach((item, i) => cols[i % 4].push(item));
 	</div>
 
 	<div class="portraits-grid">
-		{cols.map((col, colIdx) => (
-			<div class="gallery-col">
-				{col.map((item, idx) => {
-					const imgSrc = getImage(item.src);
-					const loading = idx < 2 ? "eager" : "lazy";
-					return (
-						<div class="gallery-item" data-index={colIdx * col.length + idx}>
-							{imgSrc ? (
-								<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
-							) : (
-								<img src={item.src} alt={item.alt} loading={loading} />
-							)}
-							<div class="gallery-overlay">
-								<span class="overlay-caption">{item.alt}</span>
-								{item.yearsBiking && (
-									<div class="overlay-field">
-										<span class="overlay-label">Years Biking</span>
-										<span class="overlay-value">{item.yearsBiking}</span>
-									</div>
-								)}
-								{item.favoriteCustomization && (
-									<div class="overlay-field">
-										<span class="overlay-label">Favorite Customization</span>
-										<span class="overlay-value">{item.favoriteCustomization}</span>
-									</div>
-								)}
-								{item.typeOfRiding && (
-									<div class="overlay-field">
-										<span class="overlay-label">Type of Riding</span>
-										<span class="overlay-value">{item.typeOfRiding}</span>
-									</div>
-								)}
+		{items.map((item, idx) => {
+			const imgSrc = getImage(item.src);
+			const loading = idx < 4 ? "eager" : "lazy";
+			return (
+				<div class="gallery-item">
+					{imgSrc ? (
+						<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
+					) : (
+						<img src={item.src} alt={item.alt} loading={loading} />
+					)}
+					<div class="gallery-overlay">
+						<span class="overlay-caption">{item.alt}</span>
+						{item.yearsBiking && (
+							<div class="overlay-field">
+								<span class="overlay-label">Years Biking</span>
+								<span class="overlay-value">{item.yearsBiking}</span>
 							</div>
-						</div>
-					);
-				})}
-			</div>
-		))}
+						)}
+						{item.favoriteCustomization && (
+							<div class="overlay-field">
+								<span class="overlay-label">Favorite Customization</span>
+								<span class="overlay-value">{item.favoriteCustomization}</span>
+							</div>
+						)}
+						{item.typeOfRiding && (
+							<div class="overlay-field">
+								<span class="overlay-label">Type of Riding</span>
+								<span class="overlay-value">{item.typeOfRiding}</span>
+							</div>
+						)}
+					</div>
+				</div>
+			);
+		})}
 	</div>
 </section>
 
@@ -114,13 +106,7 @@ items.forEach((item, i) => cols[i % 4].push(item));
 		gap: clamp(8px, 0.8vw, 16px);
 	}
 
-	.gallery-col {
-		display: flex;
-		flex-direction: column;
-		gap: clamp(8px, 0.8vw, 16px);
-	}
-
-	.gallery-item {
+.gallery-item {
 		border-radius: 12px;
 		overflow: hidden;
 		aspect-ratio: 1 / 1;
