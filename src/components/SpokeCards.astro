@@ -1,11 +1,11 @@
 ---
 import { Image } from 'astro:assets';
-import pics from '../content/pics.json';
+import spokeCards from '../content/spoke_cards.json';
 
-const { title, description, pics: items } = pics;
+const { title, description, pics: items } = spokeCards;
 
 // Import all gallery images dynamically
-const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/*.{jpg,jpeg,png,gif}', { eager: true });
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/**/*.{jpg,jpeg,png,gif,JPG}', { eager: true });
 
 // Helper to get image by filename
 const getImage = (src: string) => {
@@ -93,9 +93,6 @@ if (featured.length === 0) {
 	}
 }
 
-const BATCH_SIZE = 20;
-const initialItems = renderItems.slice(0, BATCH_SIZE);
-const remainingItems = renderItems.slice(BATCH_SIZE);
 ---
 
 <section class="portraits">
@@ -105,8 +102,8 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 		<p>{description}</p>
 	</div>
 
-	<div class="portraits-grid" id="portraits-grid">
-		{initialItems.map((item, idx) => {
+	<div class="portraits-grid">
+		{renderItems.map((item, idx) => {
 			const imgSrc = getImage(item.src);
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
@@ -119,114 +116,13 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 					)}
 					<div class="gallery-overlay">
 						<span class="overlay-caption">{item.alt}</span>
-						{item.typeOfRiding && (
-							<div class="overlay-field">
-								<span class="overlay-label">Type of Riding</span>
-								<span class="overlay-value">{item.typeOfRiding}</span>
-							</div>
-						)}
-						{item.favoriteCustomization && (
-							<div class="overlay-field">
-								<span class="overlay-label">Favorite Customization</span>
-								<span class="overlay-value">{item.favoriteCustomization}</span>
-							</div>
-						)}
-						{item.yearsBiking && (
-							<div class="overlay-field">
-								<span class="overlay-label">Years Biking</span>
-								<span class="overlay-value">{item.yearsBiking}</span>
-							</div>
-						)}
 					</div>
 				</div>
 			);
 		})}
-		<div id="scroll-sentinel" style="height:1px;"></div>
 	</div>
 </section>
 
-<script define:vars={{ remainingItems, BATCH_SIZE }}>
-	if (remainingItems.length > 0) {
-		const grid = document.getElementById('portraits-grid');
-		const sentinel = document.getElementById('scroll-sentinel');
-		let loaded = 0;
-
-		function createItem(item) {
-			const div = document.createElement('div');
-			div.className = 'gallery-item' + (item.embiggen ? ' featured' : '');
-			if (item.embiggen) {
-				div.style.gridColumn = 'span 2';
-				div.style.gridRow = 'span 2';
-			}
-
-			const img = document.createElement('img');
-			img.src = item.src;
-			img.alt = item.alt;
-			img.loading = 'lazy';
-			div.appendChild(img);
-
-			const overlay = document.createElement('div');
-			overlay.className = 'gallery-overlay';
-
-			const caption = document.createElement('span');
-			caption.className = 'overlay-caption';
-			caption.textContent = item.alt;
-			overlay.appendChild(caption);
-
-			if (item.typeOfRiding) {
-				overlay.appendChild(createField('Type of Riding', item.typeOfRiding));
-			}
-			if (item.favoriteCustomization) {
-				overlay.appendChild(createField('Favorite Customization', item.favoriteCustomization));
-			}
-			if (item.yearsBiking) {
-				overlay.appendChild(createField('Years Biking', item.yearsBiking));
-			}
-
-			div.appendChild(overlay);
-			return div;
-		}
-
-		function createField(label, value) {
-			const field = document.createElement('div');
-			field.className = 'overlay-field';
-			const l = document.createElement('span');
-			l.className = 'overlay-label';
-			l.textContent = label;
-			const v = document.createElement('span');
-			v.className = 'overlay-value';
-			v.textContent = value;
-			field.appendChild(l);
-			field.appendChild(v);
-			return field;
-		}
-
-		function loadBatch() {
-			const batch = remainingItems.slice(loaded, loaded + BATCH_SIZE);
-			if (batch.length === 0) {
-				observer.disconnect();
-				sentinel.remove();
-				return;
-			}
-			batch.forEach(item => {
-				grid.insertBefore(createItem(item), sentinel);
-			});
-			loaded += batch.length;
-			if (loaded >= remainingItems.length) {
-				observer.disconnect();
-				sentinel.remove();
-			}
-		}
-
-		const observer = new IntersectionObserver((entries) => {
-			if (entries[0].isIntersecting) {
-				loadBatch();
-			}
-		}, { rootMargin: '200px' });
-
-		observer.observe(sentinel);
-	}
-</script>
 
 
 <style>
@@ -292,7 +188,7 @@ const remainingItems = renderItems.slice(BATCH_SIZE);
 		object-fit: cover;
 		display: block;
 		transition: transform 0.3s ease, filter 0.3s ease;
-		filter: sepia(0.05) contrast(0.9) brightness(1.1) saturate(0.95);
+		filter: brightness(1.15);
 	}
 
 	.gallery-overlay, .portraits-grid :global(.gallery-overlay) {

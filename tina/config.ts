@@ -205,6 +205,46 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "spoke_cards",
+        label: "Spoke Cards",
+        path: "src/content",
+        match: {
+          include: "spoke_cards",
+        },
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          { type: "string", name: "title", label: "Title" },
+          { type: "string", name: "description", label: "Description" },
+          {
+            type: "object",
+            name: "pics",
+            label: "Spoke Cards",
+            list: true,
+            ui: {
+              itemProps: (item: Record<string, string>) => ({
+                label: item?.alt || "Spoke Card",
+              }),
+            },
+            fields: [
+              { type: "image", name: "src", label: "Image" },
+              { type: "string", name: "alt", label: "Caption (Alt Text)" },
+              {
+                type: "boolean",
+                name: "embiggen",
+                label: "Embiggen (2x2)",
+                required: false,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });

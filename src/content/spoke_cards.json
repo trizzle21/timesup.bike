@@ -1,0 +1,362 @@
+{
+  "title": "Spoke Cards",
+  "description": "Decorative tchotchkes collected around NYC bike events. To be inserted between the spokes of a bike wheel to signify participation",
+  "pics": [
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_2.JPG",
+      "alt": "Spoke card 2"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_3.JPG",
+      "alt": "Spoke card 3"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_4.JPG",
+      "alt": "Spoke card 4"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_5.JPG",
+      "alt": "Spoke card 5"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_6.JPG",
+      "alt": "Spoke card 6"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_7.JPG",
+      "alt": "Spoke card 7"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_8.JPG",
+      "alt": "Spoke card 8"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_9.JPG",
+      "alt": "Spoke card 9"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_10.JPG",
+      "alt": "Spoke card 10"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_11.JPG",
+      "alt": "Spoke card 11"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_12.JPG",
+      "alt": "Spoke card 12"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_13.JPG",
+      "alt": "Spoke card 13"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_14.JPG",
+      "alt": "Spoke card 14"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_16.JPG",
+      "alt": "Spoke card 16"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_18.JPG",
+      "alt": "Spoke card 18"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_20.JPG",
+      "alt": "Spoke card 20"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_21.JPG",
+      "alt": "Spoke card 21"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_22.JPG",
+      "alt": "Spoke card 22"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_23.JPG",
+      "alt": "Spoke card 23"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_25.JPG",
+      "alt": "Spoke card 25"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_26.JPG",
+      "alt": "Spoke card 26"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_27.JPG",
+      "alt": "Spoke card 27"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_28.JPG",
+      "alt": "Spoke card 28"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_29.JPG",
+      "alt": "Spoke card 29"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_30.JPG",
+      "alt": "Spoke card 30"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_31.JPG",
+      "alt": "Spoke card 31"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_32.JPG",
+      "alt": "Spoke card 32"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_33.JPG",
+      "alt": "Spoke card 33"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_34.JPG",
+      "alt": "Spoke card 34"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_36.JPG",
+      "alt": "Spoke card 36"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_37.JPG",
+      "alt": "Spoke card 37"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_38.JPG",
+      "alt": "Spoke card 38"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_39.JPG",
+      "alt": "Spoke card 39"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_40.JPG",
+      "alt": "Spoke card 40"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_41.JPG",
+      "alt": "Spoke card 41"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_42.JPG",
+      "alt": "Spoke card 42"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_43.JPG",
+      "alt": "Spoke card 43"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_44.JPG",
+      "alt": "Spoke card 44"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_45.JPG",
+      "alt": "Spoke card 45"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_46.JPG",
+      "alt": "Spoke card 46"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_47.JPG",
+      "alt": "Spoke card 47"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_48.JPG",
+      "alt": "Spoke card 48"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_49.JPG",
+      "alt": "Spoke card 49"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_50.JPG",
+      "alt": "Spoke card 50"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_51.JPG",
+      "alt": "Spoke card 51"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_52.JPG",
+      "alt": "Spoke card 52"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_53.JPG",
+      "alt": "Spoke card 53"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_54.JPG",
+      "alt": "Spoke card 54"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_55.JPG",
+      "alt": "Spoke card 55"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_56.JPG",
+      "alt": "Spoke card 56"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_57.JPG",
+      "alt": "Spoke card 57"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_58.JPG",
+      "alt": "Spoke card 58"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_59.JPG",
+      "alt": "Spoke card 59"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_60.JPG",
+      "alt": "Spoke card 60"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_61.JPG",
+      "alt": "Spoke card 61"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_62.JPG",
+      "alt": "Spoke card 62"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_63.JPG",
+      "alt": "Spoke card 63"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_64.JPG",
+      "alt": "Spoke card 64"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_65.JPG",
+      "alt": "Spoke card 65"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_66.JPG",
+      "alt": "Spoke card 66"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_67.JPG",
+      "alt": "Spoke card 67"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_68.JPG",
+      "alt": "Spoke card 68"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_69.JPG",
+      "alt": "Spoke card 69"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_70.JPG",
+      "alt": "Spoke card 70"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_71.JPG",
+      "alt": "Spoke card 71"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_73.JPG",
+      "alt": "Spoke card 73"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_74.JPG",
+      "alt": "Spoke card 74"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_75.JPG",
+      "alt": "Spoke card 75"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_76.JPG",
+      "alt": "Spoke card 76"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_77.JPG",
+      "alt": "Spoke card 77"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_78.JPG",
+      "alt": "Spoke card 78"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_79.JPG",
+      "alt": "Spoke card 79"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_80.JPG",
+      "alt": "Spoke card 80"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_81.JPG",
+      "alt": "Spoke card 81"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_82.JPG",
+      "alt": "Spoke card 82"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_83.JPG",
+      "alt": "Spoke card 83"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_84.JPG",
+      "alt": "Spoke card 84"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_85.JPG",
+      "alt": "Spoke card 85"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_86.JPG",
+      "alt": "Spoke card 86"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_87.JPG",
+      "alt": "Spoke card 87"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_88.JPG",
+      "alt": "Spoke card 88"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_89.JPG",
+      "alt": "Spoke card 89"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_90.JPG",
+      "alt": "Spoke card 90"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_91.JPG",
+      "alt": "Spoke card 91"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_92.JPG",
+      "alt": "Spoke card 92"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_93.JPG",
+      "alt": "Spoke card 93"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_94.JPG",
+      "alt": "Spoke card 94"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_95.JPG",
+      "alt": "Spoke card 95"
+    },
+    {
+      "src": "/src/assets/gallery/spoke_cards/spoke_card_96.JPG",
+      "alt": "Spoke card 96"
+    }
+  ]
+}
