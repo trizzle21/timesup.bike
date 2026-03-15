@@ -148,11 +148,11 @@ export default defineConfig({
         ],
       },
       {
-        name: "portraits",
-        label: "Bike Portraits",
+        name: "pics",
+        label: "Pics",
         path: "src/content",
         match: {
-          include: "portraits",
+          include: "pics",
         },
         format: "json",
         ui: {
@@ -166,8 +166,8 @@ export default defineConfig({
           { type: "string", name: "description", label: "Description" },
           {
             type: "object",
-            name: "portraits",
-            label: "Portraits",
+            name: "pics",
+            label: "Pics",
             list: true,
             ui: {
               itemProps: (item: Record<string, string>) => ({
@@ -193,6 +193,12 @@ export default defineConfig({
                 type: "string",
                 name: "typeOfRiding",
                 label: "Type of Riding",
+                required: false,
+              },
+              {
+                type: "boolean",
+                name: "embiggen",
+                label: "Embiggen (2x2)",
                 required: false,
               },
             ],

@@ -247,6 +247,16 @@ const getImage = (src: string) => {
 		});
 	});
 
+	// Double-click last gallery image to navigate to /pics
+	const allGalleryItems = document.querySelectorAll('.gallery-side .gallery-item');
+	const lastItem = allGalleryItems[allGalleryItems.length - 1];
+	if (lastItem) {
+		lastItem.style.cursor = 'pointer';
+		lastItem.addEventListener('dblclick', () => {
+			window.location.href = '/pics';
+		});
+	}
+
 	window.addEventListener('scroll', updateStagger);
 	window.addEventListener('resize', () => {
 		updateStagger();

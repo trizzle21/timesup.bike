@@ -1,7 +1,7 @@
 {
   "title": "Coop Magic & Lore",
-  "description": "we voided the warranty a long time ago",
-  "portraits": [
+  "description": "the warranty expired a long time ago",
+  "pics": [
     {
       "src": "/src/assets/gallery/PXL_20260302_013123734.jpg",
       "alt": "crank puller yielded during the feat of strength",
@@ -39,7 +39,40 @@
     },
     {
       "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
-      "alt": "organized bottom brackets"
+      "alt": "organized bottom brackets",
+      "embiggen": false
+    },
+    {
+      "src": "/src/assets/gallery/WhatsApp Image 2026-03-11 at 6.11.16 PM.jpeg",
+      "alt": "ghost riding a bike donation",
+      "embiggen": true
+    },
+    {
+      "src": "/src/assets/gallery/WhatsApp Image 2026-02-19 at 4.33.32 PM.jpeg",
+      "alt": "fuji royale (test)",
+      "yearsBiking": "3",
+      "favoriteCustomization": "rear rack",
+      "typeOfRiding": "commuting",
+      "embiggen": true
+    },
+    {
+      "src": "/src/assets/gallery/WhatsApp Image 2026-02-22 at 7.14.24 PM.jpeg",
+      "alt": "2026 blizzard",
+      "embiggen": true
+    },
+    {
+      "src": "/src/assets/gallery/WhatsApp Image 2026-02-23 at 1.56.19 PM.jpeg",
+      "alt": "snowed in",
+      "embiggen": true
+    },
+    {
+      "src": "/src/assets/gallery/WhatsApp Image 2026-03-08 at 12.05.09 PM.jpeg",
+      "alt": "sticker"
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
+      "alt": "compressor",
+      "embiggen": false
     }
   ]
 }
