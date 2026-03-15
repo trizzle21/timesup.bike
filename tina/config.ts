@@ -251,6 +251,58 @@ export default defineConfig({
           },
         ],
       },
+      {
+        name: "tools",
+        label: "Tools",
+        path: "src/content",
+        match: {
+          include: "tools",
+        },
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+        },
+        fields: [
+          { type: "string", name: "title", label: "Title" },
+          { type: "string", name: "description", label: "Description" },
+          {
+            type: "object",
+            name: "pics",
+            label: "Tools",
+            list: true,
+            ui: {
+              itemProps: (item: Record<string, string>) => ({
+                label: item?.alt || "Tool",
+              }),
+            },
+            fields: [
+              { type: "image", name: "src", label: "Image" },
+              { type: "string", name: "alt", label: "Tool Name (Alt Text)" },
+              {
+                type: "string",
+                name: "description",
+                label: "Description",
+                required: false,
+              },
+              {
+                type: "string",
+                name: "location",
+                label: "Location",
+                required: false,
+              },
+              {
+                type: "boolean",
+                name: "embiggen",
+                label: "Embiggen (2x2)",
+                required: false,
+              },
+            ],
+          },
+        ],
+      },
     ],
   },
 });
