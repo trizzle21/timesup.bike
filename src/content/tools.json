@@ -1,6 +1,6 @@
 {
   "title": "Tools Locator",
-  "description": "what we have and where they are",
+  "description": "what we have and where they can be found",
   "pics": [
     {
       "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
@@ -51,12 +51,6 @@
       "location": "backroom shelf"
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260315_225531615.jpg",
-      "alt": "saw guide",
-      "description": "cutting steerer tubes",
-      "location": "under the fridge in the back"
-    },
-    {
       "src": "/src/assets/gallery/tools/PXL_20260315_225538413.jpg",
       "alt": "hacksaw",
       "description": "for cutting steerer tube and handlebar",
@@ -83,7 +77,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225953455.jpg",
       "alt": "wheel axles",
-      "description": "axle, cones, locknuts",
+      "description": "axle, cones, locknuts and nuts",
       "location": "sliding cabinet opposite the sink"
     },
     {
@@ -160,7 +154,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230520474.jpg",
       "alt": "lubricants",
-      "description": "wet and dry lubricants for chain.  grease for bearings",
+      "description": "wet and dry lubricants for chain.  grease for bearings.  light oil for pivoting parts",
       "location": "backroom shelf (middle row)"
     },
     {
