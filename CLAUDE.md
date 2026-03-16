@@ -27,32 +27,36 @@ npm run preview
 ### Tech Stack
 - **Framework**: Astro 5 with MDX support
 - **Styling**: Tailwind CSS 4 (via @tailwindcss/vite)
-- **CMS**: Decap CMS (formerly Netlify CMS) for content management
+- **CMS**: TinaCMS for content management
 - **Deployment**: Git-based deployment via git-gateway backend
 
 ### Content Management
 
-Content is managed through Decap CMS and stored as JSON files in `src/content/`:
+Content is managed through TinaCMS and stored as JSON files in `src/content/`:
 - `home.json` - Hero, schedule, overview, location, join, and contact sections
+- `pics.json` - Photo gallery for the pics page
+- `spoke_cards.json` - Spoke cards, stickers, and zines gallery
+- `tools.json` - Tools locator with descriptions and locations
 - `events.json` - Events listing.  Currently not used.
 - `parts.json` - Parts catalog.  Currently not used.
 - `about.json` - About page content.  Currently not used.
 
-The CMS is configured in `public/admin/config.yml` and accessible at `/admin` when running locally with `local_backend: true`.
+The CMS is configured in `tina/config.ts` and accessible at `/admin` when running the dev server.
 
 ### Project Structure
 
 ```
 src/
-├── components/     # Astro components (Home.astro, Events.astro, Parts.astro, About.astro)
+├── components/     # Astro components (Home.astro, Pics.astro, SpokeCards.astro, Tools.astro, etc.)
 ├── content/        # JSON content files managed by Decap CMS
 ├── layouts/        # Layout.astro - shared header/footer/navigation
-├── pages/          # Route pages (index, about, events, parts)
+├── pages/          # Route pages (index, pics, spoke_cards, tools)
 └── styles/         # global.css
 
 public/
-├── admin/          # Decap CMS configuration and admin UI
-└── uploads/        # Media files uploaded via CMS
+├── admin/          # TinaCMS admin UI (generated)
+├── llms.txt        # LLM-readable site summary
+└── robots.txt      # Search engine directives
 ```
 
 ### Key Patterns
@@ -70,6 +74,6 @@ public/
 
 ## Content Editing
 
-To edit content, run the dev server and navigate to `http://localhost:4321/admin`. Changes made through the CMS are saved to JSON files in `src/content/`.
+To edit content, run the dev server and navigate to `http://localhost:4321/admin`. Changes made through TinaCMS are saved to JSON files in `src/content/`. The TinaCMS schema is defined in `tina/config.ts`.
 
 Email addresses in content are automatically linked when rendered on the site.
