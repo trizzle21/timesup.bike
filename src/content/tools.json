@@ -11,7 +11,7 @@
     {
       "src": "/src/assets/gallery/PXL_20260313_030911140.jpg",
       "alt": "wheel holder",
-      "description": "holds your wheel by the axle, useful for taking apart the hub or adjusting cones",
+      "description": "holds your wheel by the axle, useful for taking apart the hub and adjusting cones",
       "location": "backroom"
     },
     {
@@ -23,14 +23,15 @@
     {
       "src": "/src/assets/gallery/PXL_20250309_231444588.jpg",
       "alt": "bottom brackets",
+      "description": "spinny part between your pedals",
       "location": "opposite of the sink",
       "embiggen": false
     },
     {
       "src": "/src/assets/gallery/PXL_20260119_011155971.jpg",
       "alt": "used components",
-      "description": "pricing chart by the sliding door.  generally ~$5",
-      "location": "milk bins in backroom"
+      "description": "pricing chart by the sliding door, generally ~$5",
+      "location": "bins in backroom"
     },
     {
       "src": "/src/assets/gallery/PXL_20260309_015509828 (1).jpg",
@@ -59,24 +60,24 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
       "alt": "torque wrench",
-      "description": "torquing small bolts up to m6 size.  the larger one is for bigger bolts from m8 and up to bottom bracket.",
+      "description": "precise application of force for small bolts up to M6.  the larger one is for bigger bolts from M8 up to bottom bracket",
       "location": "ask a volunteer"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
       "alt": "tension meter",
-      "description": "measures spoke tension",
+      "description": "measures wheel spoke tension",
       "location": "ask a volunteer"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225926531.jpg",
       "alt": "bar end plugs",
-      "description": "caps handlebar to prevent impalement during a crash",
+      "description": "caps handlebar to prevent impalement in a crash",
       "location": "sliding cabinet opposite the sink"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225953455.jpg",
-      "alt": "wheel axles",
+      "alt": "wheel axle parts",
       "description": "axle, cones, locknuts and nuts",
       "location": "sliding cabinet opposite the sink"
     },
@@ -106,13 +107,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230229662.jpg",
       "alt": "cone wrenches",
-      "description": "thin wrench to remove and adjust lock nuts on wheels",
+      "description": "thin wrench to remove and adjust wheel hub locknuts",
       "location": "pegboard"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230356596.jpg",
       "alt": "third hand tool",
-      "description": "makes fine adjustments when installing shift or brake cables",
+      "description": "make fine adjustments when installing shift and brake cables",
       "location": "pegboard"
     },
     {
@@ -136,13 +137,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230449820.jpg",
       "alt": "chain tool",
-      "description": "pushes out rivet to shorten chain",
+      "description": "pushes out pin to shorten chain",
       "location": "pegboard"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230511796.jpg",
       "alt": "loose ball bearings & cable housing ferrules",
-      "description": "ball bearings for various sizes for wheels.  ferrules to cap cable housing and cables",
+      "description": "balls for cup and cone bearings.  ferrules to cap cable housing & cables",
       "location": "clear plastic bin in backroom shelf"
     },
     {
@@ -172,7 +173,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230546782.jpg",
       "alt": "derailleur hangar alignment guide",
-      "description": "re-straightens rear derailleur hangar",
+      "description": "straightens rear derailleur hangar",
       "location": "front area pan-am cabinet"
     },
     {
@@ -184,13 +185,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
       "alt": "bolt cutters",
-      "description": "cuts bolts and screws, not for chains",
+      "description": "cuts bolts, screws and fender stays",
       "location": "front area pan-am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230640023.jpg",
       "alt": "taps",
-      "description": "makes and cleans threads in holes.  there is one die to cut threads for threaded steerer tube.  use with cutting fluid (e.g. 3-in-1 oil)",
+      "description": "makes and cleans threads in holes.  use with cutting fluid (e.g. 3-in-1 oil)",
       "location": "front area pan-am cabinet"
     },
     {
@@ -237,14 +238,14 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_010955988.jpg",
-      "alt": "saw blade guide",
-      "description": "guides saw blade when cutting tubes (e.g. steerer tube, seatpost)",
+      "alt": "saw guide",
+      "description": "guides saw blade when cutting tubes (e.g. steerer tube, seatpost, handlebar)",
       "location": "under the fridge"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
       "alt": "assorted hand tools",
-      "description": "wrenches, pliers, hammers, etc...",
+      "description": "wrenches, pliers, hammers, scissors, etc...",
       "location": "pegboard and pan-am cabinet"
     },
     {
@@ -268,7 +269,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_014501412.jpg",
       "alt": "bottom brackets, cassette & crank tools",
-      "description": "installs and removes bottom brackets, cranks, freewheels and cassettes.  ",
+      "description": "installs and removes bottom brackets, cranks, freewheels and cassettes.",
       "location": "cabinet under truing stands"
     },
     {
@@ -280,13 +281,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015242598.jpg",
       "alt": "chain scrubber",
-      "description": "cleans chain, use with degreaser",
+      "description": "cleans chain",
       "location": "by the lubricant bins in backroom"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015455822.jpg",
       "alt": "grease gun",
-      "description": "use for metal-on-metal contact to prevent corrosion and minimize friction",
+      "description": "prevents corrosion and minimizes friction for metal-on-metal contact",
       "location": "floats between pan-am cabinet or grease bin in backroom"
     }
   ]
