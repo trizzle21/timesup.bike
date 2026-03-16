@@ -97,9 +97,9 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	// Render icons row
 	if (iconsEl) {
 		const newIconsHTML = `
-			<span>${users} 🤷</span>
-			<span>${volunteers} 🧑‍🔧</span>
-			<span>${total} 👤</span>
+			<span>${users} <span title="shop patrons">🤷</span></span>
+			<span>${volunteers} <span title="bike mechanics">🧑‍🔧</span></span>
+			<span>${total} <span title="everyone">👤</span></span>
 		`;
 		if (iconsChanged) {
 			iconsEl.classList.add('updating');
@@ -140,7 +140,12 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 
 			// Update classes
 			bar.className = 'chart-bar';
-			if (isPeak) bar.classList.add('peak');
+			if (isPeak) {
+				bar.classList.add('peak');
+				(bar as HTMLElement).title = 'busiest time';
+			} else {
+				(bar as HTMLElement).title = '';
+			}
 			if (isActive) bar.classList.add('active');
 		});
 	}
@@ -220,6 +225,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 			if (redPill) {
 				createMultiClickHandler(redPill as HTMLElement, 3, () => {
 					showToast(toastVolText, TOAST_LONG_DURATION);
+					document.querySelector('.projects')?.classList.add('visible');
 				});
 			}
 
@@ -268,6 +274,7 @@ export function updateFooterSlogan(dataMap: Record<string, any>): void {
 				// Add new handler with updated text
 				const cleanup = createMultiClickHandler(repairsPillParent, 3, () => {
 					showToast(toastVolText, TOAST_LONG_DURATION);
+					document.querySelector('.projects')?.classList.add('visible');
 				});
 				(repairsPillParent as any).__tripleClickCleanup = cleanup;
 			}

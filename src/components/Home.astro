@@ -91,6 +91,9 @@ const getImage = (src: string) => {
 					</div>
 				</div>
 			</div>
+			<div class="projects">
+				<strong>Projects: </strong> <a href="/spoke_cards">spoke cards</a>
+			</div>
 		</div>
 
 		<footer class="hero-footer">
@@ -577,6 +580,28 @@ const getImage = (src: string) => {
 		display: flex;
 		flex-wrap: wrap;
 		gap: clamp(8px, 2vw, 16px) clamp(12px, 3vw, 24px);
+	}
+
+	.projects {
+		font-size: clamp(14px, 1.3vw, 18px);
+		color: var(--text-gray);
+		line-height: 1.5;
+		display: none;
+	}
+
+	.projects:global(.visible) {
+		display: block;
+	}
+
+	.projects a {
+		color: var(--link);
+		text-decoration: none;
+		transition: color 0.2s ease;
+	}
+
+	.projects a:hover {
+		color: var(--link-dark);
+		text-decoration: underline;
 	}
 
 	.popular-hours-row {
