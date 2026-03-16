@@ -160,7 +160,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230523630.jpg",
       "alt": "degreasers",
-      "description": "cleaning solvents",
+      "description": "cleaning solvents for grease and grime",
       "location": "backroom middle shelf"
     },
     {
@@ -267,7 +267,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_014501412.jpg",
-      "alt": "bottom bracket, cassette & crank tools",
+      "alt": "bottom brackets, cassette & crank tools",
       "description": "installs and removes bottom brackets, cranks, freewheels and cassettes.  ",
       "location": "cabinet under truing stands"
     },
@@ -286,8 +286,8 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_015455822.jpg",
       "alt": "grease gun",
-      "description": "use for metal on metal contact to prevent corrosion and minimize friction",
-      "location": "pan-am cabinet or grease bin in backroom"
+      "description": "use for metal-on-metal contact to prevent corrosion and minimize friction",
+      "location": "floats between pan-am cabinet or grease bin in backroom"
     }
   ]
 }
