@@ -68,7 +68,7 @@
       "alt": "torque wrench (large)",
       "description": "precise application of force for cranks and bottom brackets",
       "location": "backroom, above the socket drawer"
-    }, 
+    },
     {
       "src": "",
       "alt": "handlebars (flat)",
@@ -330,6 +330,11 @@
       "alt": "grease gun",
       "description": "prevents corrosion and minimizes friction for metal-on-metal contact",
       "location": "floats between pan-am cabinet or grease bin in backroom"
+    },
+    {
+      "alt": "ratchet & sockets",
+      "description": "wrenching in confined space",
+      "location": "backroom, red drawer"
     }
   ]
 }
