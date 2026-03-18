@@ -39,6 +39,7 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide: https:/
 - Vise — general purpose holding and leverage
 - Garden sprayer — cleans bike
 - Paper towel (quick release)
+- Colander — clean parts in the sink without losing them down the drain
 
 ### Pegboard
 - External bottom bracket tool
@@ -46,51 +47,85 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide: https:/
 - Third hand tool — for shift/brake cable adjustments
 - Master link pliers
 - Chain checker, chain tool, chainring nut wrench
-- Hammers & mallets
 - Bolt cutters
-- Assorted hand tools (wrenches, pliers, hammers, scissors)
+- Lockring tool — install/removes cog lockrings and some bottom brackets
+- Cable cutter — cuts housing and cables
+- Vise grips — clamp things, turn rounded nuts, crimp ferrules
+- Pedal wrench
 
 ### Backroom
 - Wheel holder — holds wheel by axle for hub work
 - Bottom brackets
 - Used components (~$5, bins in backroom)
+- Cranks — backroom bins, lower section
+- Cogs — for fixed gear drivetrains
 - Assorted small parts (organized by size)
-- Assorted nuts & bolts
+- Nuts & bolts — various sizes in metric and inches
 - Inner tubes (new and used)
-- Lubricants, degreasers, disposable gloves
+- Spare inner tube — use for frame protection or accessory mounting
+- Lubricants, degreasers
+- Disposable gloves (bin in backroom and front room cabinet)
 - Wheel truing stands (one mounted, two mobile)
-- Chain scrubber, grease gun
+- Chain scrubber
 - Loose ball bearings
 - Ferrules — caps cables & housing
 - Drop handlebars
 - Flat handlebars
-- Torque wrench (large) — for cranks and bottom brackets, above the socket drawer
+- Torque wrench (large) — for cranks and bottom brackets, above the socket drawers
 - Ratchet & sockets — 1/4", 3/8" and 1/2" drivers, red drawer
 - Grinder, dremel, angle grinder — upper shelf
+- Clamps — above the nuts and bolts drawer
+- Tape — frame protector, duct, masking, electrical tape
 
-### Front area (Pan-Am cabinet)
+### Front area (front room cabinet)
 - Derailleur hanger alignment guide
 - Crown race setter & cup remover
-- Headset press
-- Taps (use with cutting fluid)
+- Crown race remover — crown race setter drawer
+- Headset press — bottom drawer
+- Taps — cuts and cleans internal threads (use with cutting fluid)
+- Threaded steerer die — in taps/die drawer
 - Punches
 - Cheater bars (small and large)
 - Calipers & rulers — in rulers drawer
 - Brake bleed kit (Shimano, mineral oil) — top shelf
-- Threaded steerer die — in taps/die drawer
+- Hammers & mallets
 - Disposable gloves
-- Grease gun (floats between Pan-Am cabinet and backroom)
+- Grease gun (floats between front room cabinet and backroom)
+- Assorted hand tools (wrenches, pliers, hammers, scissors, allen wrenches)
+
+### Drawer under truing stands
+- Caged ball bearings — for headsets and some bottom brackets
+- Lockrings and spacers
+- External cups — for headsets
+- Threaded headset top locknut
+- Crown race — for lower part of headset
+- Files — sands down material
+- Brushes — cleaning parts
+- Tire levers & patch kit
+- Star nut setter
+- Bottom brackets, cassette & crank tools
+
+### By the truing stands
+- Spokes
+- Spoke keys — tighten/loosen wheel spokes
+- Wheel alignment gauge — measures dishing in a wheel
+- Cheater bar (large) — behind the truing stands
 
 ### Other locations
 - Hacksaw, saw guide — under the fridge
-- Star nut setter, BB/cassette/crank tools — cabinet under truing stands
+- Pipe cutter — cuts tubes (seatpost, handlebars, fork), not for carbon — under the fridge
 - Tires — loft and top shelf of backroom
 - Bike frames — basement
 - Torque wrench (small), tension meter — ask a volunteer
+- Circular saw — ask a volunteer
 - Donation box — backroom and front room table
 - Front & rear racks — small room past the sink
+- Forks — room behind the sink
 - Bar end plugs, wheel axle parts, quick release skewers, drills — sliding cabinet opposite the sink
-- Garden sprayer — by the window near the sink
+- Vacuum cleaner — opposite the sink
+- Floor pump and stands — space between front and backroom
+- First aid — wall space between front and backroom, top of doorway by the fridge
+- Drinks — fridge
 
 ## Spoke Cards
 A gallery of spoke cards, stickers, and zines collected around NYC cycling events: https://timesup.bike/spoke_cards
