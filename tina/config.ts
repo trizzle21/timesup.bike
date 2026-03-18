@@ -1,4 +1,5 @@
 import { defineConfig } from "tinacms";
+import FloorplanPicker from "./components/FloorplanPicker";
 
 export default defineConfig({
   branch: process.env.TINA_BRANCH || "main",
@@ -298,6 +299,19 @@ export default defineConfig({
                 name: "embiggen",
                 label: "Embiggen (2x2)",
                 required: false,
+              },
+              {
+                type: "object",
+                name: "mapPositions",
+                label: "Map Positions",
+                list: true,
+                ui: {
+                  component: FloorplanPicker,
+                },
+                fields: [
+                  { type: "number", name: "x", label: "X %" },
+                  { type: "number", name: "y", label: "Y %" },
+                ],
               },
             ],
           },

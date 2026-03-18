@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import tools from '../content/tools.json';
 import floorplanImg from '../assets/gallery/tools/tu_floorplan.png';
+import floorplanEmptyImg from '../assets/gallery/tools/tu_floorplan_empty.png';
 
 interface ToolItem {
 	src: string;
@@ -9,6 +10,7 @@ interface ToolItem {
 	embiggen?: boolean;
 	description?: string;
 	location?: string;
+	mapPositions?: { x: number; y: number }[];
 }
 
 const { title, description, pics } = tools;
@@ -106,6 +108,22 @@ if (featured.length === 0) {
 		<h1>{title}</h1>
 		<p>{description}</p>
 		<Image src={floorplanImg} alt="Floor plan of Time's Up bike co-op showing tool locations" class="floorplan" />
+		<!-- <div class="floorplan-container">
+			<Image src={floorplanEmptyImg} alt="" class="floorplan-empty" />
+			<div class="floorplan-dots">
+				{renderItems.filter(i => i.mapPositions?.length).flatMap(item =>
+					item.mapPositions!.map((pos, idx) => (
+						<button
+							class="floorplan-dot"
+							style={`left: ${pos.x}%; top: ${pos.y}%`}
+							title={item.alt}
+							data-tool={item.alt}
+							type="button"
+						/>
+					))
+				)}
+			</div>
+		</div> -->
 	</div>
 
 	<div class="portraits-grid">
@@ -114,7 +132,7 @@ if (featured.length === 0) {
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
 			return (
-				<div class={`gallery-item${isFeatured ? ' featured' : ''}`}>
+				<div class={`gallery-item${isFeatured ? ' featured' : ''}`} data-tool={item.alt}>
 					{imgSrc ? (
 						<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
 					) : (
@@ -133,10 +151,17 @@ if (featured.length === 0) {
 								<span class="overlay-value">{item.description}</span>
 							</div>
 						)}
-						{item.location && (
-							<div class="overlay-field">
-								<span class="overlay-label">Location</span>
-								<span class="overlay-value">{item.location}</span>
+						{item.mapPositions?.length && (
+							<div
+								class="overlay-map"
+								style={`aspect-ratio: ${floorplanEmptyImg.width} / ${floorplanEmptyImg.height};`}
+							>
+								{item.mapPositions.map(pos => (
+									<span
+										class="overlay-map-dot"
+										style={`left: ${pos.x}%; top: ${pos.y}%`}
+									/>
+								))}
 							</div>
 						)}
 					</div>
@@ -190,8 +215,71 @@ if (featured.length === 0) {
 		width: 100%;
 		max-width: 1200px;
 		height: auto;
-		margin: 20px 0 0;
+		display: block;
 		border-radius: 12px;
+		margin: 20px 0 0;
+	}
+
+	.floorplan-container {
+		position: relative;
+		display: inline-block;
+		max-width: 1200px;
+		width: 100%;
+		margin: 10px 0 0;
+	}
+
+	.floorplan-empty {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 12px;
+	}
+
+	.floorplan-dots {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+	}
+
+	.floorplan-dot {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		background: #e53e3e;
+		border: 3px solid white;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+		transform: translate(-50%, -50%);
+		cursor: pointer;
+		pointer-events: auto;
+		padding: 0;
+		transition: transform 0.2s ease, background 0.2s ease;
+	}
+
+	.floorplan-dot:hover, .floorplan-dot.active {
+		transform: translate(-50%, -50%) scale(1.4);
+		background: #ff6b6b;
+	}
+
+	.floorplan-dot::after {
+		content: attr(title);
+		position: absolute;
+		bottom: calc(100% + 6px);
+		left: 50%;
+		transform: translateX(-50%);
+		background: rgba(0, 0, 0, 0.85);
+		color: white;
+		font-size: 12px;
+		padding: 4px 8px;
+		border-radius: 4px;
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s ease;
+	}
+
+	.floorplan-dot:hover::after {
+		opacity: 1;
 	}
 
 	.portraits-grid {
@@ -234,6 +322,8 @@ if (featured.length === 0) {
 		padding: 24px;
 		opacity: 0;
 		transition: opacity 0.3s ease;
+		overflow: auto;
+		box-sizing: border-box;
 	}
 
 	.overlay-caption, .portraits-grid :global(.overlay-caption) {
@@ -310,6 +400,34 @@ if (featured.length === 0) {
 		border: 0;
 	}
 
+	.overlay-map, .portraits-grid :global(.overlay-map) {
+		position: relative;
+		width: 100%;
+		background-image: url('/tu_floorplan_empty.png');
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		border-radius: 6px;
+		outline: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.overlay-map-dot, .portraits-grid :global(.overlay-map-dot) {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: #3b82f6;
+		border: 2px solid white;
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+		transform: translate(-50%, -50%);
+		pointer-events: none;
+	}
+
+	:global(.gallery-item.highlighted) {
+		outline: 3px solid #e53e3e;
+		outline-offset: -3px;
+		z-index: 2;
+	}
+
 	/* Responsive */
 	@media screen and (max-width: 1050px) {
 		.portraits-grid {
@@ -345,23 +463,64 @@ if (featured.length === 0) {
 		});
 	}
 
-	document.querySelectorAll('.portraits-grid .gallery-item').forEach(item => {
-		item.addEventListener('click', (e) => {
-			if (!isMobile()) return;
-			e.stopPropagation();
-			const wasTapped = item.classList.contains('tapped');
-			untap();
-			if (!wasTapped) {
-				item.classList.add('tapped');
-				requestAnimationFrame(() => {
-					item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-				});
+	function clearHighlights() {
+		document.querySelectorAll('.gallery-item.highlighted').forEach(el => {
+			el.classList.remove('highlighted');
+		});
+		document.querySelectorAll('.floorplan-dot.active').forEach(el => {
+			el.classList.remove('active');
+		});
+	}
+
+	// Dot click → scroll to and highlight gallery item
+	document.querySelectorAll('.floorplan-dot').forEach(dot => {
+		dot.addEventListener('click', () => {
+			const toolName = dot.getAttribute('data-tool');
+			if (!toolName) return;
+			clearHighlights();
+			const gridItem = document.querySelector(`.portraits-grid .gallery-item[data-tool="${toolName}"]`) as HTMLElement;
+			if (gridItem) {
+				dot.classList.add('active');
+				gridItem.classList.add('highlighted');
+				gridItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
 			}
 		});
 	});
 
-	document.addEventListener('click', () => {
+	// Gallery item click → highlight corresponding dot
+	document.querySelectorAll('.portraits-grid .gallery-item').forEach(item => {
+		item.addEventListener('click', (e) => {
+			if (isMobile()) {
+				e.stopPropagation();
+				const wasTapped = item.classList.contains('tapped');
+				untap();
+				if (!wasTapped) {
+					item.classList.add('tapped');
+					requestAnimationFrame(() => {
+						(item as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+					});
+				}
+			}
+
+			clearHighlights();
+			const toolName = item.getAttribute('data-tool');
+			if (!toolName) return;
+			const dot = document.querySelector(`.floorplan-dot[data-tool="${toolName}"]`) as HTMLElement;
+			if (dot) {
+				dot.classList.add('active');
+				(item as HTMLElement).classList.add('highlighted');
+			}
+		});
+	});
+
+	document.addEventListener('click', (e) => {
+		const target = e.target as HTMLElement;
+		if (!target.closest('.gallery-item') && !target.closest('.floorplan-dot')) {
+			clearHighlights();
+		}
 		if (!isMobile()) return;
-		untap();
+		if (!target.closest('.gallery-item')) {
+			untap();
+		}
 	});
 </script>
