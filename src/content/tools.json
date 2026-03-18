@@ -270,7 +270,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_033150491.jpg",
       "alt": "circular saw",
-      "description": "cuts wood",
+      "description": "cuts wood.  ask a volunteer",
       "location": "ask a volunteer",
       "mapPositions": [
         {
@@ -913,7 +913,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
       "alt": "tension meter",
-      "description": "measures wheel spoke tension",
+      "description": "measures wheel spoke tension.  ask a volunteer",
       "location": "ask a volunteer",
       "mapPositions": [
         {
@@ -989,7 +989,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_225627380.jpg",
       "alt": "torque wrench (small)",
-      "description": "precise application of force for small bolts up to M6.  zero out tension after use",
+      "description": "precise application of force for small bolts up to M6.  zero out tension after use.  ask a volunteer",
       "location": "ask a volunteer",
       "mapPositions": [
         {
