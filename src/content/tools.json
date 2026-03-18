@@ -30,7 +30,7 @@
     {
       "src": "/src/assets/gallery/PXL_20260119_011155971.jpg",
       "alt": "used components",
-      "description": "pricing chart by the sliding door, generally ~$5",
+      "description": "parts to build a bike. pricing on wall chart to the right, generally ~$5",
       "location": "bins in backroom"
     },
     {
@@ -46,9 +46,9 @@
       "location": "organizer in the backroom, black sliding cabinet in backroom and red cabinet opposite the sink"
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260315_225517512.jpg",
+      "src": "/src/assets/gallery/tools/PXL_20260318_032931136.jpg",
       "alt": "nuts & bolts",
-      "description": "various sizes but not all metric. useful for attaching accessories like racks and fenders",
+      "description": "various sizes in metric and inches. useful for attaching accessories like racks and fenders",
       "location": "backroom shelf"
     },
     {
@@ -64,62 +64,62 @@
       "location": "ask a volunteer"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_033042213.jpg",
       "alt": "torque wrench (large)",
       "description": "precise application of force for cranks and bottom brackets. zero out tension after use",
-      "location": "backroom, above the socket drawer"
+      "location": "backroom, above the socket drawers"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_035333482.jpg",
       "alt": "handlebars (flat)",
       "location": "bin in backroom"
     },
     {
-      "src": "",
-      "alt": "racks",
+      "src": "/src/assets/gallery/PXL_20260318_033702253.jpg",
+      "alt": "front & rear racks",
       "description": "adds carrying capacity to bike",
       "location": "small room past the sink"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_034145405.jpg",
       "alt": "brake bleed kit",
-      "description": "bleed shimano/mineral oil hydraulic brakes",
+      "description": "bleed hydraulic brakes for Shimano (mineral oil)",
       "location": "Pan-Am cabinet, top shelf"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_035230374.jpg",
       "alt": "threaded steerer die",
       "description": "cuts and cleans thread on steerer tube",
       "location": "Pan-Am cabinet, in taps/die drawer"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_033903125.jpg",
       "alt": "calipers & rulers",
       "description": "measures things",
       "location": "Pan-Am cabinet, in rulers drawer"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_031154875.jpg",
       "alt": "grinder",
       "description": "grinds and smooths cut material",
       "location": "backroom upper shelf"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_031515362.jpg",
       "alt": "dremel",
       "description": "makes small holes",
       "location": "backroom upper shelf"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_033753184.jpg",
       "alt": "hammers & mallets",
       "description": "percussive persuasion",
       "location": "Pan-Am cabinet and pegboard"
     },
     {
-      "src": "",
+      "src": "/src/assets/gallery/PXL_20260318_031726103.jpg",
       "alt": "angle grinder",
-      "description": "cuts chains and locks",
+      "description": "cuts chains and locks, anything the bolt cutter can't handle",
       "location": "backroom upper shelf"
     },
     {
@@ -149,6 +149,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230027463.jpg",
       "alt": "quick release skewers",
+      "description": "holds wheel to frame or fork",
       "location": "sliding cabinet opposite the sink"
     },
     {
@@ -201,8 +202,8 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230511796.jpg",
-      "alt": "loose ball bearings & ferrules",
-      "description": "balls for cup and cone bearings.  ferrules to cap cables & housing",
+      "alt": "loose ball bearings",
+      "description": "balls for cup and cone bearings",
       "location": "clear plastic bin in backroom shelf"
     },
     {
@@ -245,7 +246,7 @@
       "src": "/src/assets/gallery/tools/PXL_20260315_230612841.jpg",
       "alt": "bolt cutters",
       "description": "cuts bolts, screws and fender stays",
-      "location": "front room Pan-Am cabinet"
+      "location": "front room Pan-Am cabinet and pegboard"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230640023.jpg",
@@ -304,13 +305,13 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011042592.jpg",
       "alt": "assorted hand tools",
-      "description": "wrenches, pliers, hammers, scissors, etc...",
+      "description": "wrenches, pliers, hammers, scissors, allen wrenches, etc...",
       "location": "pegboard and Pan-Am cabinet"
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_011201538.jpg",
       "alt": "wheel truing stand",
-      "description": "for truing or building wheels.  there is a bearing size ruler on the side",
+      "description": "truing or building wheels.  there is a bearing size ruler on the side",
       "location": "backroom"
     },
     {
@@ -350,9 +351,184 @@
       "location": "floats between Pan-Am cabinet or grease bin in backroom"
     },
     {
+      "src": "/src/assets/gallery/PXL_20260318_032910813.jpg",
       "alt": "ratchet & sockets",
-      "description": "wrenching in confined space",
+      "description": "wrenching in confined space, drivers for 1/4\", 3/8\" and 1/2\"",
       "location": "backroom, red drawer"
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20260318_035521114.jpg",
+      "alt": "ferrules",
+      "description": "caps cables & housing",
+      "location": "backroom, clear bin"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_023025841.jpg",
+      "alt": "cranks",
+      "description": "connects the pedal to the bottom bracket",
+      "location": "backroom bins, lower section"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_032118924.jpg",
+      "alt": "clamps",
+      "description": "temporarily clamps things together",
+      "location": "backroom, above the nuts and bolts drawer"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_032955749.jpg",
+      "alt": "cogs",
+      "description": "for fixed gear drivetrains",
+      "location": "backroom bin"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_033150491.jpg",
+      "alt": "circular saw",
+      "description": "cuts wood",
+      "location": "ask a volunteer"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_033434766.jpg",
+      "alt": "vacuum cleaner",
+      "description": "cleans the shop",
+      "location": "opposite the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_033440209.jpg",
+      "alt": "drinks",
+      "description": "overpriced for non-volunteers but convenience comes with a cost or commitment",
+      "location": "fridge"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_033539346.jpg",
+      "alt": "colander",
+      "description": "clean parts in the sink without losing them down the drain",
+      "location": "by the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_033726979.jpg",
+      "alt": "forks",
+      "description": "various sizes",
+      "location": "room behind the sink"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
+      "alt": "spokes",
+      "description": "holds wheel rim to hub",
+      "location": "by truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034522859.jpg",
+      "alt": "lockring tool",
+      "description": "install/removes cog lockrings and some bottom brackets",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034600646.jpg",
+      "alt": "cable cutter",
+      "description": "cuts housing and cables",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034721671.jpg",
+      "alt": "caged ball bearings",
+      "description": "for headsets and some bottom brackets",
+      "location": "drawer under the truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034748827.jpg",
+      "alt": "lockrings and spacers",
+      "description": "",
+      "location": "drawer under the truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034805530.jpg",
+      "alt": "external cups",
+      "description": "for headsets",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034822383.jpg",
+      "alt": "threaded headset top locknut",
+      "description": "",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034834967.jpg",
+      "alt": "crown race",
+      "description": "for lower part of headset",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_034926130.jpg",
+      "alt": "files",
+      "description": "sands down material",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035015122.jpg",
+      "alt": "brushes",
+      "description": "cleaning parts",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035044733.jpg",
+      "alt": "tire levers & patch kit",
+      "description": "removes tire from rim and patches inner tubes",
+      "location": "drawer under truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035136073.jpg",
+      "alt": "crown race remover",
+      "description": "removes crown race from fork",
+      "location": "Pan-Am cabinet, crown race setter drawer"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035253897.jpg",
+      "alt": "first aid",
+      "description": "bandages supplies for cuts",
+      "location": "wall space between front and backroom, top of doorway by the fridge"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035305737.jpg",
+      "alt": "floor pump and stands",
+      "description": "holds up bike and pump up tires",
+      "location": "space between front and backroom"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035354052.jpg",
+      "alt": "tape",
+      "description": "frame protector tape, duct tape, masking tape, electrical tape",
+      "location": "backroom, rightmost middle shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035404527.jpg",
+      "alt": "spare inner tube",
+      "description": "use for frame protection or to add girth to accessory mounting",
+      "location": "backroom, rightmost middle shelf"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_041234341.jpg",
+      "alt": "vise grips",
+      "description": "clamp things, turn rounded nuts, crimp ferrules",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_041306557.jpg",
+      "alt": "spoke keys",
+      "description": "tighten/loosen wheel spokes",
+      "location": "by truing stand"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_044915214.jpg",
+      "alt": "pedal wrench",
+      "description": "installs & removes pedals",
+      "location": "pegboard"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_050459945.jpg",
+      "alt": "pipe cutter",
+      "description": "cuts tubes like seatpost, handlebars and fork.  not for carbon",
+      "location": "under the fridge"
     }
   ]
 }
