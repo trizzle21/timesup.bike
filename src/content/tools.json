@@ -3,6 +3,150 @@
   "description": "what we have and where they can be found at the start/end of each shift",
   "pics": [
     {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_002510737.jpg",
+      "alt": "spoke nipples",
+      "description": "attaches spoke to wheel rim",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 75.1,
+          "y": 36.8
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_002419411.jpg",
+      "alt": "cable & housing",
+      "description": "for brakes and shifting",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 65.7,
+          "y": 86
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_002116538.jpg",
+      "alt": "pumice soap",
+      "description": "abrasive grit scrubs grease off hands",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 88.7,
+          "y": 56.5
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_002104514.jpg",
+      "alt": "bubble level",
+      "description": "indicates if plane is level",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 83,
+          "y": 89.6
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_002012519.jpg",
+      "alt": "water bottle cage",
+      "description": "holds water bottles",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 94.3,
+          "y": 30.7
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001958040.jpg",
+      "alt": "chains (new)",
+      "description": "from 6 to 11 speeds, standard retail price",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 93.8,
+          "y": 30.5
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001940281.jpg",
+      "alt": "reference books",
+      "description": "",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 92.3,
+          "y": 31.1
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001629158.jpg",
+      "alt": "safety accessories",
+      "description": "bells, reflectors and basic lights",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 81.2,
+          "y": 50.2
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001409962.jpg",
+      "alt": "floor pump",
+      "description": "for schrader and presta valves",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 56.7,
+          "y": 86.9
+        },
+        {
+          "x": 27.1,
+          "y": 56.9
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001404429.jpg",
+      "alt": "repair stand",
+      "description": "holds up bike",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 56.7,
+          "y": 87.3
+        },
+        {
+          "x": 25.7,
+          "y": 33.8
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools_new/PXL_20260319_001339280.jpg",
+      "alt": "trash",
+      "description": "separate for cans, metal, cardboard and general",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 43.4,
+          "y": 88.3
+        },
+        {
+          "x": 89.4,
+          "y": 28.4
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/PXL_20251215_004323079.jpg",
       "alt": "air compressor",
       "description": "seats tubeless tires, removes bar grips, dries hands but do not press against skin",
@@ -91,6 +235,18 @@
         {
           "x": 81.5,
           "y": 49.4
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/PXL_20260318_031154875.jpg",
+      "alt": "bench grinder",
+      "description": "grinds down and smooths cut material",
+      "location": "backroom upper shelf",
+      "mapPositions": [
+        {
+          "x": 76.8,
+          "y": 86.2
         }
       ]
     },
@@ -446,7 +602,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_033440209.jpg",
       "alt": "drinks",
-      "description": "overpriced for non-volunteers but convenience comes with a cost or commitment",
+      "description": "deliberately overpriced for non-volunteers but convenience comes with a cost or commitment",
       "location": "fridge",
       "mapPositions": [
         {
@@ -508,18 +664,6 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260318_035305737.jpg",
-      "alt": "floor pump & stand",
-      "description": "holds up bike and pump up tires",
-      "location": "space between front and backroom",
-      "mapPositions": [
-        {
-          "x": 54.1,
-          "y": 89.8
-        }
-      ]
-    },
-    {
       "src": "/src/assets/gallery/tools/PXL_20260318_033726979.jpg",
       "alt": "forks",
       "description": "various sizes",
@@ -556,18 +700,6 @@
         {
           "x": 64.4,
           "y": 85.6
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/PXL_20260318_031154875.jpg",
-      "alt": "bench grinder",
-      "description": "grinds down and smooths cut material",
-      "location": "backroom upper shelf",
-      "mapPositions": [
-        {
-          "x": 76.8,
-          "y": 86.2
         }
       ]
     },
@@ -863,6 +995,18 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
+      "alt": "spoke tension meter",
+      "description": "measures wheel spoke tension.  ask a volunteer",
+      "location": "ask a volunteer",
+      "mapPositions": [
+        {
+          "x": 79.4,
+          "y": 45.9
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
       "alt": "spokes",
       "description": "holds wheel rim to hub",
@@ -907,18 +1051,6 @@
         {
           "x": 33.9,
           "y": 87.1
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/tools/PXL_20260315_225721157.jpg",
-      "alt": "spoke tension meter",
-      "description": "measures wheel spoke tension.  ask a volunteer",
-      "location": "ask a volunteer",
-      "mapPositions": [
-        {
-          "x": 79.4,
-          "y": 45.9
         }
       ]
     },

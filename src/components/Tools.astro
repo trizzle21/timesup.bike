@@ -108,22 +108,6 @@ if (featured.length === 0) {
 		<h1>{title}</h1>
 		<p>{description}</p>
 		<Image src={floorplanImg} alt="Floor plan of Time's Up bike co-op showing tool locations" class="floorplan" />
-		<!-- <div class="floorplan-container">
-			<Image src={floorplanEmptyImg} alt="" class="floorplan-empty" />
-			<div class="floorplan-dots">
-				{renderItems.filter(i => i.mapPositions?.length).flatMap(item =>
-					item.mapPositions!.map((pos, idx) => (
-						<button
-							class="floorplan-dot"
-							style={`left: ${pos.x}%; top: ${pos.y}%`}
-							title={item.alt}
-							data-tool={item.alt}
-							type="button"
-						/>
-					))
-				)}
-			</div>
-		</div> -->
 	</div>
 
 	<div class="portraits-grid">
@@ -168,6 +152,23 @@ if (featured.length === 0) {
 				</div>
 			);
 		})}
+	</div>
+
+	<div class="floorplan-container">
+		<Image src={floorplanEmptyImg} alt="" class="floorplan-empty" />
+		<div class="floorplan-dots">
+			{renderItems.filter(i => i.mapPositions?.length).flatMap(item =>
+				item.mapPositions!.map((pos, idx) => (
+					<button
+						class="floorplan-dot"
+						style={`left: ${pos.x}%; top: ${pos.y}%`}
+						title={item.alt}
+						data-tool={item.alt}
+						type="button"
+					/>
+				))
+			)}
+		</div>
 	</div>
 </section>
 
