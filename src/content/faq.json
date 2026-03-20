@@ -55,8 +55,8 @@
           "answer": "Yes.  We normally give you the model number to order parts yourself.  We carry used parts on-site to get your bike rolling but if you care for quality, do purchase (new) parts elsewhere.  We can help you install it or provide recommendations.   "
         },
         {
-          "question": "Do you service electric bikes?",
-          "answer": "No.  For e-bikes and e-scooters, your best bet nearby is [BIKEFIXNYC](https://www.bikefixnyc.com/)"
+          "question": "Do you service electric bikes or electric scooters?",
+          "answer": "No.  Your best bet nearby is [BIKEFIXNYC](https://www.bikefixnyc.com/)"
         },
         {
           "question": "Do you service specialty non-electric bikes?  e.g. cargo, folding, recumbent, trike, tandem, elliptical",
