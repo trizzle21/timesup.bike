@@ -1,7 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import { marked } from 'marked';
+import { Marked, Renderer } from 'marked';
 import home from '../content/home.json';
+
+const renderer = new Renderer();
+renderer.link = ({ href, title, text }) => {
+	const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+	const titleAttr = title ? ` title="${title}"` : '';
+	const relAttr = isExternal ? ' rel="noopener noreferrer" target="_blank"' : '';
+	return `<a href="${href}"${titleAttr}${relAttr}>${text}</a>`;
+};
+
+const homeMarked = new Marked({ renderer });
 
 const { hero, howItWorks, helpfulTips, hours, location, contact, socialLinks, gallery } = home;
 
@@ -18,11 +28,11 @@ try {
 }
 
 // Parse markdown to HTML
-const taglineHtml = await marked.parse(hero.tagline);
-const howItWorksHtml = await marked.parse(howItWorks.text);
-const helpfulTipsHtml = await marked.parse(helpfulTips.tips);
-const hoursHtml = await marked.parse(hours.text);
-const locationHtml = await marked.parse(location.text);
+const taglineHtml = await homeMarked.parse(hero.tagline);
+const howItWorksHtml = await homeMarked.parse(howItWorks.text);
+const helpfulTipsHtml = await homeMarked.parse(helpfulTips.tips);
+const hoursHtml = await homeMarked.parse(hours.text);
+const locationHtml = await homeMarked.parse(location.text);
 
 // Import all gallery images dynamically
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/gallery/**/*.{jpg,jpeg,png,gif}', { eager: true });
@@ -47,16 +57,16 @@ const getImage = (src: string) => {
 
 		<div class="hero-info">
 			<div class="how-it-works">
-				<strong>{howItWorks.heading}</strong>
+				<h2>{howItWorks.heading}</h2>
 				<div set:html={howItWorksHtml} />
 				<div set:html={helpfulTipsHtml} />
 			</div>
 			<div class="location">
-				<strong>{location.heading}</strong>
+				<h2>{location.heading}</h2>
 				<div set:html={locationHtml} />
 			</div>
 			<div class="hours">
-				<strong>{hours.heading}</strong>
+				<h2>{hours.heading}</h2>
 				<div set:html={hoursHtml} />
 			</div>
 			<div class="popular-hours-row">
@@ -431,6 +441,13 @@ const getImage = (src: string) => {
 	}
 
 	.hero-info strong {
+		color: var(--text-dark);
+	}
+
+	.hero-info h2 {
+		font-size: inherit;
+		font-weight: bold;
+		margin: 0;
 		color: var(--text-dark);
 	}
 

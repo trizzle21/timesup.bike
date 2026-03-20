@@ -1,8 +1,27 @@
 ---
 import FAQ from '../components/FAQ.astro';
 import Layout from '../layouts/Layout.astro';
+import faq from '../content/faq.json';
+
+const faqEntries = faq.sections.flatMap((section) =>
+	section.items.map((item) => ({
+		"@type": "Question",
+		"name": item.question,
+		"acceptedAnswer": {
+			"@type": "Answer",
+			"text": item.answer
+		}
+	}))
+);
+
+const faqSchema = JSON.stringify({
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": faqEntries
+});
 ---
 
-<Layout title="FAQ - Time's Up! Bike Co-op" description="Frequently asked questions" canonicalPath="/faq">
+<Layout title="FAQ - Time's Up! Bike Co-op" description="Answers about visiting Time's Up! Bike Co-op — cost, hours, services, parts donations, volunteering and more. DIY bike repair in NYC's East Village." canonicalPath="/faq">
+	<script slot="head" type="application/ld+json" is:inline set:html={faqSchema} />
 	<FAQ />
 </Layout>

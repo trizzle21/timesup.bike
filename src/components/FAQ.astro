@@ -1,6 +1,16 @@
 ---
-import { marked } from 'marked';
+import { Marked, Renderer } from 'marked';
 import faq from '../content/faq.json';
+
+const renderer = new Renderer();
+renderer.link = ({ href, title, text }) => {
+	const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+	const titleAttr = title ? ` title="${title}"` : '';
+	const relAttr = isExternal ? ' rel="noopener noreferrer" target="_blank"' : '';
+	return `<a href="${href}"${titleAttr}${relAttr}>${text}</a>`;
+};
+
+const faqMarked = new Marked({ renderer });
 
 const { title, description, sections } = faq;
 ---
@@ -18,7 +28,7 @@ const { title, description, sections } = faq;
 			{section.items.map((item) => (
 				<details>
 					<summary>{item.question}</summary>
-					<div class="answer" set:html={marked.parse(item.answer)} />
+					<div class="answer" set:html={faqMarked.parse(item.answer)} />
 				</details>
 			))}
 		</div>
