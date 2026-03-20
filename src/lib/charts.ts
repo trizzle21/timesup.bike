@@ -82,15 +82,20 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	const iconsChanged = iconsEl && !iconsEl.textContent.includes(`${users}`);
 
 	// Render header with formatted date
+	const liveIndicator = chartId === 'curr' && (testOperatingHours || isToday(date))
+		? '<span class="live-dot" title="live data"></span>'
+		: '';
+
 	if (headerEl) {
+		const newHTML = newHeaderText + liveIndicator;
 		if (headerChanged) {
 			headerEl.classList.add('updating');
 			setTimeout(() => {
-				headerEl.textContent = newHeaderText;
+				headerEl.innerHTML = newHTML;
 				headerEl.classList.remove('updating');
 			}, 100);
 		} else {
-			headerEl.textContent = newHeaderText;
+			headerEl.innerHTML = newHTML;
 		}
 	}
 
