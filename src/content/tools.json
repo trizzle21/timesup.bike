@@ -1063,9 +1063,9 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260316_015207067.jpg",
+      "src": "/src/assets/gallery/tools/PXL_20260119_011334451.jpg",
       "alt": "tires",
-      "description": "various sizes and conditions",
+      "description": "various sizes, tread and condition",
       "location": "loft and top shelf of backroom",
       "mapPositions": [
         {
@@ -1235,6 +1235,17 @@
         {
           "x": 75.2,
           "y": 39.2
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260119_011243768.jpg",
+      "alt": "wheel rim",
+      "description": "the part between the hub and the rubber tire",
+      "mapPositions": [
+        {
+          "x": 82,
+          "y": 69.7
         }
       ]
     }
