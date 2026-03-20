@@ -15,7 +15,7 @@
         },
         {
           "question": "How much does it cost?",
-          "answer": "$2 suggested donation plus parts.  Used parts are generally ~$5 each, see the full [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo) but no credit cards.  Baked goods and snacks are highly appreciated if you want to thank the volunteers."
+          "answer": "$2 suggested donation plus parts.  This covers minor consumables like lubricant, grease and cleaning supplies.  Used parts are generally ~$5 each, see the full [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo) but no credit cards.  Baked goods and snacks are highly appreciated if you want to thank the volunteers."
         },
         {
           "question": "Do I need to know how to fix bikes?",
@@ -40,6 +40,10 @@
         {
           "question": "Where are you located?",
           "answer": "The primary location is [626 East 14th St. New York, NY 10009](https://maps.app.goo.gl/eMzHrncKrd1izM759).  As of April 2026, we do not have any other bike coop location though references exist online of our former locations in Brooklyn and by the South Street Seaport.\n\nWe occasionally host Saturday classes at La Plaza Community Garden nearby from Spring to Fall, see our [Instagram](https://www.instagram.com/times_up_nyc) for the class schedule."
+        },
+        {
+          "question": "Bathroom?",
+          "answer": "Yes. All the way in the back, see [floorplan](/tools).  Please note it is not wheelchair accessible."
         }
       ]
     },
@@ -48,7 +52,7 @@
       "items": [
         {
           "question": "Can I donate bike parts?",
-          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours."
+          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.\n\nWe do not take cycling apparel, shoes, helmets and other wearables."
         },
         {
           "question": "Do you take whole bikes?",
