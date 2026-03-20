@@ -27,15 +27,15 @@
         },
         {
           "question": "What services do you provide?",
-          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Large projects like building a bike from the frame up is possible but email us to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  In terms of the limit of our coop and where a normal bike shop shines...\n- servicing performance tech (e.g. carbon fiber repair, electronic shifting)\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- facing bottom bracket\n- painting frames\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
+          "answer": "We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop.  Large projects like building a bike from the frame up is possible but email us to see what we have and what you will need to bring.  Other services include...\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out/learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight.  We recommend a normal bike shop for...\n- servicing performance tech (e.g. carbon fiber repair, electronic shifting)\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- facing bottom bracket, headtube and disc brake mounts\n- painting frames\n- artisanal, third-wave craft coffee\n- white glove, drop-off service"
         },
         {
           "question": "How much time does this take?",
-          "answer": "Most tune-ups take ~30 minutes but often you come in with one problem and we will identify a couple more.  For multiple issues, we will triage them so you can ride home, come back at a later date with replacement parts and more time.  We recommend to come at the start of the open hours as opposed to near the end.  There is no drop-off service and you need to be physically present to do the work."
+          "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more.  For multiple issues, we will triage them so you can ride home, come back at a later date with replacement parts and more time.  We recommend to come at the start of the open hours as opposed to near the end.  There is no drop-off service and you need to be physically present to do the work."
         },
         {
-          "question": "Do you have a Brooklyn location or a 24-hour bike parts vending machine?",
-          "answer": "Not anymore.  Those used to exist and you may see references appearing in our parent organization [Time's Up!](https://times-up.org/) which details the co-op's history and role in the broader context of promoting an environmentally sustainable city.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused more for someone with a busted bike looking for repairs."
+          "question": "Do you have a 24-hour bike parts vending machine?",
+          "answer": "Not anymore.  Those used to exist and you may see references appearing in our parent organization [Time's Up!](https://times-up.org/) which details the coop's 35+ year history and role in the broader context of promoting an environmentally sustainable city.  \n\nThe most current operational details for the bike coop appears at [Time's Up! Bike Coop](https://timesup.bike/).  This is focused more for someone with a busted bike looking for repairs."
         },
         {
           "question": "Where are you located?",
@@ -44,6 +44,14 @@
         {
           "question": "Bathroom?",
           "answer": "Yes. All the way in the back, see [floorplan](/tools).  Please note it is not wheelchair accessible."
+        },
+        {
+          "question": "Do you fix scooters, skateboards, strollers or other forms of micromobility?",
+          "answer": "Email us at contact@timesup.bike.  Most likely not but by some stroke of luck there may be some commonality."
+        },
+        {
+          "question": "Do you service specialty non-electric bikes like cargo bikes, folding bikes, recumbent, trike, tandem, etc...?",
+          "answer": "Email us at contact@timesup.bike.  We do not specialize in them but there may be some commonality.  Our repair stands are not weight rated for heavier bikes.\n\nGenerally folding bikes can be serviced as a normal bike, the proprietary bits are fairly solid."
         }
       ]
     },
@@ -56,7 +64,7 @@
         },
         {
           "question": "Do you take whole bikes?",
-          "answer": "We accept bike donations. They'll either be fixed up for someone who needs one or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies, we do not take e-bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
+          "answer": "Yes. They will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies, we do not take electric bikes or children's bikes.  Email us at contact@timesup.bike if you have questions."
         },
         {
           "question": "Will you buy my bike?",
@@ -64,11 +72,11 @@
         },
         {
           "question": "Do you sell bikes?",
-          "answer": "Yes and we list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
+          "answer": "Yes.  We list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. track bike) or a specific size."
         },
         {
           "question": "What tools does the co-op need?",
-          "answer": "We can always use more shop tools. Check the [tools page](/tools) to see what we currently have."
+          "answer": "We can always use more shop tools. Check the [tools page](/tools) to see what we currently have or lack."
         },
         {
           "question": "Will you help install my parts from Amazon/AliExpress/etc..?",
