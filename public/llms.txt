@@ -148,26 +148,113 @@ The co-op provides tools and supplies for DIY bike repair. Visual guide with flo
 ## FAQ
 Frequently asked questions about visiting, parts & tools, and volunteering: https://timesup.bike/faq
 
-### Visitor Basics
-- DIY bike repair workshop — you do the work, volunteer mechanics guide you
-- $2 suggested donation covers consumables (lubricant, grease, cleaning supplies)
-- Used parts ~$5 each, new parts at retail price
-- Cash preferred, Venmo accepted, no credit cards
-- No appointment or membership needed — just show up during open hours and sign in
-- Most tune-ups take ~30 minutes, come early for larger repairs
-- No drop-off service, no overnight storage
-- We do not service e-bikes, carbon fiber, electronic shifting, or welding/brazing
-- Bathroom in the back (not wheelchair accessible)
+### Workshop
 
-### Parts & Tools
-- Used parts and bike donations accepted during open hours (no apparel, shoes, helmets, e-bikes, or children's bikes)
-- Ready-to-ride bikes sold on Craigslist ($160-$200)
-- We can help install parts you purchased elsewhere
+**Q: How does the co-op work?**
+A: We are a DIY bike repair workshop with the goal to educate cyclists on bike repair/maintenance which in turn brings down the cost of ownership and gets more butts on bikes. You bring your bike, we provide tools, parts and mechanical guidance. You do the work and we'll show you how.
+
+Sign in at the reception table and let the volunteer know what you are looking to do.
+
+**Q: Where are you located?**
+A: The primary location is 626 East 14th St. New York, NY 10009 (https://maps.app.goo.gl/eMzHrncKrd1izM759). As of April 2026, we do not have any other bike coop location though references exist online of our former locations in Brooklyn and by the South Street Seaport.
+
+We occasionally host Saturday classes at La Plaza Community Garden nearby from Spring to Fall, see our Instagram (https://www.instagram.com/times_up_nyc) for the class schedule.
+
+**Q: Bathroom?**
+A: Yes. All the way in the back, floorplan (/tools). It is not wheelchair accessible.
+
+**Q: I passed by and saw an art gallery, what gives?**
+A: We share this space with 14 BC Gallery (https://www.14bcgallery.org/) from Thursday to Saturday which hosts art exhibitions.
+
+### Service
+
+**Q: What should I bring?**
+A: Bring your bike and any parts you already have. Wear clothes you don't mind getting greasy. We have gloves and hand cleaner available.
+
+**Q: How much does it cost?**
+A: $2 suggested donation plus parts. This covers minor consumables like lubricant, grease and cleaning supplies. Used parts are generally ~$5 each, see our used parts price list (https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243). New parts like chains and inner tubes are sold at retail price.
+
+The price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations. Cash is preferred and we accept electronic payments (i.e. Venmo) but no credit cards. Baked goods and snacks if you want to thank the volunteers.
+
+**Q: Do I need to know how to fix bikes?**
+A: No. The bulk of our patrons have never fixed a flat tire on their own. Volunteer mechanics are here to walk you through repairs step-by-step. It's DIY but we're here to make sure your project does not go off the rails.
+
+**Q: Do I need an appointment?**
+A: No appointment needed nor membership required. Just show up during open hours and sign in at the reception table. Check the home page (/) for our current schedule.
+
+**Q: What services do you provide?**
+A: We handle almost all repairs associated to a non-electric bike that you will find in a normal bike shop. Large projects like building a bike from the frame up is possible but email us at contact@timesup.bike to see what we have and what you will need to bring. Other services include...
+- disassembling a bike for travel
+- creating a ghost bike memorial
+- washing and cleaning
+- safety inspection for self-assembled or used bikes
+- pump up basketballs, volleyballs, footballs, anything with an air bladder
+- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space
+
+All work is done on the same day, we do not store personal items overnight. We recommend a normal bike shop for...
+- servicing electronic shifting
+- repairing and cutting carbon fiber
+- servicing electric bikes
+- welding/brazing cracked frames
+- bike fitting
+- painting frames
+- facing bottom bracket, head tube and disc brake mounts
+- artisanal, third-wave craft coffee
+- white glove, drop-off service
+
+**Q: How much time does this take?**
+A: Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more. We will triage your issues so you can ride home, come back at a later date with replacement parts and more time. We recommend to come at the start of the open hours as opposed to near the end. There is no drop-off service and you need to be physically present to do the work.
+
+**Q: Will you help install my parts purchased elsewhere? e.g. Amazon, AliExpress**
+A: Yes. We normally give you the model number to order parts yourself. We carry used parts on-site to get your bike rolling but if you care for quality, do purchase (new) parts elsewhere. We can help you install it or provide recommendations.
+
+**Q: Do you service electric bikes or electric scooters?**
+A: No. Your best bet nearby is BIKEFIXNYC (https://www.bikefixnyc.com/)
+
+**Q: Do you service specialty non-electric bikes? e.g. cargo, folding, recumbent, trike, tandem, elliptical**
+A: Email us at contact@timesup.bike. We do not specialize in them but there may be some commonality. Our repair stands are not weight rated for heavier bikes.
+
+Generally folding bikes can be serviced as a normal bike, the proprietary bits are fairly solid.
+
+**Q: Do you service other forms of micromobility? e.g. scooters, skateboards, strollers**
+A: Email us at contact@timesup.bike. Not likely but by some stroke of luck there may be some commonality.
+
+**Q: Can I chat with a mechanic?**
+A: Yes. The email contact@timesup.bike is bridged to our group chat so it's pretty much the same. Email us with questions to make the most of your next visit.
+
+### Parts
+
+**Q: Can I donate bike or parts?**
+A: Yes! We accept used parts and bikes in working condition. Drop them off during open hours. We do not take cycling apparel, shoes, helmets and other wearables.
+
+Bikes will either be fixed up or parted out to keep the shop stocked. If you leave an email, we'll send you a picture of the bike's next owner when we sell it. Due to limited repair supplies, we do not take electric bikes or children's bikes. Email us at contact@timesup.bike if you have questions.
+
+**Q: Will you buy my bike?**
+A: No. We only accept donations.
+
+**Q: Do you sell bikes?**
+A: Yes. We list ready-to-ride bikes on Craigslist priced from $160-$200. Email us if you are looking for a specific purpose (e.g. track bike) or a specific size.
+
+**Q: What tools does the co-op need?**
+A: We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the tools page (/tools) to see what we currently have or lack.
+
+**Q: Where is the 24-hour bike parts vending machine?**
+A: It's gone but you may see old references appearing in our parent organization website, Time's Up! (https://times-up.org/). That page details the coop's 35+ year history and role in the broader context of promoting an environmentally sustainable city alongside initiatives like Critical Mass, community gardens and bee-keeping.
+
+The most current operational details for the bike coop appears at Time's Up! Bike Coop (https://timesup.bike/). This is focused for someone with a busted bike looking to fix it.
 
 ### Volunteering
-- No formal application — show up, be helpful, let reception know you're interested
-- No prior bike mechanic experience required
-- Help needed beyond wrenching: organization, sales, fundraising, graphic design, analytics, events, outreach
+
+**Q: How do I become a volunteer?**
+A: Show up regularly, get to know the space and the people, and let the mechanic at the reception table know you're interested in volunteering. There's no formal application or schedule commitment, just come and be helpful. We have a meeting on the last Sunday of the month to welcome new volunteers, just leave your email and we'll reach out.
+
+**Q: Do I need prior bike mechanic experience?**
+A: No. You'll learn as you go. While our volunteers include former bike mechanics, many are enthusiasts with a wide range of experience outside the bike industry. We can use help with organization, sales, fundraising, partner development, construction, graphic design, data analytics, electronics and more. If you have time, we'll find a way to make use of your talents.
+
+**Q: What do volunteers do?**
+A: Help visitors with repairs, keep the shop organized, sort donated parts, and maintain tools. Some volunteers also help with events, outreach, marketing and maintaining our digital presence (e.g. social media, website).
+
+In terms of time commitment, come when you can. We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench.
 
 ## Spoke Cards
 A gallery of spoke cards, stickers, and zines collected around NYC cycling events: https://timesup.bike/spoke_cards
