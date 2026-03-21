@@ -18,7 +18,10 @@ const { title, description, sections } = faq;
 <section class="faq">
 	<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 	<div class="faq-header">
-		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
+		<div class="top-row">
+			<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
+			<button class="toggle-all" id="toggle-all">Expand all</button>
+		</div>
 		<h1><img src="/faq_title.png" alt={title} class="title-img" /></h1>
 		<p>{description}</p>
 	</div>
@@ -37,6 +40,18 @@ const { title, description, sections } = faq;
 		))}
 	</div>
 </section>
+
+<script>
+	const btn = document.getElementById('toggle-all');
+	if (btn) {
+		btn.addEventListener('click', () => {
+			const details = document.querySelectorAll('.faq-columns details');
+			const allOpen = Array.from(details).every(d => d.open);
+			details.forEach(d => d.open = !allOpen);
+			btn.textContent = allOpen ? 'Expand all' : 'Collapse all';
+		});
+	}
+</script>
 
 <style>
 	.faq {
@@ -62,17 +77,39 @@ const { title, description, sections } = faq;
 		margin-bottom: 32px;
 	}
 
+	.top-row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 16px;
+	}
+
 	.back-link {
 		display: inline-block;
 		color: var(--text-gray);
 		text-decoration: none;
 		font-size: 16px;
-		margin-bottom: 16px;
 		transition: color 0.2s ease;
 	}
 
 	.back-link:hover {
 		color: var(--primary);
+	}
+
+	.toggle-all {
+		background: none;
+		border: 1px solid #e5e5e5;
+		border-radius: 6px;
+		padding: 6px 16px;
+		font-size: 14px;
+		color: var(--text-gray);
+		cursor: pointer;
+		transition: color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.toggle-all:hover {
+		color: var(--primary);
+		border-color: var(--primary);
 	}
 
 	.faq-header h1 {
