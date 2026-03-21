@@ -22,22 +22,24 @@ const { title, description, sections } = faq;
 		<p>{description}</p>
 	</div>
 
-	{sections.map((section) => (
-		<div class="faq-section">
-			<h2>{section.heading}</h2>
-			{section.items.map((item) => (
-				<details>
-					<summary>{item.question}</summary>
-					<div class="answer" set:html={faqMarked.parse(item.answer)} />
-				</details>
-			))}
-		</div>
-	))}
+	<div class="faq-columns">
+		{sections.map((section) => (
+			<div class="faq-section">
+				<h2>{section.heading}</h2>
+				{section.items.map((item) => (
+					<details>
+						<summary>{item.question}</summary>
+						<div class="answer" set:html={faqMarked.parse(item.answer)} />
+					</details>
+				))}
+			</div>
+		))}
+	</div>
 </section>
 
 <style>
 	.faq {
-		max-width: 800px;
+		max-width: 1900px;
 		margin: 0 auto;
 		padding: 40px clamp(16px, 3vw, 48px);
 	}
@@ -60,7 +62,7 @@ const { title, description, sections } = faq;
 	}
 
 	.faq-header h1 {
-		margin: 0 0 8px;
+		margin: 0 0 24px;
 	}
 
 	.faq-header h1 img {
@@ -76,8 +78,26 @@ const { title, description, sections } = faq;
 		margin: 0;
 	}
 
+	.faq-columns {
+		columns: 3;
+		column-gap: 48px;
+	}
+
+	@media screen and (max-width: 1600px) {
+		.faq-columns {
+			columns: 2;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		.faq-columns {
+			columns: 1;
+		}
+	}
+
 	.faq-section {
 		margin-bottom: 32px;
+		break-inside: avoid;
 	}
 
 	.faq-section h2 {
