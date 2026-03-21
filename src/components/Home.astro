@@ -371,21 +371,16 @@ const getImage = (src: string) => {
 	}
 
 	.hero-side h1 {
-		font-size: clamp(16px, 2.5vw, 50px);
-		font-weight: 700;
-		line-height: 1.1;
 		margin: 0 0 clamp(12px, 1.5vh, 24px);
-		color: var(--text-dark);
-		font-family: 'Inter', sans-serif;
 		position: relative;
 		z-index: 1;
 	}
 
-	.title-img {
-		width: 100%;
+	.hero-side h1 img {
+		display: block;
+		width: 105%;
 		max-width: 700px;
 		height: auto;
-		display: block;
 	}
 
 	.tagline {
@@ -1004,10 +999,6 @@ const getImage = (src: string) => {
 			padding: 60px 32px 24px;
 		}
 
-		.hero-side h1 {
-			font-size: 44px;
-		}
-
 		.gallery-side {
 			width: 100%;
 			margin-left: 0;
@@ -1038,10 +1029,6 @@ const getImage = (src: string) => {
 			margin-top: 24px;
 		}
 
-		.hero-side h1 {
-			font-size: 36px;
-		}
-
 		.tagline {
 			margin-bottom: 32px;
 		}
@@ -1070,11 +1057,6 @@ const getImage = (src: string) => {
 	}
 
 	@media screen and (max-width: 480px) and (orientation: portrait) {
-
-		.hero-side h1 {
-			font-size: clamp(20px, 10vw, 28px);
-			white-space: nowrap;
-		}
 
 		.gallery-side {
 			grid-template-columns: 1fr;
