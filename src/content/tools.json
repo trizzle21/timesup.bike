@@ -60,7 +60,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034721671.jpg",
-      "alt": "ball bearings (caged)",
+      "alt": "ball bearing (caged)",
       "description": "for headsets and some bottom brackets",
       "location": "drawer under truing stand",
       "mapPositions": [
@@ -72,7 +72,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230511796.jpg",
-      "alt": "ball bearings (loose)",
+      "alt": "ball bearing (loose)",
       "description": "balls for cup and cone bearings",
       "location": "clear plastic bin in backroom shelf",
       "mapPositions": [
@@ -173,7 +173,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035015122.jpg",
-      "alt": "brushes",
+      "alt": "brush",
       "description": "cleaning parts",
       "location": "drawer under truing stand",
       "mapPositions": [
@@ -329,7 +329,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_032118924.jpg",
-      "alt": "clamps",
+      "alt": "clamp",
       "description": "temporarily clamps things together",
       "location": "backroom, above the nuts and bolts drawer",
       "mapPositions": [
@@ -341,7 +341,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_032955749.jpg",
-      "alt": "cogs",
+      "alt": "cog",
       "description": "for fixed gear drivetrains",
       "location": "backroom bin",
       "mapPositions": [
@@ -377,7 +377,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_023025841.jpg",
-      "alt": "cranks",
+      "alt": "crank",
       "description": "connects the pedal to the bottom bracket",
       "location": "backroom bins, lower section",
       "mapPositions": [
@@ -481,7 +481,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230013287.jpg",
-      "alt": "drills",
+      "alt": "drill",
       "description": "makes holes",
       "location": "cabinet by the sink",
       "mapPositions": [
@@ -517,7 +517,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035521114.jpg",
-      "alt": "ferrules",
+      "alt": "ferrule",
       "description": "caps cables & housing",
       "location": "backroom, clear bin",
       "mapPositions": [
@@ -529,7 +529,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034926130.jpg",
-      "alt": "files",
+      "alt": "file",
       "description": "sands down material",
       "location": "drawer under truing stand",
       "mapPositions": [
@@ -573,7 +573,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_033726979.jpg",
-      "alt": "forks",
+      "alt": "fork",
       "description": "holds the front wheel",
       "location": "back area past the sink",
       "mapPositions": [
@@ -641,7 +641,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260316_005750983.jpg",
-      "alt": "handlebars (drop bar)",
+      "alt": "handlebar (drop bar)",
       "description": "various drop handlebars",
       "location": "backroom, above the floor pumps",
       "mapPositions": [
@@ -653,7 +653,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_035333482.jpg",
-      "alt": "handlebars (flat)",
+      "alt": "handlebar (flat)",
       "location": "backroom shelves",
       "mapPositions": [
         {
@@ -832,7 +832,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260315_230556743.jpg",
-      "alt": "punches",
+      "alt": "punch",
       "description": "makes pilot holes.  pushes out pins",
       "location": "front room cabinet",
       "mapPositions": [
@@ -956,7 +956,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260319_002510737.jpg",
-      "alt": "spoke nipples",
+      "alt": "spoke nipple",
       "description": "attach spoke to wheel rim",
       "location": "",
       "mapPositions": [
@@ -980,7 +980,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
-      "alt": "spokes",
+      "alt": "spoke",
       "description": "attach wheel rim to hub",
       "location": "truing stand",
       "mapPositions": [
@@ -1064,7 +1064,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260119_011334451.jpg",
-      "alt": "tires",
+      "alt": "tire",
       "description": "various sizes, tread and condition",
       "location": "loft and top shelf of backroom",
       "mapPositions": [
@@ -1252,7 +1252,7 @@
     {
       "src": "/src/assets/gallery/tools/PXL_20260323_005656131.jpg",
       "alt": "zip tie",
-      "description": "temporary, ad-hoc attachment of cables, baskets, accessories",
+      "description": "ad-hoc attachment of cables, baskets, accessories",
       "mapPositions": [
         {
           "x": 68,
@@ -1262,7 +1262,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/PXL_20260323_005638361.jpg",
-      "alt": "brake pads",
+      "alt": "brake pad",
       "description": "rim and disc brake pads",
       "mapPositions": [
         {
