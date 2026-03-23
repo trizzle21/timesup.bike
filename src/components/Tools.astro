@@ -131,8 +131,9 @@ if (featured.length === 0) {
 			const imgSrc = getImage(item.src);
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
+			const toolId = item.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 			return (
-				<div class={`gallery-item${isFeatured ? ' featured' : ''}`} data-tool={item.alt}>
+				<div id={toolId} class={`gallery-item${isFeatured ? ' featured' : ''}`} data-tool={item.alt}>
 					{imgSrc ? (
 						<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
 					) : (
@@ -535,4 +536,15 @@ if (featured.length === 0) {
 			untap();
 		}
 	});
+
+	// Scroll to and highlight tool from URL hash
+	if (location.hash) {
+		const el = document.querySelector(location.hash) as HTMLElement;
+		if (el?.classList.contains('gallery-item')) {
+			requestAnimationFrame(() => {
+				el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+				el.classList.add('highlighted');
+			});
+		}
+	}
 </script>
