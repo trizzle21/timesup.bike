@@ -8,6 +8,10 @@ import {
 	COUNTER_ANIMATION_DURATION,
 	TOAST_DURATION,
 	TOAST_LONG_DURATION,
+	OPERATING_DAYS,
+	OPERATING_HOUR_START,
+	OPERATING_HOUR_END,
+	TIMEZONE,
 } from './config';
 
 // Retry configuration for API failures
@@ -42,6 +46,16 @@ function formatDate(dateString: string): string {
 		console.error('Error formatting date:', error);
 		return dateString;
 	}
+}
+
+// Check if current time is within 2 hours of operating hours (opening or closing)
+function isNearOperatingHours(): boolean {
+	const pad_hours = 2;
+	const now = new Date();
+	const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
+	const day = nyTime.getDay();
+	const hour = nyTime.getHours();
+	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START - pad_hours && hour < OPERATING_HOUR_END + pad_hours;
 }
 
 // Check if a date string is today
@@ -82,7 +96,7 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	const iconsChanged = iconsEl && !iconsEl.textContent.includes(`${users}`);
 
 	// Render header with formatted date
-	const liveIndicator = chartId === 'curr' && (testOperatingHours || isToday(date))
+	const liveIndicator = chartId === 'curr' && (testOperatingHours || (isToday(date) && isNearOperatingHours()))
 		? '<span class="live-indicator" title="count is live"><span class="live-dot"></span> LIVE</span>'
 		: '';
 
