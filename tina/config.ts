@@ -243,6 +243,12 @@ export default defineConfig({
                 required: false,
               },
               {
+                type: "string",
+                name: "event",
+                label: "Event",
+                required: false,
+              },
+              {
                 type: "boolean",
                 name: "embiggen",
                 label: "Embiggen (2x2)",

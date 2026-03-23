@@ -7,6 +7,7 @@ interface SpokeCardItem {
 	alt: string;
 	embiggen?: boolean;
 	instagram?: string;
+	event?: string;
 }
 
 const { title, description, pics } = spokeCards;
@@ -110,8 +111,9 @@ if (featured.length === 0) {
 			const imgSrc = getImage(item.src);
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
+			const cardId = item.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 			return (
-				<div class={`gallery-item${isFeatured ? ' featured' : ''}`}>
+				<div id={cardId} class={`gallery-item${isFeatured ? ' featured' : ''}`}>
 					{imgSrc ? (
 						<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
 					) : (
@@ -119,6 +121,9 @@ if (featured.length === 0) {
 					)}
 					<div class="gallery-overlay">
 						<span class="overlay-caption">{item.alt}</span>
+						{item.event && (
+							<span class="overlay-event">{item.event}</span>
+						)}
 						{item.instagram && (
 							<a class="overlay-instagram" href={`https://instagram.com/${item.instagram.replace(/^@/, '')}`} target="_blank" rel="noopener noreferrer">
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -243,6 +248,13 @@ if (featured.length === 0) {
 		font-size: clamp(14px, 1.4vw, 20px);
 		font-weight: 600;
 		color: #fff;
+		line-height: 1.3;
+	}
+
+	.overlay-event, .portraits-grid :global(.overlay-event) {
+		font-size: clamp(12px, 1.2vw, 16px);
+		color: rgba(255, 255, 255, 0.85);
+		text-align: center;
 		line-height: 1.3;
 	}
 

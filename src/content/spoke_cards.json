@@ -290,7 +290,8 @@
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_64.JPG",
       "alt": "64",
-      "instagram": "socialcyclingnyc"
+      "instagram": "socialcyclingnyc",
+      "event": "Cookout at Randall's Island"
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_65.JPG",
@@ -400,8 +401,9 @@
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_79.JPG",
-      "alt": "79 - Poughkeepsie to Manhattan Century Ride",
-      "instagram": ""
+      "alt": "79",
+      "instagram": "",
+      "event": "Poughkeepsie to Manhattan Century Ride"
     },
     {
       "src": "/src/assets/gallery/spoke_cards/spoke_card_81.JPG",
