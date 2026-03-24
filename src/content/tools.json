@@ -1372,6 +1372,17 @@
           "y": 85.6
         }
       ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260324_042420393.jpg",
+      "alt": "assembly compounds",
+      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps hold in bar grip",
+      "mapPositions": [
+        {
+          "x": 62.5,
+          "y": 85.3
+        }
+      ]
     }
   ]
 }
