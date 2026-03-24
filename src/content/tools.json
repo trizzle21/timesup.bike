@@ -1,6 +1,6 @@
 {
   "title": "Tools Locator",
-  "description": "What we have and where they can be found at the start/end of each shift.  Ask a volunteer for tools marked by ⚠️",
+  "description": "What we have and where they can be found at the start/end of each shift.  Ask a volunteer for help where marked by ⚠️",
   "pics": [
     {
       "src": "/src/assets/gallery/tools/PXL_20251215_004323079.jpg",
@@ -172,6 +172,28 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/PXL_20260323_005638361.jpg",
+      "alt": "brake pad",
+      "description": "rim and disc brake pads",
+      "mapPositions": [
+        {
+          "x": 74.5,
+          "y": 85.4
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/aa_tools_6.jpg",
+      "alt": "brakes",
+      "description": "various rim brakes (e.g. cantilever, caliper, v-brake).  few if any disc brakes",
+      "mapPositions": [
+        {
+          "x": 65.9,
+          "y": 39.8
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260318_035015122.jpg",
       "alt": "brush",
       "description": "cleaning parts",
@@ -220,6 +242,18 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/PXL_20260315_230356596.jpg",
+      "alt": "cable puller",
+      "description": "make fine adjustments when installing shift and brake cables",
+      "location": "pegboard",
+      "mapPositions": [
+        {
+          "x": 65.7,
+          "y": 27.3
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260318_033903125.jpg",
       "alt": "caliper & ruler",
       "description": "measures things",
@@ -228,6 +262,18 @@
         {
           "x": 33.4,
           "y": 85.4
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260319_001958040.jpg",
+      "alt": "chain",
+      "description": "from 6 to 11 speeds. unused at normal retail price",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 93.8,
+          "y": 30.5
         }
       ]
     },
@@ -268,6 +314,17 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/tools_3_2.jpg",
+      "alt": "chain whip",
+      "description": "removes cog and cassette",
+      "mapPositions": [
+        {
+          "x": 65.4,
+          "y": 29
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260315_230439885.jpg",
       "alt": "chainring nut wrench",
       "description": "install and remove chainring nuts",
@@ -276,18 +333,6 @@
         {
           "x": 64.5,
           "y": 27.1
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/tools/PXL_20260319_001958040.jpg",
-      "alt": "chain",
-      "description": "from 6 to 11 speeds. unused at normal retail price",
-      "location": "",
-      "mapPositions": [
-        {
-          "x": 93.8,
-          "y": 30.5
         }
       ]
     },
@@ -432,6 +477,17 @@
         {
           "x": 33.6,
           "y": 84.8
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/tools_3_3.jpg",
+      "alt": "diagonal cutter",
+      "description": "cuts zip ties.  not for cutting cables",
+      "mapPositions": [
+        {
+          "x": 65.6,
+          "y": 28.6
         }
       ]
     },
@@ -640,6 +696,18 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/PXL_20260319_002116538.jpg",
+      "alt": "hand cleaner",
+      "description": "removes grease with abrasive pumice and citrus based solvent",
+      "location": "",
+      "mapPositions": [
+        {
+          "x": 88.7,
+          "y": 56.5
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260316_005750983.jpg",
       "alt": "handlebar (drop)",
       "location": "backroom, above the floor pumps",
@@ -758,6 +826,17 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/tools_3_10.jpg",
+      "alt": "magnet",
+      "description": "removes loose ball bearings from hub. check if metal is stainless steel/aluminum/titanium (non-magnet) or carbon steel (magnetic)",
+      "mapPositions": [
+        {
+          "x": 41.1,
+          "y": 80
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260315_230359485.jpg",
       "alt": "master link plier",
       "description": "installs and removes master link on chain",
@@ -806,6 +885,17 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/aa_tools_2.jpg",
+      "alt": "pin spanner",
+      "description": "removes collars/rings/retainers with the two holes",
+      "mapPositions": [
+        {
+          "x": 64.6,
+          "y": 28.2
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260318_050459945.jpg",
       "alt": "pipe cutter",
       "description": "cuts tubes like seatpost, handlebars and fork.  not for carbon",
@@ -814,18 +904,6 @@
         {
           "x": 80.9,
           "y": 85.6
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/tools/PXL_20260319_002116538.jpg",
-      "alt": "hand cleaner",
-      "description": "removes grease with abrasive pumice and citrus based solvent",
-      "location": "",
-      "mapPositions": [
-        {
-          "x": 88.7,
-          "y": 56.5
         }
       ]
     },
@@ -862,6 +940,17 @@
         {
           "x": 97.7,
           "y": 38.8
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/aa_tools_1.jpg",
+      "alt": "Rag",
+      "description": "for cleaning and protects parts finish from vise jaws",
+      "mapPositions": [
+        {
+          "x": 65.4,
+          "y": 85.8
         }
       ]
     },
@@ -930,6 +1019,17 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/aa_tools_4.jpg",
+      "alt": "seatpost",
+      "description": "attaches saddle to bike frame",
+      "mapPositions": [
+        {
+          "x": 65.9,
+          "y": 39.6
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260318_035404527.jpg",
       "alt": "spare inner tube",
       "description": "use for frame protection or to add girth to accessory mounting",
@@ -942,13 +1042,13 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260318_041306557.jpg",
-      "alt": "spoke wrench",
-      "description": "tighten/loosen wheel spokes",
+      "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
+      "alt": "spoke",
+      "description": "attach wheel rim to hub",
       "location": "truing stand",
       "mapPositions": [
         {
-          "x": 75.2,
+          "x": 74.4,
           "y": 35
         }
       ]
@@ -978,13 +1078,13 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260318_034509156.jpg",
-      "alt": "spoke",
-      "description": "attach wheel rim to hub",
+      "src": "/src/assets/gallery/tools/PXL_20260318_041306557.jpg",
+      "alt": "spoke wrench",
+      "description": "tighten/loosen wheel spokes",
       "location": "truing stand",
       "mapPositions": [
         {
-          "x": 74.4,
+          "x": 75.2,
           "y": 35
         }
       ]
@@ -1026,18 +1126,6 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260315_230356596.jpg",
-      "alt": "cable puller",
-      "description": "make fine adjustments when installing shift and brake cables",
-      "location": "pegboard",
-      "mapPositions": [
-        {
-          "x": 65.7,
-          "y": 27.3
-        }
-      ]
-    },
-    {
       "src": "/src/assets/gallery/tools/PXL_20260318_035230374.jpg",
       "alt": "threaded steerer die",
       "description": "cuts and cleans thread on steerer tube, use with cutting fluid (e.g. 3-in-1 oil)",
@@ -1046,18 +1134,6 @@
         {
           "x": 33.9,
           "y": 86
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/tools/PXL_20260318_035044733.jpg",
-      "alt": "tire lever & patch kit",
-      "description": "removes tire from rim and patches inner tubes",
-      "location": "drawer under truing stand",
-      "mapPositions": [
-        {
-          "x": 74.4,
-          "y": 42.5
         }
       ]
     },
@@ -1074,6 +1150,18 @@
         {
           "x": 82.2,
           "y": 69
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260318_035044733.jpg",
+      "alt": "tire lever & patch kit",
+      "description": "removes tire from rim and patches inner tubes",
+      "location": "drawer under truing stand",
+      "mapPositions": [
+        {
+          "x": 74.4,
+          "y": 42.5
         }
       ]
     },
@@ -1118,6 +1206,21 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/aa_tools_3.jpg",
+      "alt": "tray",
+      "description": "keeps your tools and parts organized. prevents screws/bearings from getting lost.  circular tray is magnetic",
+      "mapPositions": [
+        {
+          "x": 58.9,
+          "y": 88.7
+        },
+        {
+          "x": 73.4,
+          "y": 31.3
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260119_011155971.jpg",
       "alt": "used components",
       "description": "pedals, saddle, stem, brakes, shifters, bar grips, seatpost etc... pricing on wall chart, generally ~$5",
@@ -1146,6 +1249,17 @@
         {
           "x": 80.4,
           "y": 28.8
+        }
+      ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/tools_3_4.jpg",
+      "alt": "valve core remover",
+      "description": "tightens and removes presta valve core.  spare valve cores",
+      "mapPositions": [
+        {
+          "x": 65.2,
+          "y": 29.4
         }
       ]
     },
@@ -1226,6 +1340,17 @@
       ]
     },
     {
+      "src": "/src/assets/gallery/tools/PXL_20260119_011243768.jpg",
+      "alt": "wheel rim",
+      "description": "the part between the hub and the rubber tire",
+      "mapPositions": [
+        {
+          "x": 82,
+          "y": 69.7
+        }
+      ]
+    },
+    {
       "src": "/src/assets/gallery/tools/PXL_20260316_011201538.jpg",
       "alt": "wheel truing stand",
       "description": "truing or building wheels.  there is a bearing size ruler on the side",
@@ -1238,17 +1363,6 @@
       ]
     },
     {
-      "src": "/src/assets/gallery/tools/PXL_20260119_011243768.jpg",
-      "alt": "wheel rim",
-      "description": "the part between the hub and the rubber tire",
-      "mapPositions": [
-        {
-          "x": 82,
-          "y": 69.7
-        }
-      ]
-    },
-    {
       "src": "/src/assets/gallery/tools/PXL_20260323_005656131.jpg",
       "alt": "zip tie",
       "description": "ad-hoc attachment of cables, baskets, accessories",
@@ -1256,17 +1370,6 @@
         {
           "x": 68,
           "y": 85.6
-        }
-      ]
-    },
-    {
-      "src": "/src/assets/gallery/tools/PXL_20260323_005638361.jpg",
-      "alt": "brake pad",
-      "description": "rim and disc brake pads",
-      "mapPositions": [
-        {
-          "x": 74.5,
-          "y": 85.4
         }
       ]
     }
