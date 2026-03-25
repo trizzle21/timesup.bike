@@ -96,9 +96,12 @@ export function renderChart(chartId: string, data: ChartData, testOperatingHours
 	const iconsChanged = iconsEl && !iconsEl.textContent.includes(`${users}`);
 
 	// Render header with formatted date
-	const liveIndicator = chartId === 'curr' && (testOperatingHours || (isToday(date) && isNearOperatingHours()))
+	const isLive = chartId === 'curr' && (testOperatingHours || (isToday(date) && isNearOperatingHours()));
+	const liveIndicator = isLive
 		? '<span class="live-indicator" title="count is live">  <span class="live-dot"></span> Live</span>'
-		: '';
+		: chartId === 'curr'
+			? '<span class="offline-indicator" title="we\'re closed at the moment">offline</span>'
+			: '';
 
 	if (headerEl) {
 		const newHTML = newHeaderText + liveIndicator;
