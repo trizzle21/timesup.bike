@@ -105,7 +105,7 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 		: isLive
 			? '<span class="live-indicator" title="prepping to open">  <span class="live-dot"></span> prep</span>'
 			: isCurr
-				? '<span class="offline-indicator" title="shop is closed">closed</span>'
+				? '<span class="offline-indicator" title="waiting to open">offline</span>'
 				: '';
 
 	if (headerEl) {
