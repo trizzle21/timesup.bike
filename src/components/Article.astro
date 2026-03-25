@@ -1,0 +1,249 @@
+---
+import { Marked, Renderer } from 'marked';
+import { Image } from 'astro:assets';
+
+const renderer = new Renderer();
+renderer.link = ({ href, title, text }) => {
+	const isExternal = href && (href.startsWith('http://') || href.startsWith('https://'));
+	const titleAttr = title ? ` title="${title}"` : '';
+	const relAttr = isExternal ? ' rel="noopener noreferrer"' : '';
+	return `<a href="${href}"${titleAttr}${relAttr} target="_blank">${text}</a>`;
+};
+
+const articleMarked = new Marked({ renderer });
+
+interface TextBlock {
+	_template: 'text';
+	content: string;
+}
+
+interface ImageBlock {
+	_template: 'image';
+	src: string;
+	alt?: string;
+}
+
+type Block = TextBlock | ImageBlock;
+
+interface ArticleData {
+	title: string;
+	description: string;
+	titleImage?: string;
+	body: Block[];
+}
+
+const { article } = Astro.props as { article: ArticleData };
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/gallery/**/*.{jpeg,jpg,png,gif,webp,avif}');
+
+async function resolveImage(src: string) {
+	if (!src) return null;
+	const key = src.startsWith('/') ? src : `/${src}`;
+	if (images[key]) {
+		const mod = await images[key]();
+		return mod.default;
+	}
+	return null;
+}
+
+const titleImageData = article.titleImage ? await resolveImage(article.titleImage) : null;
+
+const resolvedBlocks = await Promise.all(
+	article.body.map(async (block: Block) => {
+		if (block._template === 'image' && block.src) {
+			const imageData = await resolveImage(block.src);
+			return { ...block, imageData };
+		}
+		return block;
+	})
+);
+---
+
+<section class="article">
+	<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
+	<div class="article-header">
+		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
+		{titleImageData ? (
+			<h1><Image src={titleImageData} alt={article.title} class="title-img" /></h1>
+		) : (
+			<h1>{article.title}</h1>
+		)}
+		{article.description && <p class="description">{article.description}</p>}
+	</div>
+
+	<div class="article-body">
+		{resolvedBlocks.map((block: any) => {
+			if (block._template === 'text') {
+				return <div class="text-block" set:html={articleMarked.parse(block.content)} />;
+			}
+			if (block._template === 'image' && block.imageData) {
+				return (
+					<figure class="image-block">
+						<Image src={block.imageData} alt={block.alt || ''} />
+						{block.alt && <figcaption>{block.alt}</figcaption>}
+					</figure>
+				);
+			}
+			if (block._template === 'image' && block.src) {
+				return (
+					<figure class="image-block">
+						<img src={block.src} alt={block.alt || ''} />
+						{block.alt && <figcaption>{block.alt}</figcaption>}
+					</figure>
+				);
+			}
+		})}
+	</div>
+</section>
+
+<style>
+	.article {
+		max-width: 1900px;
+		margin: 0 auto;
+		padding: 40px clamp(16px, 3vw, 48px);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.watermark {
+		position: absolute;
+		top: clamp(60px, 4vh, 80px);
+		/* left: calc(50% - 500px - 5%); */
+		left: calc(50% - 150px - 5%);
+		width: clamp(500px, 50%, 800px);
+		opacity: 0.11;
+		pointer-events: none;
+		z-index: 0;
+		transform: rotate(-15deg);
+	}
+
+	.article-header {
+		max-width: 1000px;
+		margin: 0 auto 32px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.back-link {
+		display: inline-block;
+		color: var(--text-gray);
+		text-decoration: none;
+		font-size: 16px;
+		transition: color 0.2s ease;
+		margin-bottom: 16px;
+	}
+
+	.back-link:hover {
+		color: var(--primary);
+	}
+
+	.article-header h1 {
+		font-size: clamp(28px, 4vw, 48px);
+		font-weight: 700;
+		color: var(--text-dark);
+		margin: 0 0 12px;
+		line-height: 1.2;
+	}
+
+	.article-header h1 :global(img) {
+		display: block;
+		width: 100%;
+		max-width: 300px;
+		height: auto;
+	}
+
+	.description {
+		font-size: clamp(14px, 1.5vw, 18px);
+		color: var(--text-light);
+		margin: 0;
+	}
+
+	.article-body {
+		max-width: 1000px;
+		margin: 0 auto;
+		position: relative;
+		z-index: 1;
+	}
+
+	.text-block {
+		font-size: clamp(15px, 1.4vw, 17px);
+		line-height: 1.8;
+		color: var(--text-gray);
+	}
+
+	.text-block :global(h2) {
+		font-size: clamp(22px, 2.5vw, 30px);
+		font-weight: 600;
+		color: var(--text-dark);
+		margin: 0.5em 0 0.25em;
+	}
+
+	.text-block :global(h3) {
+		font-size: clamp(18px, 2vw, 24px);
+		font-weight: 600;
+		color: var(--text-dark);
+		margin: 0.5em 0 0.25em;
+	}
+
+	.text-block :global(p) {
+		margin: 0 0 1em;
+	}
+
+	.text-block :global(a) {
+		color: var(--link);
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.text-block :global(a:hover) {
+		color: var(--primary);
+	}
+
+	.text-block :global(ul),
+	.text-block :global(ol) {
+		margin: 0 0 1em;
+		padding-left: 1.5em;
+	}
+
+	.text-block :global(li) {
+		margin-bottom: 0.4em;
+	}
+
+	.text-block :global(blockquote) {
+		border-left: 3px solid var(--primary);
+		margin: 1.5em 0;
+		padding: 0.5em 1em;
+		color: var(--text-light);
+		font-style: italic;
+	}
+
+	.text-block :global(strong) {
+		color: var(--text-dark);
+	}
+
+	.image-block {
+		margin: 2em calc(-50vw + 50%);
+		text-align: center;
+	}
+
+	.image-block :global(img) {
+		width: 100%;
+		max-width: 1000px;
+		max-height: 600px;
+		object-fit: cover;
+		height: auto;
+		border-radius: 8px;
+	}
+
+	.image-block figcaption {
+		font-size: 14px;
+		color: var(--text-light);
+		margin-top: 8px;
+	}
+
+	@media screen and (max-width: 768px) {
+		.image-block {
+			margin: 1.5em -16px;
+		}
+	}
+</style>

@@ -1,0 +1,23 @@
+---
+import Article from '../../components/Article.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	const articleFiles = import.meta.glob('../../content/articles/*.json', { eager: true });
+
+	return Object.entries(articleFiles).map(([path, data]) => {
+		const slug = path.split('/').pop()!.replace('.json', '');
+		return {
+			params: { slug },
+			props: { article: (data as any).default || data },
+		};
+	});
+}
+
+const { slug } = Astro.params;
+const { article } = Astro.props;
+---
+
+<Layout title={`${article.title} - Time's Up! Bike Co-op`} description={article.description} canonicalPath={`/articles/${slug}`}>
+	<Article article={article} />
+</Layout>

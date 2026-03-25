@@ -229,9 +229,10 @@ export default defineConfig({
             label: "Spoke Cards",
             list: true,
             ui: {
-              itemProps: (item: Record<string, string>) => ({
-                label: item?.alt || "Spoke Card",
-              }),
+              itemProps: (item: Record<string, string>) => {
+                const parts = [item?.alt, item?.event, item?.instagram].filter(Boolean);
+                return { label: parts.join(" - ") || "Spoke Card" };
+              },
             },
             fields: [
               { type: "image", name: "src", label: "Image" },
@@ -370,6 +371,64 @@ export default defineConfig({
                 fields: [
                   { type: "number", name: "x", label: "X %" },
                   { type: "number", name: "y", label: "Y %" },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        name: "articles",
+        label: "Articles",
+        path: "src/content/articles",
+        format: "json",
+        ui: {
+          allowedActions: {
+            create: true,
+            delete: true,
+          },
+        },
+        fields: [
+          { type: "string", name: "title", label: "Title" },
+          { type: "string", name: "description", label: "Description" },
+          { type: "image", name: "titleImage", label: "Title Image" },
+          {
+            type: "object",
+            name: "body",
+            label: "Body",
+            list: true,
+            templates: [
+              {
+                name: "text",
+                label: "Text Block",
+                ui: {
+                  itemProps: (item: Record<string, string>) => {
+                    const raw = item?.content || "";
+                    const heading = raw.match(/^##?\s+(.+)/m);
+                    const preview = heading ? heading[1] : raw.slice(0, 60);
+                    return { label: `Text: ${preview}${!heading && raw.length > 60 ? "…" : ""}` };
+                  },
+                },
+                fields: [
+                  {
+                    type: "string",
+                    name: "content",
+                    label: "Content",
+                    ui: { component: "textarea" },
+                  },
+                ],
+              },
+              {
+                name: "image",
+                label: "Image Block",
+                ui: {
+                  itemProps: (item: Record<string, string>) => ({
+                    label: `Image: ${item?.alt || item?.src?.split("/").pop() || "untitled"}`,
+                  }),
+                },
+                fields: [
+                  { type: "image", name: "src", label: "Image" },
+                  { type: "string", name: "alt", label: "Caption" },
                 ],
               },
             ],

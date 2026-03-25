@@ -1,0 +1,48 @@
+{
+  "title": "Building up a bike from scratch",
+  "description": "The fastest and quickest way to go from no bike to your first bike",
+  "titleImage": "",
+  "body": [
+    {
+      "content": "## Overview\nIf you are long on time but short on dollars, this guide will get you rolling around the city on a bike you built yourself. A full build at the co-op typically costs $40-$80 in parts and takes two to three sessions to finish. You will learn a ton along the way and walk away knowing how to maintain everything on the bike.",
+      "_template": "text"
+    },
+    {
+      "content": "## Before you show up\n\nEmail contact@timesup.bike and let us know you want to do a build. We need to confirm you have the right parts before you start — a frame, fork, headset, bottom bracket, crankset, wheels, brakes and a seatpost at minimum. If you are missing components, we can check what we have in stock or point you to where to find them.\n\nDo some research on your frame first. Know the wheel size (usually 700c or 26\"), the bottom bracket type (threaded or press-fit), and whether the brakes are rim or disc. This saves a lot of time at the shop.\n\nWear clothes you don't mind getting greasy. We have gloves and hand cleaner but builds are messy work.",
+      "_template": "text"
+    },
+    {
+      "content": "## What to expect on build day\n\nShow up at the start of open hours — Sunday or Wednesday at 5pm. Sign in at the reception table and tell the volunteer you are doing a build. They will pair you with a mechanic who can walk you through the process.\n\nA typical build follows this order:\n\n1. **Headset and fork** — press or thread the headset into the frame, install the fork, cut the steerer tube if needed\n2. **Bottom bracket and cranks** — thread in the bottom bracket, attach the crankset and pedals\n3. **Wheels and tires** — install tires and tubes, mount the wheels, true them if they wobble\n4. **Drivetrain** — chain, derailleurs (if geared), shifters and cables\n5. **Brakes** — mount brake calipers, run cables, adjust pad alignment\n6. **Cockpit** — handlebars, stem, grips, saddle and seatpost\n7. **Final check** — tighten everything to spec, test ride around the block\n\nYou will do all the work yourself with a mechanic guiding you through each step. This is not a drop-off service — it is a hands-on tutorial.",
+      "_template": "text"
+    },
+    {
+      "content": "## It probably won't happen in one visit\n\nMost builds take two or three sessions. Open hours are 5-8pm and we will not start a major project close to closing. Plan your first visit around steps 1-3 and come back for the rest.\n\nCommon reasons a build gets paused:\n- A part doesn't fit and you need to order the right one\n- You need a tool or part we don't have in stock\n- It is getting close to 8pm and you still have brakes and drivetrain to do\n\nThis is normal. Bring your parts home between visits — we do not store personal bikes or parts overnight.",
+      "_template": "text"
+    },
+    {
+      "content": "## The Sunday-Monday combo\n\nThe fastest path to a finished build is to start here on Sunday and then head to Mechanical Gardens in Williamsburg on Monday to finish up. Both co-ops have limited hours and inventory, so combining the two is key to getting it done quickly. Mechanical Gardens has a different parts selection which is useful if we are out of something you need.",
+      "_template": "text"
+    },
+    {
+      "content": "## Cost breakdown\n\nThe suggested donation is $2 per visit which covers tool use, grease and consumables. Used parts are generally $5 each — check our [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243). New parts like chains and tubes are sold at retail.\n\nA rough estimate for a full build using mostly used parts:\n- Frame and fork: bring your own or $30-$60 from Craigslist\n- Wheels: $10-$20 used from the co-op\n- Brakes, cables, housing: $10-$15\n- Chain: $10-$15 new\n- Tubes and tires: $15-$25 new\n- Misc hardware (seatpost clamp, stem bolts, etc.): $5-$10\n\n**Rough total: $80-$150** if you need to buy a frame, or **$40-$80** if you already have one.\n\nCash is preferred. We accept Venmo and Zelle but no credit cards.",
+      "_template": "text"
+    },
+    {
+      "content": "## Where to find a frame\n\nWe do not regularly stock frames but occasionally have donated ones. Your best bets:\n- **Craigslist and Facebook Marketplace** - search for \"bike frame\" or \"bike project\" in NYC, $20-$60 is common\n- **Mechanical Gardens (Williamsburg)** and other community bike shops sometimes sell frames\n- **Bike Jumble** in Park Slope held during the twice a year, usually May and September \n- **Trash picks** — keep an eye on the curb, especially around moving season in September\n\nGet the right size. Stand over the top tube with flat feet on the ground — you want a couple inches of clearance. If you are not sure, email us a photo and we will help you figure it out.",
+      "_template": "text"
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260316_013332663.jpg",
+      "alt": "we have frames in the basement but it won't be the best",
+      "_template": "image"
+    },
+    {
+      "content": "## Tips for a smooth build\n\n- **Come at 5pm sharp.** Builds take time and you want the full three hours.\n- **Bring all your parts in a bag.** Loose parts rolling around are easy to lose.\n- **Label everything.** If you are spread across multiple visits, tape notes to parts so you remember what goes where.\n- **Ask questions.** The whole point is to learn. There are no dumb questions here.\n- **Take photos as you go.** Useful reference for reassembly and future maintenance.\n- **Don't skip the test ride.** Ride around the block before you leave. Better to catch a problem now than on the Williamsburg Bridge.",
+      "_template": "text"
+    },
+    {
+      "content": "## Ready to start?\n\nEmail contact@timesup.bike with what you have and what you need. We will let you know if you are ready to start or what is missing. Then show up on Sunday or Wednesday at 5pm at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) and let's build a bike.",
+      "_template": "text"
+    }
+  ]
+}
