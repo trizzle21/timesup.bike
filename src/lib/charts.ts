@@ -145,15 +145,17 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 		const isActive = isCurr && (testState === 'open' || (isOperatingHours() && isToday(date)));
 
 		// For the current chart on today, figure out which bar index is "now"
-		// 20 bars across OPERATING_HOUR_START–OPERATING_HOUR_END (each bar = 9 min)
+		// Bar 0: before 5pm (early), Bars 1-18: 10-min slots 5pm-8pm, Bar 19: after 8pm (late)
 		let currentBarIndex = shiftData.length; // default: show all bars
 		if (isCurrToday) {
 			const now = new Date();
 			const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
 			const minutesSinceStart = (nyTime.getHours() - OPERATING_HOUR_START) * 60 + nyTime.getMinutes();
-			const totalMinutes = (OPERATING_HOUR_END - OPERATING_HOUR_START) * 60;
-			const minutesPerBar = totalMinutes / shiftData.length;
-			currentBarIndex = Math.max(1, Math.ceil(minutesSinceStart / minutesPerBar));
+			if (minutesSinceStart < 0) {
+				currentBarIndex = 1; // before 5pm: only show bar 0 (early)
+			} else {
+				currentBarIndex = Math.min(shiftData.length, 1 + Math.ceil(minutesSinceStart / 10));
+			}
 		}
 
 		// Get existing bars or create new ones
