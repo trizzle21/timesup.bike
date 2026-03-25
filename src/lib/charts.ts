@@ -55,7 +55,7 @@ function isNearOperatingHours(): boolean {
 	const nyTime = new Date(now.toLocaleString('en-US', { timeZone: TIMEZONE }));
 	const day = nyTime.getDay();
 	const hour = nyTime.getHours();
-	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START - pad_hours && hour < OPERATING_HOUR_END + pad_hours;
+	return OPERATING_DAYS.includes(day) && hour >= OPERATING_HOUR_START - pad_hours && hour <= OPERATING_HOUR_END;
 }
 
 // Check if a date string is today
