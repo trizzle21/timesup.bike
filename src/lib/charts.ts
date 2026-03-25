@@ -180,10 +180,12 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 
 			// Update classes
 			bar.className = 'chart-bar';
-			if (isFuture && height > 0) bar.classList.add('future');
 			if (isPeak) {
 				bar.classList.add('peak');
 				(bar as HTMLElement).title = 'busiest time';
+			} else if (isFuture && height > 0) {
+				bar.classList.add('future');
+				(bar as HTMLElement).title = 'predicted';
 			} else {
 				(bar as HTMLElement).title = '';
 			}
