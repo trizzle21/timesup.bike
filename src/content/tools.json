@@ -1376,7 +1376,7 @@
     {
       "src": "/src/assets/gallery/tools/aaa_tt4.jpg",
       "alt": "assembly compounds",
-      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps slip on bar grip. anti-seize for threads",
+      "description": "loctite prevents bolts vibrating loose. fiber grip prevents carbon tubes from slipping. hair spray helps slip on bar grip. copper anti-seize for threads",
       "mapPositions": [
         {
           "x": 62.5,
@@ -1397,7 +1397,7 @@
     },
     {
       "src": "/src/assets/gallery/tools/aaa_tt2.jpg",
-      "alt": "derailleurs",
+      "alt": "derailleur",
       "description": "moves chain on gears",
       "mapPositions": [
         {
