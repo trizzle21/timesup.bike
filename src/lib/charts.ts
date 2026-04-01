@@ -187,7 +187,7 @@ export function renderChart(chartId: string, data: ChartData, testState: 'open' 
 			bar.className = 'chart-bar';
 			if (isPeak) {
 				bar.classList.add('peak');
-				(bar as HTMLElement).title = 'busiest time';
+				(bar as HTMLElement).title = 'peak traffic';
 			} else if (isFuture && height > 0) {
 				bar.classList.add('future');
 				(bar as HTMLElement).title = 'predicted';
