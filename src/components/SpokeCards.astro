@@ -394,6 +394,10 @@ if (featured.length === 0) {
 		:global(.gallery-item.tapped img) {
 			transform: scale(1.05);
 		}
+
+		:global(.gallery-item.tapped.panning img) {
+			transform: scale(2.4);
+		}
 	}
 </style>
 
@@ -431,6 +435,28 @@ if (featured.length === 0) {
 		if (!target.closest('.portraits .gallery-item')) {
 			untap();
 		}
+	});
+
+	// Mobile: touch-drag to zoom + pan when tapped
+	document.querySelectorAll('.portraits .gallery-item').forEach(item => {
+		const img = item.querySelector('img') as HTMLElement;
+		if (!img) return;
+
+		item.addEventListener('touchmove', (e) => {
+			if (!item.classList.contains('tapped')) return;
+			e.preventDefault();
+			item.classList.add('panning');
+			const touch = (e as TouchEvent).touches[0];
+			const rect = (item as HTMLElement).getBoundingClientRect();
+			const x = (touch.clientX - rect.left) / rect.width * 100;
+			const y = (touch.clientY - rect.top) / rect.height * 100;
+			img.style.transformOrigin = `${x}% ${y}%`;
+		}, { passive: false });
+
+		item.addEventListener('touchend', () => {
+			item.classList.remove('panning');
+			img.style.transformOrigin = 'center center';
+		});
 	});
 
 	// Desktop: pan zoomed image with mouse movement
