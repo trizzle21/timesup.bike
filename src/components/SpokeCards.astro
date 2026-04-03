@@ -467,7 +467,7 @@ if (featured.length === 0) {
 				const x = (touch.clientX - rect.left) / rect.width * 100;
 				const y = (touch.clientY - rect.top) / rect.height * 100;
 				img.style.transformOrigin = `${x}% ${y}%`;
-			}, 15);
+			}, 1);
 		});
 
 		item.addEventListener('touchmove', (e) => {
