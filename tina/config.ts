@@ -230,13 +230,14 @@ export default defineConfig({
             list: true,
             ui: {
               itemProps: (item: Record<string, string>) => {
-                const parts = [item?.alt, item?.event, item?.instagram].filter(Boolean);
-                return { label: parts.join(" - ") || "Spoke Card" };
+                const file = item?.src?.split("/").pop()?.replace(/\.[^.]+$/, "").replace("spoke_card_", "#") || "?";
+                const parts = [item?.event, item?.instagram].filter(Boolean);
+                const detail = parts.length ? ` - ${parts.join(" - ")}` : "";
+                return { label: `${file}${detail}` };
               },
             },
             fields: [
               { type: "image", name: "src", label: "Image" },
-              { type: "string", name: "alt", label: "Caption (Alt Text)" },
               {
                 type: "string",
                 name: "event",

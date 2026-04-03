@@ -24,6 +24,7 @@ const getImage = (src: string) => {
 	return key ? images[key].default : null;
 };
 
+const isDev = import.meta.env.DEV;
 const validItems = items.filter(i => i.src);
 
 // Simulate CSS grid dense placement to find gaps
@@ -111,16 +112,20 @@ if (featured.length === 0) {
 			const imgSrc = getImage(item.src);
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
-			const cardId = item.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+			const itemNumber = idx + 1;
+			const cardId = `${itemNumber}`;
+			const altText = item.event || `Spoke card ${itemNumber}`;
+			const filename = item.src.split('/').pop()?.replace(/\.[^.]+$/, '') || '';
 			return (
 				<div id={cardId} class={`gallery-item${isFeatured ? ' featured' : ''}`}>
 					{imgSrc ? (
-						<Image src={imgSrc} alt={item.alt} loading={loading} width={900} height={900} />
+						<Image src={imgSrc} alt={altText} loading={loading} width={900} height={900} />
 					) : (
-						<img src={item.src} alt={item.alt} loading={loading} />
+						<img src={item.src} alt={altText} loading={loading} />
 					)}
+					{isDev && <span class="dev-filename">{filename}</span>}
 					<div class="gallery-overlay">
-						<span class="overlay-caption">{item.alt}</span>
+						<span class="overlay-caption">{itemNumber}</span>
 						{item.event && (
 							<span class="overlay-event">{item.event}</span>
 						)}
@@ -201,6 +206,20 @@ if (featured.length === 0) {
 		grid-row: span 2;
 	}
 
+	.dev-filename, .portraits-grid :global(.dev-filename) {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		font-size: 10px;
+		font-weight: 600;
+		color: #fff;
+		background: rgba(0, 0, 0, 0.6);
+		padding: 2px 6px;
+		border-radius: 3px;
+		z-index: 2;
+		pointer-events: none;
+	}
+
 	.gallery-item, .portraits-grid :global(.gallery-item) {
 		border-radius: 12px;
 		overflow: hidden;
@@ -264,6 +283,7 @@ if (featured.length === 0) {
 		font-size: clamp(12px, 1.2vw, 16px);
 		color: rgba(255, 255, 255, 0.85);
 		text-align: center;
+		text-transform: capitalize;
 		line-height: 1.3;
 	}
 
@@ -285,16 +305,35 @@ if (featured.length === 0) {
 	@media (hover: hover) {
 		.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {
 			opacity: 1;
-			align-items: flex-start;
-			justify-content: flex-end;
 			background: none;
-			padding: 12px;
-			gap: 4px;
+			padding: 0;
 		}
 
-		.gallery-item:hover .overlay-caption, .portraits-grid :global(.gallery-item:hover .overlay-caption),
-		.gallery-item:hover .overlay-instagram, .portraits-grid :global(.gallery-item:hover .overlay-instagram),
+		.gallery-item:hover .overlay-caption, .portraits-grid :global(.gallery-item:hover .overlay-caption) {
+			position: absolute;
+			bottom: 8px;
+			right: 8px;
+			font-size: clamp(12px, 1.2vw, 16px);
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+		}
+
 		.gallery-item:hover .overlay-event, .portraits-grid :global(.gallery-item:hover .overlay-event) {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			font-size: clamp(12px, 1.2vw, 16px);
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+			text-align: right;
+		}
+
+		.gallery-item:hover .overlay-instagram, .portraits-grid :global(.gallery-item:hover .overlay-instagram) {
+			position: absolute;
+			bottom: 8px;
+			left: 8px;
 			font-size: clamp(12px, 1.2vw, 16px);
 			background: rgba(0, 0, 0, 0.55);
 			padding: 4px 8px;
@@ -320,21 +359,33 @@ if (featured.length === 0) {
 
 		:global(.gallery-item.tapped .gallery-overlay) {
 			opacity: 1 !important;
-			align-items: flex-start;
-			justify-content: flex-end;
 			background: none;
-			padding: 12px;
-			gap: 4px;
+			padding: 0;
 		}
 
-		:global(.gallery-item.tapped .overlay-caption),
-		:global(.gallery-item.tapped .overlay-instagram) {
+		:global(.gallery-item.tapped .overlay-caption) {
+			position: absolute;
+			bottom: 8px;
+			right: 8px;
 			background: rgba(0, 0, 0, 0.55);
 			padding: 4px 8px;
 			border-radius: 4px;
 		}
 
 		:global(.gallery-item.tapped .overlay-event) {
+			position: absolute;
+			top: 8px;
+			left: 8px;
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+			text-align: right;
+		}
+
+		:global(.gallery-item.tapped .overlay-instagram) {
+			position: absolute;
+			bottom: 8px;
+			left: 8px;
 			background: rgba(0, 0, 0, 0.55);
 			padding: 4px 8px;
 			border-radius: 4px;
