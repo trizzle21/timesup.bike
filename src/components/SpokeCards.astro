@@ -273,13 +273,29 @@ if (featured.length === 0) {
 		text-decoration: underline;
 	}
 
-	.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {
-		opacity: 1;
-	}
+	@media (hover: hover) {
+		.gallery-item:hover .gallery-overlay, .portraits-grid :global(.gallery-item:hover .gallery-overlay) {
+			opacity: 1;
+			align-items: flex-start;
+			justify-content: flex-end;
+			background: none;
+			padding: 12px;
+			gap: 4px;
+		}
 
-	.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
-		transform: scale(1.05);
-		filter: none;
+		.gallery-item:hover .overlay-caption, .portraits-grid :global(.gallery-item:hover .overlay-caption),
+		.gallery-item:hover .overlay-instagram, .portraits-grid :global(.gallery-item:hover .overlay-instagram),
+		.gallery-item:hover .overlay-event, .portraits-grid :global(.gallery-item:hover .overlay-event) {
+			font-size: clamp(12px, 1.2vw, 16px);
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+		}
+
+		.gallery-item:hover img, .portraits-grid :global(.gallery-item:hover img) {
+			transform: scale(1.05);
+			filter: none;
+		}
 	}
 
 	/* Responsive */
@@ -288,5 +304,72 @@ if (featured.length === 0) {
 			grid-template-columns: repeat(2, 1fr);
 		}
 
+		:global(.gallery-item.tapped) {
+			grid-column: span 2 !important;
+			grid-row: span 2 !important;
+		}
+
+		:global(.gallery-item.tapped .gallery-overlay) {
+			opacity: 1 !important;
+			align-items: flex-start;
+			justify-content: flex-end;
+			background: none;
+			padding: 12px;
+			gap: 4px;
+		}
+
+		:global(.gallery-item.tapped .overlay-caption),
+		:global(.gallery-item.tapped .overlay-instagram) {
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+		}
+
+		:global(.gallery-item.tapped .overlay-event) {
+			background: rgba(0, 0, 0, 0.55);
+			padding: 4px 8px;
+			border-radius: 4px;
+		}
+
+		:global(.gallery-item.tapped img) {
+			transform: scale(1.05);
+		}
 	}
 </style>
+
+<script>
+	const isMobile = () => window.matchMedia('(max-width: 1050px)').matches;
+
+	function untap() {
+		document.querySelectorAll('.portraits .gallery-item.tapped').forEach(el => {
+			el.classList.remove('tapped');
+		});
+	}
+
+	document.querySelectorAll('.portraits .gallery-item').forEach(item => {
+		item.addEventListener('click', (e) => {
+			if (!isMobile()) return;
+			const target = e.target as HTMLElement;
+			const isTapped = item.classList.contains('tapped');
+			if (isTapped && target.closest('a')) return; // only let IG links work when enlarged
+			e.preventDefault();
+			e.stopPropagation();
+			const wasTapped = item.classList.contains('tapped');
+			untap();
+			if (!wasTapped) {
+				item.classList.add('tapped');
+				requestAnimationFrame(() => {
+					(item as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+				});
+			}
+		});
+	});
+
+	document.addEventListener('click', (e) => {
+		if (!isMobile()) return;
+		const target = e.target as HTMLElement;
+		if (!target.closest('.portraits .gallery-item')) {
+			untap();
+		}
+	});
+</script>
