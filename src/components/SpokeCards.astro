@@ -398,6 +398,7 @@ if (featured.length === 0) {
 			touch-action: none;
 		}
 
+
 		:global(.gallery-item.tapped img) {
 			transform: scale(1.05);
 		}
@@ -449,12 +450,12 @@ if (featured.length === 0) {
 		const img = item.querySelector('img') as HTMLElement;
 		if (!img) return;
 
-		let longPressTimer: ReturnType<typeof setTimeout> | null = null;
-		let isPanning = false;
-
 		item.addEventListener('contextmenu', (e) => {
 			if (item.classList.contains('tapped')) e.preventDefault();
 		});
+
+		let longPressTimer: ReturnType<typeof setTimeout> | null = null;
+		let isPanning = false;
 
 		item.addEventListener('touchstart', (e) => {
 			if (!item.classList.contains('tapped')) return;
@@ -466,24 +467,17 @@ if (featured.length === 0) {
 				const x = (touch.clientX - rect.left) / rect.width * 100;
 				const y = (touch.clientY - rect.top) / rect.height * 100;
 				img.style.transformOrigin = `${x}% ${y}%`;
-			}, 300);
-		}, { passive: true });
+			}, 15);
+		});
 
 		item.addEventListener('touchmove', (e) => {
-			if (!item.classList.contains('tapped')) return;
-			if (!isPanning && longPressTimer) {
-				clearTimeout(longPressTimer);
-				longPressTimer = null;
-				return;
-			}
 			if (!isPanning) return;
-			e.preventDefault();
 			const touch = (e as TouchEvent).touches[0];
 			const rect = (item as HTMLElement).getBoundingClientRect();
 			const x = (touch.clientX - rect.left) / rect.width * 100;
 			const y = (touch.clientY - rect.top) / rect.height * 100;
 			img.style.transformOrigin = `${x}% ${y}%`;
-		}, { passive: false });
+		});
 
 		item.addEventListener('touchend', () => {
 			if (longPressTimer) {
