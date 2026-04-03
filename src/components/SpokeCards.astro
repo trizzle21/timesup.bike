@@ -391,6 +391,13 @@ if (featured.length === 0) {
 			border-radius: 4px;
 		}
 
+		:global(.gallery-item.tapped) {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			user-select: none;
+			touch-action: none;
+		}
+
 		:global(.gallery-item.tapped img) {
 			transform: scale(1.05);
 		}
@@ -442,10 +449,35 @@ if (featured.length === 0) {
 		const img = item.querySelector('img') as HTMLElement;
 		if (!img) return;
 
+		let longPressTimer: ReturnType<typeof setTimeout> | null = null;
+		let isPanning = false;
+
+		item.addEventListener('contextmenu', (e) => {
+			if (item.classList.contains('tapped')) e.preventDefault();
+		});
+
+		item.addEventListener('touchstart', (e) => {
+			if (!item.classList.contains('tapped')) return;
+			const touch = (e as TouchEvent).touches[0];
+			longPressTimer = setTimeout(() => {
+				isPanning = true;
+				item.classList.add('panning');
+				const rect = (item as HTMLElement).getBoundingClientRect();
+				const x = (touch.clientX - rect.left) / rect.width * 100;
+				const y = (touch.clientY - rect.top) / rect.height * 100;
+				img.style.transformOrigin = `${x}% ${y}%`;
+			}, 300);
+		}, { passive: true });
+
 		item.addEventListener('touchmove', (e) => {
 			if (!item.classList.contains('tapped')) return;
+			if (!isPanning && longPressTimer) {
+				clearTimeout(longPressTimer);
+				longPressTimer = null;
+				return;
+			}
+			if (!isPanning) return;
 			e.preventDefault();
-			item.classList.add('panning');
 			const touch = (e as TouchEvent).touches[0];
 			const rect = (item as HTMLElement).getBoundingClientRect();
 			const x = (touch.clientX - rect.left) / rect.width * 100;
@@ -454,8 +486,15 @@ if (featured.length === 0) {
 		}, { passive: false });
 
 		item.addEventListener('touchend', () => {
-			item.classList.remove('panning');
-			img.style.transformOrigin = 'center center';
+			if (longPressTimer) {
+				clearTimeout(longPressTimer);
+				longPressTimer = null;
+			}
+			if (isPanning) {
+				isPanning = false;
+				item.classList.remove('panning');
+				img.style.transformOrigin = 'center center';
+			}
 		});
 	});
 
