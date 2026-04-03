@@ -101,7 +101,7 @@ if (featured.length === 0) {
 
 <section class="portraits">
 	<div class="portraits-header">
-		<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
+		<a href="/" class="back-link" aria-label="Back to home"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back to home</a>
 		<h1><img src="/spoke_cards_title.png" alt={title} class="title-img" /></h1>
 		<p>{description}</p>
 	</div>
@@ -151,16 +151,25 @@ if (featured.length === 0) {
 	}
 
 	.back-link {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
 		color: var(--text-gray);
 		text-decoration: none;
-		font-size: 16px;
+		font-family: 'Raleway', sans-serif;
+		font-size: 15px;
+		font-weight: 500;
 		margin-bottom: 16px;
-		transition: color 0.2s ease;
+		transition: color 0.2s ease, gap 0.2s ease;
 	}
 
 	.back-link:hover {
 		color: var(--primary);
+		gap: 10px;
+	}
+
+	.back-link svg {
+		flex-shrink: 0;
 	}
 
 	.portraits-header h1 {

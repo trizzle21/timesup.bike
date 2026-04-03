@@ -19,8 +19,8 @@ const { title, description, sections } = faq;
 	<img src="/TU_logo.svg" alt="" class="watermark" aria-hidden="true" />
 	<div class="faq-header">
 		<div class="top-row">
-			<a href="/" class="back-link" aria-label="Back to home">&larr; Back</a>
-			<button class="toggle-all" id="toggle-all">Expand all</button>
+			<a href="/" class="back-link" aria-label="Back to home"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> Back to home</a>
+			<button class="toggle-all" id="toggle-all"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg> Expand all</button>
 		</div>
 		<h1><img src="/faq_title.png" alt={title} class="title-img" /></h1>
 		<p>{description}</p>
@@ -48,7 +48,9 @@ const { title, description, sections } = faq;
 			const details = document.querySelectorAll<HTMLDetailsElement>('.faq-columns details');
 			const allOpen = Array.from(details).every(d => d.open);
 			details.forEach(d => d.open = !allOpen);
-			btn.textContent = allOpen ? 'Expand all' : 'Collapse all';
+			const chevronDown = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+			const chevronUp = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 15 12 9 18 15"></polyline></svg>';
+			btn.innerHTML = allOpen ? `${chevronDown} Expand all` : `${chevronUp} Collapse all`;
 		});
 	}
 </script>
@@ -87,31 +89,46 @@ const { title, description, sections } = faq;
 	}
 
 	.back-link {
-		display: inline-block;
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
 		color: var(--text-gray);
 		text-decoration: none;
-		font-size: 16px;
-		transition: color 0.2s ease;
+		font-family: 'Raleway', sans-serif;
+		font-size: 15px;
+		font-weight: 500;
+		margin-bottom: 16px;
+		transition: color 0.2s ease, gap 0.2s ease;
 	}
 
 	.back-link:hover {
 		color: var(--primary);
+		gap: 10px;
+	}
+
+	.back-link svg {
+		flex-shrink: 0;
 	}
 
 	.toggle-all {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
 		background: #d0e4f7;
 		border: none;
-		border-radius: 6px;
-		padding: 6px 16px;
+		border-radius: 20px;
+		padding: 6px 14px;
+		font-family: 'Raleway', sans-serif;
 		font-size: 14px;
+		font-weight: 600;
 		color: var(--text-gray);
 		cursor: pointer;
-		transition: color 0.2s ease, border-color 0.2s ease;
+		transition: color 0.2s ease, background 0.2s ease;
 	}
 
 	.toggle-all:hover {
 		color: var(--primary);
-		border-color: var(--primary);
+		background: #b8d4f0;
 	}
 
 	.faq-header h1 {
