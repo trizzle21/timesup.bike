@@ -364,9 +364,9 @@ function updateAnnouncementBanner(dataMap: Record<string, any>): void {
 		const date = d.toLocaleDateString('en-US', { ...tz, month: 'numeric', day: 'numeric', year: '2-digit' });
 		const time = d.toLocaleTimeString('en-US', { ...tz, hour: 'numeric', minute: '2-digit', hour12: true });
 		document.getElementById('announcement-date')!.textContent = `posted on ${weekday} ${date} at ${time}`;
-		banner.style.display = 'block';
+		banner.classList.add('visible');
 	} else {
-		banner.style.display = 'none';
+		banner.classList.remove('visible');
 	}
 }
 
