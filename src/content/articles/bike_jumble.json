@@ -19,8 +19,24 @@
       "content": "## Tips for buying\n\n- **Know what you need before you go.** It is easy to get distracted by bins of cheap parts. Make a list.\n- **Bring cash.** Not every vendor takes cards.\n- **Inspect everything.** Used parts are sold as-is. Spin the wheels, check for cracks, test the shifting if you can.\n- **Bring a bag or backpack.** You will not want to carry loose parts around all day.\n- **Go early.** The serious buyers show up at 10am. By 2pm the best deals are gone.\n- **Ask questions.** Most vendors are cyclists themselves and happy to talk about what they are selling.",
       "_template": "text"
     },
-{
-      "content": "## Find us there\nTime's Up! has a booth at the Jumble. If you are feeling overwhelmed by the selection or not sure whether a part is compatible with your bike, come find us and ask. One of our volunteers will walk the Jumble with you, help you figure out what you need and check that it actually fits your setup before you buy it. Look for the Time's Up! table.\n\n## Why it matters\nThe Bike Jumble keeps parts and bikes in circulation instead of in landfills. It connects people who need affordable transportation with people who have spare bikes and parts. It is one of the few places in the city where the cycling community shows up in one place — racers, commuters, messengers, co-op mechanics, collectors and people who just want a cheap bike to get around on.\n\nIf you pick up a project bike or parts you need help installing, bring them to the co-op. We are open Sundays and Wednesdays at 5pm.\n\nEmail contact@timesup.bike or visit us at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) in the East Village.",
+    {
+      "content": "## Find us there\nTime's Up! has a booth at the Jumble. If you are feeling overwhelmed by the selection or not sure whether a part is compatible with your bike, come find us and ask. One of our volunteers will walk the Jumble with you, help you figure out what you need and check that it actually fits your setup before you buy it. Look for the Time's Up! table.",
+      "_template": "text"
+    },
+    {
+      "src": "/src/assets/gallery/articles/IMG-20250519-WA0005.jpg",
+      "_template": "image"
+    },
+    {
+      "src": "/src/assets/gallery/articles/IMG-20250510-WA0022.jpg",
+      "_template": "image"
+    },
+    {
+      "src": "/src/assets/gallery/articles/IMG-20250510-WA0004.jpg",
+      "_template": "image"
+    },
+    {
+      "content": "## Why it matters\nThe Bike Jumble keeps parts and bikes in circulation instead of in landfills. It connects people who need affordable transportation with people who have spare bikes and parts. It is one of the few places in the city where the cycling community shows up in one place — racers, commuters, messengers, co-op mechanics, collectors and people who just want a cheap bike to get around on.\n\nIf you pick up a project bike or parts you need help installing, bring them to the co-op. We are open Sundays and Wednesdays at 5pm.\n\nEmail contact@timesup.bike or visit us at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) in the East Village.",
       "_template": "text"
     }
   ]

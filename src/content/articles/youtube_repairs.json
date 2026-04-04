@@ -1,0 +1,35 @@
+{
+  "title": "Using online help and the co-op tools to fix your bike",
+  "description": "How to combine online resources with hands-on time at the shop to get your bike running right",
+  "titleImage": "",
+  "body": [
+    {
+      "content": "## Overview\nYou do not need to walk into the co-op knowing how to fix your bike. Some of our best repair sessions start with a patron who watched a YouTube video at home, showed up with a rough idea of what needs to happen, and worked through it with a mechanic filling in the gaps. The video gives you the concept. The co-op gives you the tools, the parts and someone to catch mistakes before they become problems.",
+      "_template": "text"
+    },
+    {
+      "content": "## The channels worth watching\n\nNot all bike repair videos are equal. These are the ones our mechanics actually recommend.\n\n**Park Tool (Calvin Jones)** -- The gold standard. Park Tool's channel covers nearly every repair you will encounter, explained clearly with professional tools. Calvin Jones has been teaching bike mechanics for decades and his videos are thorough without being slow. Start here for any repair you have not done before.\n\n**RJ the Bike Guy** -- More approachable and DIY-friendly than Park Tool. RJ works on real bikes in real condition, not showroom models. Good for budget builds, used bike restoration and figuring out workarounds when you do not have the exact right tool.\n\n**Sheldon Brown ([sheldonbrown.com](https://www.sheldonbrown.com/))** -- Not a YouTube channel but a website that has been the bible of bike mechanics since the early internet. Sheldon passed away in 2008 but his articles are still the most detailed reference for wheel building, gear theory, frame compatibility and obscure standards. If you need to understand why something works the way it does, Sheldon wrote about it.\n\n**Reddit [r/bikewrench](https://www.reddit.com/r/bikewrench/)** -- A community of mechanics and DIY riders who answer repair questions. Post a photo of your problem with a description and you will usually get a helpful response within hours. Good for diagnosing weird issues, identifying obscure parts and getting a second opinion before you start a repair.",
+      "_template": "text"
+    },
+    {
+      "content": "## How to use a video before your visit\n\n1. **Identify the problem.** \"My gears skip\" or \"my brakes squeal\" is enough to search for.\n2. **Watch the repair video once all the way through.** Do not skip ahead. Understanding the full process matters more than memorizing each step.\n3. **Note what tools and parts are needed.** The video will show you. If you are not sure whether we have a specific tool, email us and ask.\n4. **Watch it again if the repair is complex.** Wheel truing, headset replacement and bottom bracket work are worth a second viewing.\n5. **Bring your phone to the shop.** You can rewatch the video at the stand while you work. This is normal and nobody will judge you for it.",
+      "_template": "text"
+    },
+    {
+      "content": "## What the video cannot teach you\n\nVideos show you the steps but they cannot tell you what your specific bike needs. That is where the co-op fills in.\n\n- **Diagnosis.** The video assumes you know what is wrong. A mechanic can help you figure out that your \"slipping chain\" is actually a worn cassette, not a cable adjustment.\n- **Compatibility.** Your bike might use different standards than the one in the video. A mechanic can tell you whether that bottom bracket tutorial applies to your frame before you start pulling things apart.\n- **Feel.** How tight is tight enough? How much cable tension is right? These are things you learn by doing, with someone next to you who can say \"a little more\" or \"stop, that is too much.\"\n- **Recovery.** If you strip a bolt, cross-thread a part or break something mid-repair, a mechanic can help you fix it. Alone at home, you are stuck.",
+      "_template": "text"
+    },
+    {
+      "content": "## A typical video-assisted visit\n\nThis is how it usually goes:\n\n1. You show up and tell the reception volunteer what you want to do.\n2. You get paired with a mechanic and explain the repair. Mention that you watched a video.\n3. The mechanic confirms the diagnosis and checks that the approach in the video applies to your bike.\n4. You do the work. The mechanic watches, advises and steps in when needed.\n5. You test ride, make final adjustments and head home.\n\nThe whole thing usually takes 30 minutes to two hours depending on the repair. Come at 5pm to give yourself the full window.",
+      "_template": "text"
+    },
+    {
+      "content": "## Repairs that work well with this approach\n\n- **Flat tire / tube replacement** -- simple enough to learn from a video, good first repair to do at the shop\n- **Brake pad replacement and adjustment** -- the video shows the process, the mechanic helps you get the alignment right\n- **Chain replacement** -- straightforward with a chain tool, but sizing matters and a mechanic can check your work\n- **Cable and housing replacement** -- the routing and tension are easier to get right with guidance\n- **Derailleur adjustment** -- videos explain the concept well but dialing it in by feel is where hands-on help shines\n- **Headset and bottom bracket service** -- more advanced, but doable if you watched the video and a mechanic walks you through it",
+      "_template": "text"
+    },
+    {
+      "content": "## Quick links\n\n- [Park Tool YouTube channel](https://www.youtube.com/@parktool)\n- [RJ the Bike Guy YouTube channel](https://www.youtube.com/@RJTheBikeGuy)\n- [Sheldon Brown's website](https://www.sheldonbrown.com/)\n\nCome by on Sunday or Wednesday at 5pm with your bike and your phone. We will figure it out together.\n\nEmail contact@timesup.bike or visit us at [626 East 14th St](https://maps.app.goo.gl/eMzHrncKrd1izM759) in the East Village.",
+      "_template": "text"
+    }
+  ]
+}
