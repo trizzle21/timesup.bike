@@ -3,12 +3,37 @@
   "description": "",
   "sections": [
     {
-      "heading": "Workshop",
+      "heading": "Visiting",
       "items": [
         {
           "question": "How does the co-op work?",
           "answer": "We are a DIY bike repair workshop with the goal to educate cyclists on bike repair/maintenance which in turn brings down the cost of ownership and gets more butts on bikes.  You bring your bike, we provide tools, parts and step-by-step mechanical guidance. You do the work and we'll show you how.\n\nSign in at the reception table and let the volunteer know what you are looking to do.\n\nHint: Email contact@timesup.bike before your visit with your issue. Some specialists are only in on certain days, but everyone can see your message and help coordinate."
         },
+        {
+          "question": "Do I need an appointment?",
+          "answer": "No appointment or membership needed. Just show up during open hours and sign in at the reception table."
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "$2 suggested donation plus parts.  This covers minor consumables like lubricant, grease and cleaning supplies.  Used parts are generally ~$5 each, see our [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo, Zelle) but no credit cards.  Baked goods and snacks if you want to thank the volunteers."
+        },
+        {
+          "question": "Do I need to know how to fix bikes?",
+          "answer": "No.  The bulk of our patrons have never fixed a flat tire on their own.  Volunteer mechanics are here to walk you through repairs step-by-step. It's DIY but we're here to make sure your project does not go off the rails."
+        },
+        {
+          "question": "What should I bring?",
+          "answer": "Bring your bike and any parts you already have. Wear clothes you don't mind getting greasy. We have gloves and hand cleaner available."
+        },
+        {
+          "question": "How much time does this take?",
+          "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more.  We will triage your issues so you can ride home, come back at a later date with replacement parts and more time.  We recommend coming at the start of the open hours and advise against starting major projects near closing.  There is no drop-off service and you need to be physically present to do the work.\n\nIn terms of wait time, there isn't much and we can attend to you as soon as you walk in.  Everyone works on a different part of their bike, we have a consistent 1:1 ratio of patrons to mechanics at any time and can overflow onto the sidewalk. You can see a real-time view of shop traffic on our main page and it doesn't get crazy until we hit 20+ patrons."
+        }
+      ]
+    },
+    {
+      "heading": "Location & Hours",
+      "items": [
         {
           "question": "Where are you located?",
           "answer": "The primary location is [626 East 14th St. New York, NY 10009](https://maps.app.goo.gl/eMzHrncKrd1izM759).  As of April 2026, we do not have any other bike coop location though references exist online of our former locations in Brooklyn and by the South Street Seaport.\n\nWe occasionally host Saturday classes at La Plaza Community Garden nearby from Spring to Fall, see our [Instagram](https://www.instagram.com/times_up_nyc) for the class schedule."
@@ -18,20 +43,71 @@
           "answer": "We are open on Wednesdays and Sundays from 5pm to 8pm.  You may usually see people there well after the closing time but we are just finishing up projects and will not start new repairs 30 minutes before closing.  "
         },
         {
-          "question": "Do I need an appointment?",
-          "answer": "No appointment or membership needed. Just show up during open hours and sign in at the reception table."
-        },
-        {
           "question": "Why is there an art gallery at the address?",
           "answer": "We share this space with [14BC Gallery](https://www.14bcgallery.org/) which hosts art exhibitions from Thursday to Saturday."
         },
         {
           "question": "Bathroom?",
           "answer": "Yes. All the way in the back.  It is not wheelchair accessible due to a narrow set of stairs. ![floorplan](/tu_floorplan_bathroom.png)"
+        }
+      ]
+    },
+    {
+      "heading": "Repairs",
+      "items": [
+        {
+          "question": "What services do you provide?",
+          "answer": "We handle almost all repairs associated with a non-electric bike that you will find in a normal bike shop, including...\n- building a bike from the frame up, email us at contact@timesup.bike first so we can confirm you have all the necessary parts\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight."
         },
         {
-          "question": "Code of conduct?",
-          "answer": "Be excellent to each other."
+          "question": "What service does the co-op not handle?",
+          "answer": "We recommend a normal bike shop for the following.\n- regular, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- powder coating or painting frames\n- facing bottom bracket***, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service\n\n*** [Mechanical Gardens](https://bikecoop.nyc/) is a bike coop in Williamsburg that has the tool for facing and chasing a bottom bracket shell.  They set their own pricing but are similarly donation based."
+        },
+        {
+          "question": "Will you help install my parts purchased elsewhere? e.g. Amazon, AliExpress, eBay",
+          "answer": "Yes. We typically give you a model number so you can order parts yourself. We carry used parts on-site to get your bike rolling but the quality varies.  If you want new or higher-quality components, we can recommend parts the coop does not carry and then help you install them."
+        },
+        {
+          "question": "Can I chat with a mechanic?",
+          "answer": "Yes.  contact@timesup.bike goes to our mechanics group chat so you'll get a quick response."
+        }
+      ]
+    },
+    {
+      "heading": "What We Service",
+      "items": [
+        {
+          "question": "Do you service electric bikes or electric scooters?",
+          "answer": "No.  Your best bet nearby is [BikeFixNYC](https://www.bikefixnyc.com/)"
+        },
+        {
+          "question": "Do you service specialty non-electric bikes? e.g. cargo, bakfiet, folding, recumbent, trike, tandem, elliptical",
+          "answer": "Email us at contact@timesup.bike.  We do not specialize in these but there may be some commonality.  Our repair stands are not weight rated for heavier bikes.\n\nGenerally folding bikes can be serviced as a normal bike, the proprietary bits are fairly solid."
+        },
+        {
+          "question": "Do you service other forms of micromobility? e.g. scooters, skateboards, strollers",
+          "answer": "Email us at contact@timesup.bike.  Unlikely but there may be some commonality."
+        }
+      ]
+    },
+    {
+      "heading": "Parts & Donations",
+      "items": [
+        {
+          "question": "Can I donate a bike or parts?",
+          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.  We cannot clip locks for obviously abandoned bikes.  Email us at contact@timesup.bike if you have questions.\n\nBikes will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies and space, we do not take electric bikes or children's bikes.  We do not take cycling apparel, shoes, helmets and other wearables.  Please do not leave donations for the coop if we are closed, it gets us in trouble with the neighbors.\n\n[Times Up!](https://times-up.org/support/donating-land-or-real-estate/) is a 501(c)(3) non-profit organization and donations can be tax deductible "
+        },
+        {
+          "question": "Do you buy or sell bikes?",
+          "answer": "We do not buy bikes, we only accept donations.  We do sell ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. city commuting) or a specific size."
+        },
+        {
+          "question": "What tools does the co-op need?",
+          "answer": "We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the [tools page](/tools) to see what we currently have or lack."
+        },
+        {
+          "question": "Where is the 24-hour bike parts vending machine?",
+          "answer": "It's gone but you may see old references at our parent organization, [Time's Up](https://times-up.org/).  That site details the coop's 35+ year history and role in the broader context of promoting environmental sustainability alongside initiatives like Critical Mass, community gardens and bee-keeping.  Please note, some of the information on the bike co-op campaign page is out-of-date and stale, we are working to update it.  \n\nAs of April 2026, the most current operational details for the bike coop appear on this site which is meant for someone with a busted bike looking to fix it."
         }
       ]
     },
@@ -49,80 +125,10 @@
         {
           "question": "How much time to commit?",
           "answer": "Three hours once a week is enough to be effective and get a lay of the land.  We have a deep volunteer bench so it's fine to take time off for yourself when life throws you a wrench."
-        }
-      ]
-    },
-    {
-      "heading": "Service",
-      "items": [
-        {
-          "question": "What services do you provide?",
-          "answer": "We handle almost all repairs associated with a non-electric bike that you will find in a normal bike shop, including...\n- building a bike from the frame up, email us at contact@timesup.bike first so we can confirm you have all the necessary parts\n- disassembling a bike for travel\n- creating a ghost bike memorial\n- washing and cleaning\n- safety inspection for self-assembled or used bikes\n- pump up basketballs, volleyballs, footballs, anything with an air bladder\n- hang out, learn by osmosis, chit chat about bikes and vibe in the chaotic yet positive energy of the space\n\nAll work is done on the same day, we do not store personal items overnight."
         },
         {
-          "question": "What service does the co-op not handle?",
-          "answer": "We recommend a normal bike shop for the following.\n- regular, practical business hours\n- repairing and cutting carbon fiber\n- servicing electronic shifting, suspension, belt drive, internal gear hubs and dynamos\n- servicing electric bikes\n- welding/brazing cracked frames\n- bike fitting\n- powder coating or painting frames\n- facing bottom bracket***, head tube and disc brake mounts\n- artisanal, third-wave craft coffee\n- white glove, drop-off service\n\n*** [Mechanical Gardens](https://bikecoop.nyc/) is a bike coop in Williamsburg that has the tool for facing and chasing a bottom bracket shell.  They set their own pricing but are similarly donation based."
-        },
-        {
-          "question": "What should I bring?",
-          "answer": "Bring your bike and any parts you already have. Wear clothes you don't mind getting greasy. We have gloves and hand cleaner available."
-        },
-        {
-          "question": "How much does it cost?",
-          "answer": "$2 suggested donation plus parts.  This covers minor consumables like lubricant, grease and cleaning supplies.  Used parts are generally ~$5 each, see our [used parts price list](https://www.canva.com/design/DAGpoE5WunE/sd7Tocqw9nuRl_IhE9WkWA/view?utm_content=DAGpoE5WunE&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hacf7432243).  New parts like chains and inner tubes are sold at retail price.  \n\nThe price is kept low due to heavy reliance on volunteer mechanics, second-hand parts and private donations.  Cash is preferred and we accept electronic payments (i.e. Venmo, Zelle) but no credit cards.  Baked goods and snacks if you want to thank the volunteers."
-        },
-        {
-          "question": "Do I need to know how to fix bikes?",
-          "answer": "No.  The bulk of our patrons have never fixed a flat tire on their own.  Volunteer mechanics are here to walk you through repairs step-by-step. It's DIY but we're here to make sure your project does not go off the rails."
-        },
-        {
-          "question": "How much time does this take?",
-          "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more.  We will triage your issues so you can ride home, come back at a later date with replacement parts and more time.  We recommend coming at the start of the open hours and advise against starting major projects near closing.  There is no drop-off service and you need to be physically present to do the work.\n\nIn terms of wait time, there isn't much and we can attend to you as soon as you walk in.  Everyone works on a different part of their bike, we have a consistent 1:1 ratio of patrons to mechanics at any time and can overflow onto the sidewalk. You can see a real-time view of shop traffic on our main page and it doesn't get crazy until we hit 20+ patrons."
-        },
-        {
-          "question": "Do you service electric bikes or electric scooters?",
-          "answer": "No.  Your best bet nearby is [BikeFixNYC](https://www.bikefixnyc.com/)"
-        },
-        {
-          "question": "Do you service specialty non-electric bikes?  e.g. cargo, bakfiet, folding, recumbent, trike, tandem, elliptical",
-          "answer": "Email us at contact@timesup.bike.  We do not specialize in these but there may be some commonality.  Our repair stands are not weight rated for heavier bikes.\n\nGenerally folding bikes can be serviced as a normal bike, the proprietary bits are fairly solid."
-        },
-        {
-          "question": "Do you service other forms of micromobility? e.g. scooters, skateboards, strollers",
-          "answer": "Email us at contact@timesup.bike.  Unlikely but there may be some commonality."
-        },
-        {
-          "question": "Can I chat with a mechanic?",
-          "answer": "Yes.  contact@timesup.bike goes to our mechanics group chat so you'll get a quick response."
-        }
-      ]
-    },
-    {
-      "heading": "Parts",
-      "items": [
-        {
-          "question": "Can I donate a bike or parts?",
-          "answer": "Yes! We accept used parts and bikes in working condition. Drop them off during open hours.  We cannot clip locks for obviously abandoned bikes.  Email us at contact@timesup.bike if you have questions.\n\nBikes will either be fixed up or parted out to keep the shop stocked.  If you leave an email, we'll send you a picture of the bike's next owner when we sell it.  Due to limited repair supplies and space, we do not take electric bikes or children's bikes.  We do not take cycling apparel, shoes, helmets and other wearables.  Please do not leave donations for the coop if we are closed, it gets us in trouble with the neighbors.\n\n[Times Up!](https://times-up.org/support/donating-land-or-real-estate/) is a 501(c)(3) non-profit organization and donations can be tax deductible "
-        },
-        {
-          "question": "Will you buy my bike?",
-          "answer": "No.  We only accept donations."
-        },
-        {
-          "question": "Do you sell bikes?",
-          "answer": "Yes.  We list ready-to-ride bikes on Craigslist priced from $160-$200.  Email us if you are looking for a specific purpose (e.g. city commuting) or a specific size."
-        },
-        {
-          "question": "What tools does the co-op need?",
-          "answer": "We can always use more shop tools and non-expiring consumables (e.g. clean rags, paper towels, lubricant, cleaning supplies, grease). Check the [tools page](/tools) to see what we currently have or lack."
-        },
-        {
-          "question": "Where is the 24-hour bike parts vending machine?",
-          "answer": "It's gone but you may see old references at our parent organization, [Time's Up](https://times-up.org/).  That site details the coop's 35+ year history and role in the broader context of promoting environmental sustainability alongside initiatives like Critical Mass, community gardens and bee-keeping.  Please note, some of the information on the bike co-op campaign page is out-of-date and stale, we are working to update it.  \n\nAs of April 2026, the most current operational details for the bike coop appear on this site which is meant for someone with a busted bike looking to fix it."
-        },
-        {
-          "question": "Will you help install my parts purchased elsewhere? e.g. Amazon, AliExpress, eBay",
-          "answer": "Yes. We typically give you a model number so you can order parts yourself. We carry used parts on-site to get your bike rolling but the quality varies.  If you want new or higher-quality components, we can recommend parts the coop does not carry and then help you install them."
+          "question": "Code of conduct?",
+          "answer": "Be excellent to each other."
         }
       ]
     }
