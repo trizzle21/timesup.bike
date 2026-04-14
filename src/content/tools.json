@@ -1427,6 +1427,17 @@
           "y": 23.7
         }
       ]
+    },
+    {
+      "src": "/src/assets/gallery/tools/PXL_20260414_005516749.jpg",
+      "alt": "Ultrasonic Cleaner ⚠️",
+      "description": "Cleans intricate parts like chains and cassettes through cavitation.  Heated bath fits up to 10.5\" x 11.5\" x 4.5\" item",
+      "mapPositions": [
+        {
+          "x": 91.1,
+          "y": 42.6
+        }
+      ]
     }
   ]
 }
