@@ -135,6 +135,7 @@ const isDev = import.meta.env.DEV;
 			const loading = idx < 4 ? "eager" : "lazy";
 			const isFeatured = !!item.embiggen;
 			const toolId = item.alt.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+			const filename = item.src.split('/').pop() || '';
 			return (
 				<div id={toolId} class={`gallery-item${isFeatured ? ' featured' : ''}`} data-tool={item.alt}>
 					{imgSrc ? (
@@ -142,6 +143,7 @@ const isDev = import.meta.env.DEV;
 					) : (
 						<img src={item.src} alt={item.alt} loading={loading} />
 					)}
+					{isDev && <span class="dev-filename">{filename}</span>}
 					<span class="tool-name">{item.alt}</span>
 					<div class="sr-only">
 						{item.description && <span>{item.description}</span>}
@@ -308,6 +310,20 @@ const isDev = import.meta.env.DEV;
 	.portraits-grid :global(.gallery-item.featured) {
 		grid-column: span 2;
 		grid-row: span 2;
+	}
+
+	.dev-filename {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		font-size: 16px;
+		font-weight: 600;
+		color: #ffffff;
+		background: rgba(255, 0, 0, 0.7);
+		padding: 2px 6px;
+		border-radius: 3px;
+		z-index: 2;
+		pointer-events: none;
 	}
 
 	.gallery-item, .portraits-grid :global(.gallery-item) {
