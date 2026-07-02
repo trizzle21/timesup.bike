@@ -28,6 +28,10 @@
         {
           "question": "How much time does this take?",
           "answer": "Most tune-ups take 30 minutes but often you come in with one problem and we will identify a couple more.  We will triage your issues so you can ride home, come back at a later date with replacement parts and more time.  We recommend coming at the start of the open hours and advise against starting major projects near closing.  There is no drop-off service and you need to be physically present to do the work.\n\nIn terms of wait time, there isn't much and we can attend to you as soon as you walk in.  Everyone works on a different part of their bike, we have a consistent 1:1 ratio of patrons to mechanics at any time and can overflow onto the sidewalk. You can see a real-time view of shop traffic on our main page and it doesn't get crazy until we hit 20+ patrons."
+        },
+        {
+          "question": "What is the road condition like?",
+          "answer": "NYC maintains a network of live cameras.  Here are some from two blocks away at 1st avenue and 14th street which can help assess if the road is wet or snow logged. [Camera #1 - North](https://webcams.nyctmc.org/api/cameras/db5f8b82-99b1-45f3-a520-7d1f91d0a49a/image) and [Camera #2 - South](https://webcams.nyctmc.org/api/cameras/02d7db8e-481d-477e-9cdb-a2b6c6ec1ca3/image)"
         }
       ]
     },
